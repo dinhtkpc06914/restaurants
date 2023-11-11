@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-center justify-content-md-between">
 
@@ -14,7 +22,6 @@
       </div>
     </div>
   </div>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
@@ -57,3 +64,6 @@
 
     </div>
   </header><!-- End Header -->
+
+</body>
+</html>
