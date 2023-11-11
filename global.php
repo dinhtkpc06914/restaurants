@@ -7,8 +7,9 @@ $ADMIN_URL = "$ROOT_URL/admin";
 $SITE_URL = "$ROOT_URL/site";
 $SL_PER_PAGE = 10;
 $UPLOAD_URL = "../../uploaded";
-$VIEW_NAME = 'index.php';
+$VIEW_NAME = "index.php";
 $MESSAGE = '';
+$CONTENT_ADMIN="$ROOT_URL/content-admin";
 
 function exist_param($fieldname)
 {
