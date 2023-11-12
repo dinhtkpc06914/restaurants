@@ -44,7 +44,7 @@
             <div class="col-md-8 right_col ">
             <?php include $VIEW_NAME ?> ;
         </div>
-        </div>   
+
         <?php require "footer.php";
         ?>
         <!-- /footer content -->

@@ -51,7 +51,11 @@
                     </div>
 
                     <div class="mb-3 text-center mt-3">     
+
                         <input style = "background-color: #2A3F54;" type="submit" name="btn_insert" value="Thêm mới" class="btn btn-info mr-3">
+
+                        <input type="submit" name="btn_insert" value="Thêm mới" class="btn btn-info mr-3">
+
                         <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
                     </div>
 
