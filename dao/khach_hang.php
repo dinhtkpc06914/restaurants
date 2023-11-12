@@ -10,7 +10,7 @@ function khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $hinh, $email, $sdt )
 function khach_hang_update($ma_kh, $mat_khau, $ho_ten,$hinh, $email, $sdt)
 {
     $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,hinh=?,email=?, sdt=? WHERE ma_kh=?";
-    pdo_execute($sql, $mat_khau, $ho_ten, $hinh, $email, $sdt);
+    pdo_execute($sql, $mat_khau, $ho_ten, $hinh, $email, $sdt, $ma_kh);
 }
 function khach_hang_delete($ma_kh)
 {

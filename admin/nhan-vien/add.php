@@ -1,6 +1,6 @@
 <div class="page-title">
     <div class="title_left">
-        <h3>Thêm mới khách hàng</h3>
+        <h3>Thêm mới Nhân Viên</h3>
     </div>
     
 </div>
@@ -15,8 +15,8 @@
                 <form action="index.php" method="POST" enctype="multipart/form-data" id="admin_add_kh">
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <label for="ma_kh" class="form-label">Mã khách hàng</label>
-                            <input type="text" name="ma_kh" id="ma_kh" class="form-control" required placeholder="Nhập mã khách hàng...">
+                            <label for="ma_kh" class="form-label">Mã nhân viên</label>
+                            <input type="text" name="ma_nv" id="ma_nv" class="form-control" required placeholder="Nhập mã khách hàng...">
                         </div>
                         <div class="form-group col-sm-6">
                             <label for="ho_ten" class="form-label">Họ và tên</label>
@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="mb-3 text-center mt-3">     
-                        <input style = "background-color: #2A3F54;" type="submit" name="btn_insert" value="Thêm mới" class="btn btn-info mr-3">
+                        <input style = "background-color: #2A3F54;"type="submit" name="btn_insert" value="Thêm mới" class=" btn text-white mr-3">
                         <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
                     </div>
 

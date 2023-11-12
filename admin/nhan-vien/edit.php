@@ -1,6 +1,6 @@
 <div class="page-title">
     <div class="title_left">
-        <h3>Sửa thông tin khách hàng </h3>
+        <h3>Sửa thông tin nhân viên </h3>
     </div>
     
 </div>
@@ -12,12 +12,12 @@
             </div>
             <div class="x_content">
                 <br />
-                <form action="index.php?btn_update" method="POST" enctype="multipart/form-data" id="admin_update_kh">
+                <form action="index.php?btn_update" method="POST" enctype="multipart/form-data" id="admin_update_nv">
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <label for="ma_kh" class="form-label">MÃ KHÁCH HÀNG </label>
-                            <input type="text" name="ma_kh" id="ma_kh" class="form-control" required
-                                value="<?= $ma_kh ?>">
+                            <label for="ma_nv" class="form-label">MÃ NHÂN VIÊN </label>
+                            <input type="text" name="ma_nv" id="ma_nv" class="form-control" required
+                                value="<?= $ma_nv ?>">
                         </div>
                         <div class="form-group col-sm-6">
                             <label for="ho_ten" class="form-label">Họ và tên</label>
@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="form-group col-sm-6">
                             <label for="mat_khau" class="form-label">Mật khẩu</label>
-                            <input type="password" name="mat_khau" id="mat_khau" class="form-control" required
+                            <input type="password" name="matkhau" id="mat_khau" class="form-control" required
                                 value="<?= $mat_khau ?>">
                         </div>
                         <div class="form-group col-sm-6">
@@ -65,7 +65,7 @@
                   
 
                     <div class="mb-3 text-center mt-3">
-                        <input type="hidden" name="ma_kh" value="<?= $ma_kh ?>">                  
+                        <input type="hidden" name="ma_nv" value="<?= $ma_nv ?>">                  
                         <input type="submit" name="btn_update" value="Cập nhật" class="btn btn-info mr-3">
                         <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
                     </div>

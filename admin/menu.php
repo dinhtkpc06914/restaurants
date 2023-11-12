@@ -31,10 +31,12 @@
                     <li><a><i class="fa fa-edit"></i> Quản lý <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li> <a href="<?= $ADMIN_URL ?>/khach-hang/index.php?btn_list" class="nav-item nav-link">Quản Lý Khách hàng</a></li>
-                            <li><a href="#">Quản lý nhân viên</a></li>
+                            <li><a href="<?= $ADMIN_URL ?>/nhan-vien/index.php?btn_list" class="nav-item nav-link">Quản lý nhân viên</a></li>
                             <li><a href="#">Quản lý bàn ăn</a></li>
                             <li><a href="#">Quản lý món ăn</a></li>
                             <li><a href="#">Quản lý hóa đơn</a></li>
+                            <li><a href="#">Quản lý bình luận</a></li>
+                            <li><a href="#">Quản lý đặt bàn</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-user"></i> Tài khoản <span class="fa fa-chevron-down"></span></a>

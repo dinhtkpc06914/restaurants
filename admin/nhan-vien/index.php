@@ -1,15 +1,15 @@
 <?php 
 require_once "../../dao/pdo.php";
-require_once "../../dao/khach_hang.php";
+require_once "../../dao/nhan_vien.php";
 require "../../global.php";
-
+$ma_nv = $ho_ten = $mat_khau = $hinh = $email = $sdt = "";
 extract($_REQUEST);
 if(exist_param("btn_list")){
-    $items= khach_hang_selectall();
+    $items= nhan_vien_selectall();
     $VIEW_NAME = "list.php";
 }elseif(exist_param("btn_insert")){
     // lấy dữ liệu từ form
-    $ma_kh=$_POST['ma_kh'];
+    $ma_nv=$_POST['ma_nv'];
     $mat_khau=md5($_POST['mat_khau']);
     $ho_ten=$_POST['ho_ten'];  
     $up_hinh = save_file("up_hinh", "$UPLOAD_URL/users/");
@@ -17,51 +17,51 @@ if(exist_param("btn_list")){
     $email=$_POST['email'];
     $sdt = $_POST['sdt'];
     // insert database
-    khach_hang_insert($ma_kh, $mat_khau,$ho_ten, $hinh, $email, $sdt);
+    nhan_vien_insert($ma_nv, $ho_ten,$mat_khau, $hinh, $email, $sdt);
 
     // show dữ liệu
-    $items = khach_hang_selectall();
+    $items = nhan_vien_selectall();
     $VIEW_NAME = "list.php";
 
 }elseif(exist_param("btn_edit")){
     // lấy dữ liệu từ form
-    $ma_kh = $_REQUEST["ma_kh"];
-    $khach_hang_info = khach_hang_select_by_id($ma_kh);
-    extract($khach_hang_info);
+    $ma_nv = $_REQUEST["ma_nv"];
+    $nhan_vien_info = nhan_vien_select_by_id($ma_nv);
+    extract($nhan_vien_info);
     // showw dữ liệu    
-    $items = khach_hang_selectall();
+    $items = nhan_vien_selectall();
     $VIEW_NAME = "edit.php";
 }elseif (exist_param("btn_delete")) {
 
-    $ma_kh = $_REQUEST['ma_kh'];
-    khach_hang_delete($ma_kh);
+    $ma_nv = $_REQUEST['ma_nv'];
+    nhan_vien_delete($ma_nv);
     //hiển thị danh sách
 
-    $items = khach_hang_selectall();
+    $items = nhan_vien_selectall();
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_delete_all")) {
     try {
-        $arr_ma_kh = $_POST['ma_kh'];
-        khach_hang_delete($arr_ma_kh);
+        $arr_ma_nv = $_POST['ma_nv'];
+        nhan_vien_delete($arr_ma_nv);
         $MESSAGE = "Xóa thành công!";
     } catch (Exception $exc) {
         $MESSAGE = "Xóa thất bại!";
     }
-    $items = khach_hang_selectall();
+    $items = nhan_vien_selectall();
     $VIEW_NAME = "list.php";
 }elseif (exist_param("btn_update")) {
 
-    $ma_kh = $_POST['ma_kh'];
+    $ma_nv = $_POST['ma_nv'];
     $ho_ten = $_POST['ho_ten'];
-    $mat_khau = md5($_POST['mat_khau']);
+    $mat_nvau = md5($_POST['mat_khau']);
     $up_hinh = save_file("up_hinh", "$UPLOAD_URL/users/");
     $hinh = strlen($up_hinh) > 0 ? $up_hinh : $hinh;
     $email = $_POST['email'];
     $sdt = $_POST['sdt'];
-    khach_hang_update($ma_kh, $mat_khau, $ho_ten, $hinh, $email, $sdt);
-    // khach_hang_update();
+    nhan_vien_update($ma_nv, $ho_ten,$mat_khau,  $hinh, $email, $sdt);
+    // nhan_vien_update();
     //hiển thị danh sách
-    $items = khach_hang_selectall();
+    $items = nhan_vien_selectall();
     $VIEW_NAME = "list.php";
 } else {
     $VIEW_NAME = "add.php";
