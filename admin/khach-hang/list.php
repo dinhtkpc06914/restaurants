@@ -19,7 +19,7 @@
               
               <table width="100%" class="table table-hover table-bordered text-center ">
                   <div >
-                      <tr class="bg-info text-white" >
+                      <tr style="background-color: #2A3F54;"class=" text-white" >
                           <th><input type="checkbox" id="select-all"></th>
                           <th>Mã KH</th>
                           <th>Họ và tên</th>
@@ -27,7 +27,7 @@
                           <th>Số điện thoại</th>
                           <th>Ảnh</th>
                          
-                          <th><a href="index.php" class="btn btn-outline-success text-white">Thêm mới
+                          <th><a style="background-color: #2A3F54;" href="index.php" class="btn btn-outline-success text-white">Thêm mới
                                   <i class="fas fa-plus-circle"></i></a></th>
                       </tr>
                   </div>
@@ -71,7 +71,7 @@
                   </tbody>
 
               </table>
-              <button type="submit" class="btn btn-primary mb-1 text-white" id="deleteAll" onclick="return checkDelete()">
+              <button style="background-color: #2A3F54;" type="submit" class="btn btn-primary mb-1 text-white" id="deleteAll" onclick="return checkDelete()">
                   Xóa mục đã chọn</button>
           </form>
             </div>

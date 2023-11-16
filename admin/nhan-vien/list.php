@@ -19,7 +19,7 @@
               
               <table width="100%" class="table table-hover table-bordered text-center ">
                   <div >
-                      <tr class="bg-info text-white" >
+                      <tr style="background-color: #2A3F54;"class=" text-white" >
                           <th><input type="checkbox" id="select-all"></th>
                           <th>Mã NV</th>
                           <th>Họ và tên</th>
@@ -27,7 +27,7 @@
                           <th>Số điện thoại</th>
                           <th>Ảnh</th>
                          
-                          <th><a style = "background-color: #2A3F54;" href="index.php" class="btn  text-white">Thêm mới
+                          <th><a  href="index.php" class="btn btn-outline-success  text-white">Thêm mới
                                   <i class="fas fa-plus-circle"></i></a></th>
                       </tr>
                   </div>
