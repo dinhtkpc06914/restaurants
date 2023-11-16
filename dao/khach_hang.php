@@ -13,7 +13,7 @@ function khach_hang_update($ma_kh, $mat_khau, $ho_ten,$hinh, $email, $sdt)
 
     pdo_execute($sql, $mat_khau, $ho_ten, $hinh, $email, $sdt, $ma_kh);
 
-    pdo_execute($sql, $mat_khau, $ho_ten, $hinh, $email, $sdt);
+    
 }
 function khach_hang_delete($ma_kh)
 {
