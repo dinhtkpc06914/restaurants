@@ -19,7 +19,6 @@ if (exist_param("btn_list")) {
     $mo_ta = $_POST['mo_ta'];
     //insert vào db
     loai_insert($ten_loai_ban, $mo_ta);
-
     //show dữ liệu
     $items = loai_select_all();
     $VIEW_NAME = "list.php";
@@ -57,8 +56,8 @@ if (exist_param("btn_list")) {
     $mo_ta = $_POST['mo_ta'];
 
     // Cập nhật dữ liệu trong cơ sở dữ liệu
-    $sql = "UPDATE loai_ban SET ten_loai_ban=?, mo_ta=? WHERE ma_loai_ban=?";
-    pdo_execute($sql, $ten_loai_ban, $mo_ta, $ma_loai_ban);
+    $sql = "UPDATE loai_ban SET ten_loai_ban=?,suc_chua ?, mo_ta=? WHERE ma_loai_ban=?";
+    pdo_execute($sql, $ten_loai_ban,$suc_chua, $mo_ta );
 
     // Thực hiện các hành động sau khi cập nhật (nếu cần)
     // Ví dụ: Chuyển hướng về trang danh sách

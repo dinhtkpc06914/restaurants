@@ -1,9 +1,9 @@
 <?php
 require '../../global.php';
-require '../../dao/nhan_vien.php';
-if (isset($_GET['ma_nv'])) {
+require '../../dao/khach_hang.php';
+if (isset($_GET['ma_kh'])) {
 
-    $result = nhan_vien_exist($_GET['ma_nv']);
+    $result = khach_hang_exist($_GET['ma_kh']);
     if ($result == true) {
         echo json_encode(false);
     } else {
@@ -11,16 +11,16 @@ if (isset($_GET['ma_nv'])) {
     }
 }
 if (isset($_GET['email'])) {
-    $result = nhan_vien_exist_email($_GET['email']);
+    $result = khach_hang_exist_email($_GET['email']);
     if ($result == true) {
         echo json_encode(false);
     } else {
         echo json_encode(true);
     }
 }
-if (isset($_POST['ma_nv'])) {
+if (isset($_POST['ma_kh'])) {
     # code...
-    $result = nhan_vien_exist($_POST['ma_nv']);
+    $result = khach_hang_exist($_POST['ma_kh']);
     if ($result == true) {
         echo json_encode(true);
     } else {

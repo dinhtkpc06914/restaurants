@@ -1,6 +1,6 @@
 <?php
 require '../../global.php';
-require '../../dao/khach-hang.php';
+require '../../dao/khach_hang.php';
 if (isset($_GET['ma_kh'])) {
 
     $result = khach_hang_exist($_GET['ma_kh']);

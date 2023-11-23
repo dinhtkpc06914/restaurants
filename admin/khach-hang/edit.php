@@ -1,13 +1,24 @@
+<?php
+$img_path = $UPLOAD_URL . '/users/' . $hinh;
+if (is_file($img_path)) {
+    $img = "<img src='$img_path' height='100'>";
+} else {
+    $img = "no photo";
+}
+?>
+
+
+
 <div class="page-title">
     <div class="title_left">
-        <h3>Sửa thông tin khách hàng </h3>
+        <h3>Thêm mới khách hàng</h3>
     </div>
-    
+
 </div>
-<div class="row">
+<div class="row" >
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
-            <div class="x_title">              
+            <div class="x_title">
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
@@ -57,23 +68,51 @@
                                 value="<?= $email ?>">
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="email" class="form-label">Số điện thoại</label>
-                            <input type="text" name="sdt" id="sdt" class="form-control" required
+                            <label for="sdt" class="form-label">Số điện thoại</label>
+                            <input type="sdt" name="sdt" id="sdt" class="form-control" required
                                 value="<?= $sdt ?>">
                         </div>
                     </div>
-                  
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Kích hoạt?</label>
+                            <div class="form-control">
+                                <label class="radio-inline  mr-3">
+                                    <input type="radio" value="0" name="kich_hoat"
+                                        <?= !$kich_hoat ? 'checked' : '' ?>>Chưa kích
+                                    hoạt
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" value="1" name="kich_hoat"
+                                        <?= $kich_hoat ? 'checked' : '' ?>>Kích hoạt
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Kích hoạt?</label>
+                            <div class="form-control">
+                                <label class="radio-inline mr-3">
+                                    <input type="radio" value="0" name="vai_tro" <?= !$vai_tro ? 'checked' : '' ?>>Khách
+                                    hàng
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" value="1" name="vai_tro" <?= $vai_tro ? 'checked' : '' ?>>Nhân
+                                    viên
+                                </label>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="mb-3 text-center mt-3">
                         <input type="hidden" name="ma_kh" value="<?= $ma_kh ?>">                  
-                        <input style="background-color: #2A3F54;" type="submit" name="btn_update" value="Cập nhật" class="btn btn-info mr-3">
+                        <input type="submit" name="btn_update" value="Cập nhật" class="btn btn-info mr-3">
                         <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
                     </div>
 
                 </form>
-            </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>

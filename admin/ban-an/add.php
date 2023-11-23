@@ -32,6 +32,11 @@
                             <label for="ten_ban" class="form-label">Tên bàn</label>
                             <input type="text" name="ten_ban" id="ten_ban" class="form-control">
                         </div>
+                        <div class="form-group col-sm-4">
+                            <label for="suc_chua" class="form-label">Sức chứa</label>
+                            <input type="text" name="suc_chua" id="suc_chua" class="form-control">
+                        </div>
+                   
                    
                         <div class="form-group col-sm-4">
                             <label for="trang_thai" class="form-label">Trạng thái</label>
@@ -41,7 +46,7 @@
             </div>
             <div class="mb-3 text-center">
                 <input type="submit" name="btn_insert" value="Thêm mới" class="btn btn-info mr-3">
-                <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
+                <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách" style="background: #2A3F54;"></a>
             </div>
 
             </form>

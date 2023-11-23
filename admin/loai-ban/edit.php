@@ -14,12 +14,7 @@
                 <br />
                 <div class="card-body col-sm-12">
                     <form action="index.php?btn_update" method="POST" id="edit_loai">
-                        <div class="mb-3">
-                            <label for="ma_loai_ban" class="form-label">Mã loại</label>               
-
-                            <input type="text" name="ma_loai_ban" class="form-control" disabled
-                                value="<?= $ma_loai_ban ?>">
-                        </div>
+                       
                         <div class="mb-3">
                             <label for="ten_loai_ban" class="form-label">Tên loại</label>
                             <input type="text" name="ten_loai_ban" placeholder="Nhập tên loại" class="form-control"

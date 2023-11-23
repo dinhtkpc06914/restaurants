@@ -8,8 +8,8 @@
             <div class="footer-info">
               <h3>Restaurantly</h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
+               Quốc lộ 1A <br>
+                Thường thạnh, Cái răng, Cần Thơ<br><br>
                 <strong>Phone:</strong> +1 5589 55488 55<br>
                 <strong>Email:</strong> info@example.com<br>
               </p>
@@ -35,7 +35,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Dịch vụ</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>

@@ -1,6 +1,6 @@
 <?php
 require_once "../../global.php";
-require "../../dao/hang-hoa.php";
+require "../../dao/ban.php";
 
 if (isset($_GET['act']) && ($_GET['act'] == 'add')) {
     $result = ban_an_exist_add($_GET['ten_ban']);

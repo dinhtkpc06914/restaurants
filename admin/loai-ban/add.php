@@ -14,11 +14,7 @@
                 <br />
                 <div class="card">
             <div class="card-body">
-                <form action="index.php" method="POST" id="add_loai">
-                    <div class="mb-3">
-                        <label for="ma_loai" class="form-label">Mã loại bàn</label>
-                        <input type="text" name="ma_loai_ban" class="form-control" disabled placeholder="Tự tăng...">
-                    </div>
+                <form action="index.php" method="POST" id="add_loai">              
                     <div class="mb-3">
                         <label for="ten_loai_ban" class="form-label">Tên loại bàn</label>
                         <input type="text" name="ten_loai_ban" class="form-control" required placeholder="Nhập tên loại...">
