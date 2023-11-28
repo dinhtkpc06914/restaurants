@@ -8,8 +8,10 @@ $VIEW_NAME = "tai-khoan/dang-nhap-form.php";
 if (exist_param("btn_login")) {
     $user = khach_hang_select_by_id($ma_kh);
     if ($user) {
-        if ($user['mat_khau'] == $mat_khau) {
+        $stored_password_hash = $user['mat_khau'];
 
+        // Kiểm tra mật khẩu bằng Argon2
+        if (password_verify($mat_khau, $stored_password_hash)) {
             if (exist_param('ghi_nho')) {
                 add_cookie("ma_kh", $ma_kh, 30);
                 add_cookie("mat_khau", $mat_khau, 30);
@@ -17,8 +19,8 @@ if (exist_param("btn_login")) {
                 delete_cookie("ma_kh");
                 delete_cookie("mat_khau");
             }
-            $_SESSION["user"] = $user;
 
+            $_SESSION["user"] = $user;
             $ten_vai_tro =  $user['vai_tro'] == 0 ? "" : "nhân viên ";
             echo "<script>
                      alert('Đăng nhập tài khoản " . $ten_vai_tro . "thành công!'); 
@@ -31,7 +33,6 @@ if (exist_param("btn_login")) {
         $MESSAGE = "Sai tên đăng nhập!";
     }
 } else {
-
     if (exist_param("btn_logout")) {
         unset($_SESSION['user']);
         $_SESSION['name_page'] = 'trang_chu';
@@ -40,3 +41,4 @@ if (exist_param("btn_login")) {
     $mat_khau = get_cookie("mat_khau");
 }
 require '../layout.php';
+?>

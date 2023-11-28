@@ -2,19 +2,18 @@
 <div>
     <div class="page-title">
     <div class="title_left">
-        <h3>Danh sách loại bàn</h3>
+        <h3>DANH SÁCH LOẠI BÀN</h3>
     </div>
-   
 </div>
 <div class="row">
-    <div class="col-md-12 col-sm-12 ">
+    <div class="col-md-10 col-sm-10 ">
         <div class="x_panel">
             <div class="x_title">              
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
                 <br />
-                <form action="?btn_delete_all" method="post" class="table-responsive">
+                <form action="?btn_delete_all" method="post" >
                
                 <table width="100%" class="table table-hover table-bordered text-center">
                     <thead >
@@ -23,8 +22,8 @@
                             <th>Mã loại</th>
                             <th>Tên loại</th>
                             <th>Mô tả</th>
-                            <th><a href="index.php" class="btn btn-outline-success text-white">Thêm mới
-                                    <i class="fas fa-plus-circle"></i></a></th>
+                            <th>Trạng Thái</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,6 +40,7 @@
                             <td><?= $ma_loai_ban ?></td>
                             <td><?= $ten_loai_ban ?></td>
                             <td><?= $mo_ta?></td>
+                            <td><?= $trang_thai?></td>
                             <td class="text-end">
                                 <a href="<?= $suadm ?>" class="btn btn-outline-info btn-rounded"><i
                                         class="fas fa-pen"></i></a>
@@ -57,6 +57,9 @@
                 </table>
                 <button style="background-color: #2A3F54;" type="submit" class="btn btn-info mb-1" id="deleteAll" onclick="return checkDelete()">
                     Xóa mục đã chọn</button>
+
+                    <a href="index.php" class="btn  text-white" style="background-color: #2A3F54;">Thêm mới
+                                    <i class="fas fa-plus-circle"></i></a>
             </form>
             </div>
         </div>

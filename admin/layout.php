@@ -11,9 +11,10 @@
 
     <title>RESTAURANT</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script src="<?= $CONTENT_ADMIN ?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link href="<?= $CONTENT_ADMIN ?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -36,13 +37,15 @@
 
 <body class="nav-md bg-white">
     <div class="container body">
+ 
         <div class="main_container">
             <?php require "menu.php";
             ?>
         </div>
         <div class="main_container">
-            <div class="col-md-8 right_col ">
-            <?php include $VIEW_NAME ?> ;
+            
+            <div class="col-md-12 right_col ">
+            <?php include $VIEW_NAME ?> 
         </div>
 
         <?php require "footer.php";
@@ -51,7 +54,10 @@
     </div>
 
     <!-- jQuery -->
-    <script src="<?= $CONTENT_ADMIN ?>/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   
     <!-- Bootstrap -->
     <script src="<?= $CONTENT_ADMIN ?>/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FastClick -->
@@ -90,6 +96,14 @@
 
     <!-- Custom Theme Scripts -->
     <script src="<?= $CONTENT_ADMIN ?>/build/js/custom.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+    <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
 </body>
 <script>

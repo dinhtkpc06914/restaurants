@@ -57,3 +57,6 @@ function check_login()
     header("location: $SITE_URL/tai-khoan/dang-nhap.php");
     die;
 }
+
+
+

@@ -1,6 +1,6 @@
 <footer>
           <div class="pull-right">
-           Hệ thống Nhà hàng / Quán ăn 
+          <a href="../../site/trang-chinh"> Hệ thống Nhà hàng / Quán ăn </a>
           </div>
           <div class="clearfix"></div>
         </footer>

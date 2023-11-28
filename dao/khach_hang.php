@@ -24,10 +24,10 @@ function khach_hang_delete($ma_kh)
         pdo_execute($sql, $ma_kh);
     }
 }
-function khach_hang_selectall()
+function khach_hang_selectall_by_role($vai_tro = 0)
 {
-    $sql = "SELECT * FROM khach_hang";
-    return pdo_query($sql);
+    $sql = "SELECT * FROM khach_hang WHERE vai_tro = ?";
+    return pdo_execute($sql, $vai_tro);
 }
 function khach_hang_select_by_id($ma_kh)
 {
