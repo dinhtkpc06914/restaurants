@@ -12,7 +12,7 @@
             </div>
             <div class="x_content">
                 <br />
-                <form action="index.php" method="POST" enctype="multipart/form-data" id="admin_add_kh"
+                <form action="index.php" method="POST" enctype="multipart/form-data" id="admin_add_nv"
                     onsubmit="return validateForm()">
                     <div class="row">
                         <div class="form-group col-sm-12">

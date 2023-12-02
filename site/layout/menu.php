@@ -99,16 +99,29 @@ padding: 10px ;
       </div>
     </div>
   </div>
+  
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-cente ml-5  ">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       <nav id="navbar" class="navbar order-last order-lg-0">
+      <?php
+                if (isset($_SESSION['name_page'])) {
+                    $name_page = $_SESSION['name_page'];
+                }
+                ?>
+                    <ul class="m-auto nav">
+                <?php
+                if (isset($_SESSION['name_page'])) {
+                    $name_page = $_SESSION['name_page'];
+                }
+                ?>
         <ul>
-          <li><a class="nav-link scrollto active" href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang chủ</a></li>
+          <li>  <img style="width: 6rem;" src="<?=$CONTENT_URL?>/assets/img/lo-go.png"  alt=""></li>
+          <li><a class="nav-link scrollto <?= $name_page == 'trang_chu' ? 'active' : '' ?> " href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang chủ</a></li>
           <li><a class="nav-link scrollto" href="#about">Về chúng tôi</a></li>
-          <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+          <li><a class="" href="<?= $SITE_URL ?>/mon-an/liet-ke.php">Thực đơn</a></li>
           <li><a class="nav-link scrollto" href="#specials">Khuyến mãi</a></li>
           <li><a class="nav-link scrollto" href="#events">Sự kiện</a></li>
           <li><a class="nav-link scrollto" href="#chefs">Đầu bếp</a></li>
@@ -126,8 +139,8 @@ padding: 10px ;
   <div class="widget-header d-flex ">
                 
                 <a href="<?= $SITE_URL . "/cart/list-cart.php" ?>" class="icon icon-sm "><i
-                         class="bi bi-basket  "></i></a>
-                <span class="badge badge-pill badge-danger notify">
+                         class="bi bi-basket" ></i></a>
+                <span class="badge badge-pill text-danger">
                     <?php
                     if (isset($_SESSION['total_cart'])) {
                         echo $_SESSION['total_cart'];
@@ -166,6 +179,8 @@ padding: 10px ;
                             <a class="dropdown-item pl-3 py-2"
                                 href="<?= $SITE_URL . '/tai-khoan/cap-nhat-tk.php' ?>">Cập nhật tài khoản</a>
                             <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/doi-mk.php' ?>">Đổi mật
+                                khẩu</a>
+                                <a class="dropdown-item pl-3 py-2" href="#">Quên mật 
                                 khẩu</a>
                             <a class="dropdown-item pl-3 py-2"
                                 href="<?= $SITE_URL . '/tai-khoan/dang-nhap.php?btn_logout' ?>">Đăng xuất</a>

@@ -67,21 +67,21 @@
                             <p id="sdt_error" style="color: red;"></p>
                         </div>
                     </div>
-                    <!-- <div class="row">
+                    <div class="row">
                        
                         <div class="form-group col-sm-12">
                             <label>Vai trò</label>
                             <div class="form-control">
                                 <label class="radio-inline mr-3">
-                                    <input type="radio" value="0" name="vai_tro" id="vai_tro_0"<?php echo isset($vai_tro) && $vai_tro == 0 ? 'checked' : ''; ?>>Khách hàng
+                                    <input type="hidden" value="0" name="vai_tro" id="vai_tro_0"<?php echo isset($vai_tro) && $vai_tro == 0 ? 'checked' : ''; ?>>Khách hàng
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" value="1" name="vai_tro" id="vai_tro_1"<?php echo isset($vai_tro) && $vai_tro == 1 ? 'checked' : ''; ?>>Nhân viên
+                                    <input type="hidden" value="1" name="vai_tro" id="vai_tro_1"<?php echo isset($vai_tro) && $vai_tro == 1 ? 'checked' : ''; ?>>Nhân viên
                                 </label>
                             </div>
                             <p id="vai_tro_error" style="color: red;"></p>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="row"> <div class="form-group col-sm-12">
                             <label>Kích hoạt?</label>
                             <div class="form-control">

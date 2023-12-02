@@ -24,6 +24,7 @@
                                     <th>Ảnh</th>
                                     <th>Vai trò</th>
                                     <th>Kích hoạt</th>
+                                    <th>Địa Chỉ</th>
                                     <th></th>
                                 </tr>
                             </div>
@@ -64,6 +65,9 @@
                                         </td>
                                         <td>
                                             <?= ($kich_hoat == 1) ? "Rồi" : "Chưa"; ?>
+                                        </td>
+                                        <td>
+                                        <?= $dia_chi?>
                                         </td>
                                         <td class="text-end">
                                             <a href="<?= $suakh ?>" class="btn btn-outline-info btn-rounded"><i

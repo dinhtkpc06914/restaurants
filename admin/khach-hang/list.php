@@ -1,4 +1,3 @@
-
 <div>
     <div class="page-title">
         <div class="title_left">
@@ -22,8 +21,9 @@
                                     <th>Họ và tên</th>
                                     <th>Địa chỉ email</th>
                                     <th>SĐT</th>
-                                    <th>Ảnh</th>                            
+                                    <th>Ảnh</th>
                                     <th>Kích hoạt</th>
+                                    <th>Địa chỉ</th>
                                     <th></th>
                                 </tr>
                             </div>
@@ -59,9 +59,12 @@
                                             <img src="<?= $UPLOAD_URL . '/users/' . $hinh ?>" alt="" width="40px"
                                                 height="30px">
                                         </td>
-                                      
+
                                         <td>
                                             <?= ($kich_hoat == 1) ? "Rồi" : "Chưa"; ?>
+                                        </td>
+                                        <td>
+                                        <?= $dia_chi ?>
                                         </td>
                                         <td class="text-end">
                                             <a href="<?= $suakh ?>" class="btn btn-outline-info btn-rounded"><i
@@ -84,19 +87,17 @@
                             <i class="fas fa-plus-circle"></i></a>
                     </form>
                     <div class="mt-3" width="100%">
-                            <ul class="pagination justify-content-center">
-                                <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
+                        <ul class="pagination justify-content-center">
+                            <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
+                                <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
+                                    <a class="page-link" href="?btn_list&page=<?= $i ?>">
+                                        <?= $i ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
 
-                                    <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
-                                        <a class="page-link" href="?btn_list&page=<?= $i ?>">
-                                            <?= $i ?>
-                                        </a>
-                                    </li>
-
-                                <?php } ?>
-
-                            </ul>
-                        </div>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

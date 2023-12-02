@@ -89,6 +89,14 @@ if (is_file($img_path)) {
                         </div>
                     </div>
                     <div class="row">
+                    <div class="form-group col-sm-12">
+                            <label for="dia_chi" class="form-label">Địa chỉ</label>
+                            <input type="text" name="dia_chi" id="dia_chi" class="form-control" 
+                                value="<?= $dia_chi ?>" >
+                                <p id="dia_chi_error" style="color: red;"></p>                             
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="form-group col-sm-12">
                             <label>Kích hoạt?</label>
                             <div class="form-control">

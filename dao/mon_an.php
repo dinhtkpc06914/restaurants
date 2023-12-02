@@ -50,7 +50,7 @@ function mon_an_exist_update($ma_mon_an, $ten_mon_an)
     return pdo_query_value($sql, $ma_mon_an, $ten_mon_an) > 0;
 }
 
-function mon_an_tang_luot_xem($ma_mon_an)
+function mon_an_tang_so_luot_xem($ma_mon_an)
 {
     $sql = "UPDATE mon_an SET luot_xem = luot_xem + 1 WHERE ma_mon_an=?";
     pdo_execute($sql, $ma_mon_an);
@@ -65,15 +65,15 @@ function mon_an_select_dac_biet()
     $sql = "SELECT * FROM mon_an WHERE dac_biet=1";
     return pdo_query($sql);
 }
-function mon_an_select_by_loai($ma_loai)
+function mon_an_select_by_loai($ma_loai_mon)
 {
-    $sql = "SELECT * FROM mon_an WHERE ma_loai=?";
-    return pdo_query($sql, $ma_loai);
+    $sql = "SELECT * FROM mon_an WHERE ma_loai_mon=?";
+    return pdo_query($sql, $ma_loai_mon);
 }
 function mon_an_select_keyword($keyword)
 {
-    $sql = "SELECT * FROM mon_an hh "
-        . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
+    $sql = "SELECT * FROM mon_an mon_an "
+        . " JOIN loai lo ON lo.ma_loai_mon=mon_an.ma_loai_mon "
         . " WHERE ten_mon_an LIKE ? OR ten_loai LIKE ?";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
@@ -94,3 +94,25 @@ function mon_an_select_page($order, $limit)
     $sql = "SELECT * FROM mon_an ORDER BY $order DESC LIMIT $begin,$limit";
     return pdo_query($sql);
 }
+function mon_an_select_page1($order, $limit, $page)
+{
+    // ... (các dòng mã khác)
+
+    if (!isset($_REQUEST['page'])) {
+        $_SESSION['page'] = 1;
+    }
+    if (!isset($_SESSION['total_page'])) {
+        $_SESSION['total_page'] = 1;
+    }
+    $_SESSION['total_pro'] = pdo_query_value("SELECT count(*) FROM mon_an");
+    if (exist_param("page")) {
+        $_SESSION['page'] = $_REQUEST['page'];
+    }
+    $begin = ($_SESSION['page'] - 1) * $limit;
+    $_SESSION['total_page'] = ceil($_SESSION['total_pro'] / $limit);
+    $sql = "SELECT * FROM mon_an ORDER BY $order DESC LIMIT $begin, $limit";
+    return pdo_query($sql);
+}
+
+
+

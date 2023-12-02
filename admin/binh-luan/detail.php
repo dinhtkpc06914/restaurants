@@ -30,23 +30,20 @@
      </thead>
      <tbody>
          <?php
-
          foreach ($items as $item) {
              extract($item);
-
          ?>
          <tr>
              <td><input type="checkbox" name="ma_binh_luan[]" value="<?= $ma_binh_luan ?>"></td>
              <td><?= $items[0]['ten_mon_an'] ?></td>
              <td><?= $noi_dung ?></td>
              <td><?= $ngay_binh_luan ?></td>
-             <td><?= $ma_khach_hang ?></td>
+             <td><?= $ma_kh ?></td>
              <td class="text-end">
                  <a href="index.php?btn_delete&ma_binh_luan=<?= $ma_binh_luan ?>&ma_mon_an=<?= $ma_mon_an ?>"
                      class="btn btn-outline-danger btn-rounded" onclick="return checkDelete()"><i
                          class="fas fa-trash"></i></a>
-             </td>
-           
+             </td>   
          </tr>
          <?php
          }

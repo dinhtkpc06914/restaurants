@@ -2,7 +2,7 @@
 require_once 'pdo.php';
 function binh_luan_insert($ma_kh, $ma_mon_an, $noi_dung, $ngay_binh_luan, $xep_hang)
 {
-    $sql = "INSERT INTO binh_luan(ma_kh, ma_mon_an, noi_dung, ngay_binh_luan, rating) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO binh_luan(ma_kh, ma_mon_an, noi_dung, ngay_binh_luan, xep_hang) VALUES (?,?,?,?,?)";
 
     pdo_execute($sql, $ma_kh, $ma_mon_an, $noi_dung, $ngay_binh_luan, $xep_hang);
 }
@@ -57,6 +57,6 @@ function binh_luan_select_by_mon_an($ma_mon_an, $limit = 10)
     $_SESSION['total_page'] = ceil($_SESSION['total_bl'] / $limit);
     $sql = "SELECT b.*, h.ten_mon_an, k.ho_ten, k.hinh FROM binh_luan b 
     JOIN mon_an h ON h.ma_mon_an = b.ma_mon_an 
-    JOIN khach_hang k ON k.ma_kh =b.ma_khach_hang WHERE b.ma_mon_an=? ORDER BY ma_binh_luan DESC LIMIT $begin,$limit";
+    JOIN khach_hang k ON k.ma_kh =b.ma_kh WHERE b.ma_mon_an=? ORDER BY ma_binh_luan DESC LIMIT $begin,$limit";
     return pdo_query($sql, $ma_mon_an);
 }

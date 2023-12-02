@@ -35,14 +35,13 @@
                 </ul>
             </div>
             <div class="profile_info">
-                <span>Welcome,</span>
+                <span>Welcome</span>
                 <div class="text-white">
-                    <?= $_SESSION['user']['ho_ten'] ?>
+                    <?=$_SESSION['user']['ho_ten']?>
                 </div>
             </div>
         </div>
         <!-- /menu profile quick info -->
-
         <br />
 
         <!-- sidebar menu -->
@@ -50,26 +49,26 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                    <li><a href="<?= $ADMIN_URL ?>/trang-chinh/" class="nav-item nav-link"><i class="fa fa-home"></i>
+                    <li><a href="<?=$ADMIN_URL?>/trang-chinh/" class="nav-item nav-link"><i class="fa fa-home"></i>
                             Trang chủ<span></span></a>
 
                     </li>
                     <li><a><i class="fa fa-edit"></i> Quản lý <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li> <a href="<?= $ADMIN_URL ?>/khach-hang/index.php?btn_list"
+                            <li> <a href="<?=$ADMIN_URL?>/khach-hang/index.php?btn_list"
                                     class="nav-item nav-link">Quản Lý Khách hàng</a></li>
-                            <li> <a href="<?= $ADMIN_URL ?>/nhan-vien/index.php?btn_list"
+                            <li> <a href="<?=$ADMIN_URL?>/nhan-vien/index.php?btn_list"
                                     class="nav-item nav-link">Quản Lý Nhân Viên</a></li>
-                            <li><a href="<?= $ADMIN_URL ?>/loai-ban/index.php?btn_list" class="nav-item nav-link">Quản
+                            <li><a href="<?=$ADMIN_URL?>/loai-ban/index.php?btn_list" class="nav-item nav-link">Quản
                                     lý loại bàn</a></li>
-                            <li><a href="<?= $ADMIN_URL ?>/mon-an/index.php?btn_list" class="nav-item nav-link">Quản lý
+                            <li><a href="<?=$ADMIN_URL?>/mon-an/index.php?btn_list" class="nav-item nav-link">Quản lý
                                     món ăn</a></li>
-                            <li><a href="<?= $ADMIN_URL ?>/loai-mon/index.php?btn_list" class="nav-item nav-link">Quản
+                            <li><a href="<?=$ADMIN_URL?>/loai-mon/index.php?btn_list" class="nav-item nav-link">Quản
                                     lý loại món ăn</a></li>
-                            <li><a href="<?= $ADMIN_URL ?>/binh-luan/index.php?btn_list" class="nav-item nav-link">Quản
+                            <li><a href="<?=$ADMIN_URL?>/binh-luan/index.php?btn_list" class="nav-item nav-link">Quản
                                     lý bình luận</a></li>
-                            <li><a href="<?= $ADMIN_URL ?>/don-dat-mon/index.php?btn_list" class="nav-item nav-link">Quản lý đơn đặt </a></li>
-                            <li><a <a href="<?= $ADMIN_URL ?>/dat-ban/index.php?btn_list" class="nav-item nav-link">Quản lý đặt bàn</a></li>
+                            <li><a href="<?=$ADMIN_URL?>/don-dat-mon/index.php?btn_list" class="nav-item nav-link">Quản lý đơn đặt </a></li>
+                            <li><a <a href="<?=$ADMIN_URL?>/dat-ban/index.php?btn_list" class="nav-item nav-link">Quản lý đặt bàn</a></li>
 
                         </ul>
                     </li>

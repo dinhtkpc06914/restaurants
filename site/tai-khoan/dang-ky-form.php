@@ -98,7 +98,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                         <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                     </div>
                 </div>
-
+                <div class="form-sub-w3">
+                    <input type="text" name="dia_chi" placeholder="Nhập địa chỉ " /><br>
+                    <p id="dia_chi_error" style="color: red;"></p>
+                    <div class="icon-w3">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
                 <label class="anim">
 
                     <a href="<?= $SITE_URL ?>/tai-khoan/quen-mk.php">Quên mật khẩu</a>
@@ -132,6 +138,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
     function validateForm() {
         var valid = true;
         var ho_ten = document.getElementsByName("ho_ten")[0].value;
+        var dia_chi = document.getElementsByName("dia_chi")[0].value;
         var ma_kh = document.getElementsByName("ma_kh")[0].value;
         var mat_khau = document.getElementsByName("mat_khau")[0].value;
         var mat_khau2 = document.getElementsByName("mat_khau2")[0].value;
@@ -150,7 +157,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
             document.getElementById("ho_ten_error").innerText = "Vui lòng nhập họ tên !";
             valid = false;
         } else {
-            document.getElementById("ma_kh_error").innerText = "";
+            document.getElementById("ho_ten_error").innerText = "";
         }
         // Kiểm tra trường 'ma_kh'
         if (ma_kh.trim() === "") {
@@ -183,6 +190,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
             valid = false;
         } else {
             document.getElementById("email_error").innerText = "";
+        }
+        //kiểm tra địa chỉ
+        if (dia_chi.trim() === "") {
+            document.getElementById("dia_chi_error").innerText = "Vui lòng nhập địa chỉ !";
+            valid = false;
+        } else {
+            document.getElementById("dia_chi_error").innerText = "";
         }
         // Kiểm tra trường 'hình '
         if (hinh.trim() === "") {

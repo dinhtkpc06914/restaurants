@@ -3,7 +3,7 @@
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-lg-8">
-          <h1>Welcome to <span>Restaurantly</span></h1>
+          <h1>Chào mừng đến <span>Simple Savory</span></h1>
           <h2>Cung cấp thực phẩm tuyệt vời trong hơn 18 năm!</h2>
 
           <div class="btns">

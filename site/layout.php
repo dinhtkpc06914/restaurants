@@ -13,10 +13,10 @@
   <!-- Favicons -->
   <link href="<?=$CONTENT_URL?>/assets/img/favicon.png" rel="icon">
   <link href="<?=$CONTENT_URL?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="<?=$CONTENT_URL?>/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="<?=$CONTENT_URL?>/assets/vendor/aos/aos.css" rel="stylesheet">

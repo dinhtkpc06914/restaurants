@@ -6,7 +6,7 @@
 <div>
     <div class="page-title">
         <div class="title_left">
-            <h3>DANH SÁCH ĐƠN HÀNG</h3>
+            <h3>DANH SÁCH ĐƠN HANG</h3>
         </div>
     </div>
     <div class="row">
@@ -23,9 +23,9 @@
                                 <tr style="font-weight: 500;text-align: center;">
                                     <td width="50px">STT</td>
                                     <td width="200px">Tên User</td>
-                                    <td width="200px" >Tên món ăn/<br>Số lượng</td>
-                                    <td width="200px">Tổng tiền</td>
-                                    <td >Email</td>
+                                    <td width="200px"  >Tên Sản Phẩm/<br>Số lượng</td>
+                                    <td>Tổng tiền</td>
+                                    <td width="250px">Địa chỉ</td>
                                     <td width="250px">Ngày đặt</td>
                                     <td>Số điện thoại</td>
                                    
@@ -37,24 +37,23 @@
                                 <?php
                                 $total = 0;
                                 $count = 0;
+
                                 foreach ($items as $item) {
                                     echo '
                                     <tr style="text-align: center;">
                                         <td width="50px">' . (++$count) . '</td>
-                                        <td style="text-align:center">' . $item['ten_khach_hang'] . '</td>
+                                        <td style="text-align:center">' . $item['ma_kh'] . '</td>
                                         <td>' . $item['ten_mon_an'] . '<br>(<strong>' . $item['so_luong'] . '</strong>)</td>
                                         <td class="b-500 red">' . number_format($item['don_gia'], 0, ',', '.') . '<span> VNĐ</span></td>
-                                        <td width="100px">' . $item['email'] . '</td>
+                                        <td width="100px">' . $item['dia_chi'] . '</td>
                                         <td width="100px">' . $item['ngay_tao'] . '</td>
                                         <td width="100px">' . $item['sdt'] . '</td>
-                                        
                                         <td width="100px" class="green b-500">' . $item['trang_thai'] . '</td>
                                         <td width="100px">
                                             <a href="edit.php?ma_chi_tiet=' . $item['ma_chi_tiet'] . '" class="btn btn-success">Edit</a>
                                         </td>
                                     </tr>';
                                 }
-                                
                                 ?>
                             </tbody>
                         </table>

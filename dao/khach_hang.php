@@ -2,15 +2,15 @@
 require_once 'pdo.php';
 
 
-function khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat, $vai_tro)
+function khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat, $vai_tro,$dia_chi)
 {
-    $sql = "INSERT INTO khach_hang(ma_kh,mat_khau,ho_ten,email,sdt,hinh,kich_hoat,vai_tro) VALUES(?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat == 1, $vai_tro == 1);
+    $sql = "INSERT INTO khach_hang(ma_kh,mat_khau,ho_ten,email,sdt,hinh,kich_hoat,vai_tro,dia_chi) VALUES(?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat == 1, $vai_tro == 1,$dia_chi);
 }
-function khach_hang_update($ma_kh, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat, $vai_tro)
+function khach_hang_update($ma_kh, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat, $vai_tro,$dia_chi)
 {
-    $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,email=?,sdt=?,hinh=?,kich_hoat=?,vai_tro=? WHERE ma_kh=?";
-    pdo_execute($sql, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat == 1, $vai_tro == 1, $ma_kh);
+    $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,email=?,sdt=?,hinh=?,kich_hoat=?,vai_tro=?,dia_chi=? WHERE ma_kh=?";
+    pdo_execute($sql, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat == 1, $vai_tro == 1,$dia_chi, $ma_kh);
 }
 function khach_hang_delete($ma_kh)
 {
@@ -18,7 +18,7 @@ function khach_hang_delete($ma_kh)
     if (is_array($ma_kh)) {
         // xoa nhieu kh
         foreach ($ma_kh as $ma) {
-            pdo_execute($sql, $ma);
+            pdo_execute($sql, $ma); 
         }
     } else {
         pdo_execute($sql, $ma_kh);

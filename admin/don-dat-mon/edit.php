@@ -59,10 +59,10 @@ require_once('../database/dbhelper.php');
                                     echo '
                                         <tr style="text-align: center;">
                                             <td width="50px">' . (++$count) . '</td>
-                                            <td style="text-align:center">' . $item['ten_khach_hang'] . '</td>
+                                            <td style="text-align:center">' . $item['ma_kh'] . '</td>
                                             <td>' . $item['ten_mon_an'] . '<br>(<strong>' . $item['so_luong'] . '</strong>)</td>
                                             <td class="b-500 red">' . number_format($item['don_gia'], 0, ',', '.') . '<span> VNĐ</span></td>
-                                            <td width="100px">' . $item['email'] . '</td>
+                                            <td width="100px">' . $item['dia_chi'] . '</td>
                                             <td width="100px">' . $item['sdt'] . '</td>
                                             <td>
                                                 <select name="trang_thai" id="trang_thai" onchange="trang_thai(' . $item['ma_chi_tiet'] . ')">

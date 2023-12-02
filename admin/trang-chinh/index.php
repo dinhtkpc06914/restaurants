@@ -1,5 +1,4 @@
 <?php
-
 require "../../global.php";
 require "../../dao/loai_mon.php";
 require "../../dao/mon_an.php";

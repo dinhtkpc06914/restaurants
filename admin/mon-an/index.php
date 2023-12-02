@@ -10,7 +10,7 @@ extract($_REQUEST);
 if (exist_param("btn_list")) {
 
     //show dữ liệu
-    $items =mon_an_select_page('ma_mon_an', 10);
+    $items =mon_an_select_page('ma_mon_an', 6);
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_insert")) {
     #lấy dữ liệu từ form
@@ -30,7 +30,7 @@ if (exist_param("btn_list")) {
     mon_an_insert($ten_mon_an, $don_gia, $gia_giam, $hinh,$mo_ta_mon,$dac_biet, $ngay_nhap, $luot_xem,$ma_loai_mon  );
 
     //show dữ liệu
-    $items =mon_an_select_page('ma_mon_an', 10);
+    $items =mon_an_select_page('ma_mon_an', 6);
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_edit")) {
     #lấy dữ liệu từ form
@@ -47,7 +47,7 @@ if (exist_param("btn_list")) {
    mon_an_delete($ma_mon_an);
     //hiển thị danh sách
 
-    $items =mon_an_select_page('ma_mon_an', 10);
+    $items =mon_an_select_page('ma_mon_an', 6);
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_delete_all")) {
     try {
@@ -58,7 +58,7 @@ if (exist_param("btn_list")) {
     } catch (Exception $exc) {
         $MESSAGE = "Xóa thất bại!";
     }
-    $items =mon_an_select_page('ma_mon_an', 10);
+    $items =mon_an_select_page('ma_mon_an', 6);
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_update")) {
 
@@ -78,7 +78,7 @@ if (exist_param("btn_list")) {
     mon_an_update($ma_mon_an,$ten_mon_an, $don_gia, $gia_giam, $hinh,$mo_ta_mon,$dac_biet, $ngay_nhap, $luot_xem,$ma_loai_mon);
     //hiển thị danh sách
 
-    $items =mon_an_select_page('ma_mon_an', 10);
+    $items =mon_an_select_page('ma_mon_an', 6);
     $VIEW_NAME = "list.php";
 } else {
     $loai_mon = loai_mon_select_all('ASC');

@@ -19,12 +19,12 @@ if(exist_param("btn_list")){
     $hinh = strlen($up_hinh) > 0 ? $up_hinh : $hinh;
     $kich_hoat = isset($_POST['kich_hoat']) ? $_POST['kich_hoat'] : null;
     $vai_tro = isset($_POST['vai_tro']) ? $_POST['vai_tro'] : 1; // Mặc định là 1 (Nhân viên)
-
+    $dia_chi = $_POST['dia_chi'];
     // Mã hóa mật khẩu bằng Argon2
     $hashed_mat_khau = password_hash($raw_mat_khau, PASSWORD_ARGON2I);
 
     // insert database
-    khach_hang_insert($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro);
+    khach_hang_insert($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro, $dia_chi);
 
     // show dữ liệu
     $items = khach_hang_selectall_by_role();
@@ -67,16 +67,18 @@ if(exist_param("btn_list")){
 
     $up_hinh = save_file("up_hinh", "$UPLOAD_URL/users/");
     $hinh = strlen($up_hinh) > 0 ? $up_hinh : $hinh;
-
+    $dia_chi = $_POST['dia_chi'];
     // Mã hóa mật khẩu bằng Argon2
     $hashed_mat_khau = password_hash($raw_mat_khau, PASSWORD_ARGON2I);
 
     // Cập nhật thông tin khách hàng với mật khẩu đã mã hóa
-    khach_hang_update($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro);
+    khach_hang_update($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro, $dia_chi);
 
     // Hiển thị danh sách
     $items = khach_hang_selectall_by_role();
     $VIEW_NAME = "list.php";
+}else{
+    $VIEW_NAME = "add.php";
 }
 require "../layout.php";
 ?>
