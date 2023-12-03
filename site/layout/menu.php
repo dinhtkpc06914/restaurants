@@ -180,8 +180,7 @@ padding: 10px ;
                                 href="<?= $SITE_URL . '/tai-khoan/cap-nhat-tk.php' ?>">Cập nhật tài khoản</a>
                             <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/doi-mk.php' ?>">Đổi mật
                                 khẩu</a>
-                                <a class="dropdown-item pl-3 py-2" href="#">Quên mật 
-                                khẩu</a>
+                                <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/cart/hoadon.php' ?>">Danh sách đơn hàng</a>
                             <a class="dropdown-item pl-3 py-2"
                                 href="<?= $SITE_URL . '/tai-khoan/dang-nhap.php?btn_logout' ?>">Đăng xuất</a>
 

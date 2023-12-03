@@ -1,12 +1,14 @@
 <style>
     #page-item{
         background-color: #cda45e;
-        margin-top: ;
+      
     }
-    
+
 </style>
-<div class="col-sm-12" id="reviews">
-    <div class="card border-light mb-3">
+<div class="container">
+    <div class="row">
+    <div class="col-sm-12" id="reviews">
+    <div class="card border-light">
         <div class="card-header text-white text-uppercase" style="background-color: #cda45e"><i
                 class="fa fa-comment"></i> Đánh giá
         </div>
@@ -14,20 +16,20 @@
             <?php foreach ($binh_luan_list as $bl): ?>
                 <div class="review">
                     <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                    <meta itemprop="datePublished" content="01-01-2016">
+                    <meta itemprop="datePublished" content="01-01-2023">
                     <?= $bl['ngay_binh_luan'] ?>
 
                     <?php for ($i = 1; $i <= $bl['xep_hang']; $i++) {
                         echo '<span class="review_xep_hang fa fa-star"></span>';
                     } ?>
 
-                    by <b>
+                    bởi <b>
                         <?= $bl['ho_ten'] ?>
                     </b>
                     <img width="40" height="40" class="rounded-circle object-fit-cover"
                         src="<?= $UPLOAD_URL . "/users/" . $bl['hinh'] ?>" />
                     <p class="blockquote">
-                    <p class="mb-2">
+                    <p class="">
                         <?= $bl['noi_dung'] ?>
                     </p>
                     </p>
@@ -55,7 +57,7 @@
 
             ?>
             <div class="text-center" id="bl">
-                <h5>Để lại bình luận</h5>
+                <h5>Đánh giá</h5>
                 <form action="" method="POST">
                     <div class="xep_hang">
                         <input type="radio" name="xep_hang" value="5" id="5" checked>
@@ -72,8 +74,8 @@
                     <div class="comment-area">
                         <textarea class="form-control" name="noi_dung" placeholder="Nội dung..." rows="2"></textarea>
                     </div>
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-outline-dark send px-5">Đăng bình luận
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-outline-dark btn-dark send px-5 text-white">Đăng bình luận
                             <i class="fa fa-long-arrow-right ml-1"></i>
                         </button>
                     </div>
@@ -81,5 +83,7 @@
             </div>
             <?php
         } ?>
+    </div>
+</div>
     </div>
 </div>

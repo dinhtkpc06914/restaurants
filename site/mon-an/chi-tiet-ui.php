@@ -3,10 +3,9 @@
 <body>
     <!-- Chi tiết sản phẩm -->
     <div class="container">
-        <div class="row">
-            <!-- Ảnh -->
+        <div class="row">      
             <div class="col-md-12 col-lg-6">
-                <div class="card mb-3 float-right">
+                <div class="card mb-3 ">
                     <div class="card-body text-center col-md-12">
                         <a href="#" data-toggle="modal" data-target="#productModal">
                             <img class="img-fluid" src="<?= $UPLOAD_URL . "/products/" . $hinh ?>" />
@@ -46,14 +45,14 @@
                             </div>
                         </form>
                         <a href="<?= $SITE_URL . "/cart/add-cart.php?id=" . $mon_an['ma_mon_an'] ?>" class="btn btn-outline-dark mt-3">Thêm vào giỏ hàng</a>
-                        <div class="product_rassurance mt-2">
+                        <div class="product_rassurance mt-5">
                             <ul class="list-inline">
                                 <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br />Giao hàng nhanh</li>
                                 <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br />Bảo mật</li>
                                 <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br />0101010101101</li>
                             </ul>
                         </div>
-                        <div class="reviews_product p-3 mb-2 ">
+                        <div class="reviews_product p-3 ">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>

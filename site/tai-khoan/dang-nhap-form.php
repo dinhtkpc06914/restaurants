@@ -4,7 +4,61 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php $google_client = new Google_Client();
 
+$google_client->setClientId('940855314149-67fe9njgq76gnpra61db8al3q7f3oee6.apps.googleusercontent.com');
+$google_client->setClientSecret('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');
+$google_client->setRedirectUri('http://localhost/duan1/site/tai-khoan/dang-nhap.php');
+$google_client->addScope('email');
+$google_client->addScope('profile');
+
+$google_client->setHttpClient(
+    new \GuzzleHttp\Client([
+        'verify' => false, // Tắt xác minh chứng chỉ SSL (lưu ý: không an toàn)
+    ])
+);
+
+
+if (isset($_GET["code"])) {
+    try {
+        $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+
+        if (!isset($token["error"])) {  // nếu lỗi trong quá trình lấy token sẽ có một mảng lỗi
+            $google_client->setAccessToken($token['access_token']);  // set token cho $google_client để sử dụng
+
+            $google_service = new Google_Service_Oauth2($google_client);
+
+            $data = $google_service->userinfo->get();  // lấy thông tin người dùng
+            $name = $data['given_name'];
+            $email = $data['email'];
+            $thumbnail = $data['picture'];
+
+            // Lưu ảnh vào thư mục source
+            $imageContent = file_get_contents($thumbnail);
+            $imageFileName = './uploaded/user/' . $email . '_thumbnail.jpg';
+            $imageSaveData = $email . '_thumbnail.jpg';
+            file_put_contents($imageFileName, $imageContent);
+
+
+            // kiểm tra tài khoảng theo email người dùng đã có chưa
+
+          $users = new users();
+            $info_user = $user->checkEmail($email);
+
+            if (isset($info_user)) {
+                $_SESSION['user'] = $info_user;
+                header("Location: http://localhost/duan1/site/trang-chinh/index.php");
+            } else {
+              $users->insert_user_google($name, $email, $imageSaveData);
+                $info_user = $user->checkEmail($email);
+                $_SESSION['user'] = $info_user;
+                header("Location: http://localhost/duan1/site/trang-chinh/index.php");
+            }
+        }
+    } catch (Exception $e) {
+        echo 'Caught exception: ', $e->getMessage(), "\n";
+    }
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,6 +125,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="submit-agileits">
 					<input type="submit" name="btn_login" value="Gửi">
 				</div>
+				<a  href="<?= $google_client->createAuthUrl() ?>" class="btn-google m-b-20 text-white">
+                    <img src="../../content/contentCilent/images/icon-google.png" >
+                   Đăng nhập với google
+                </a>
 			</form>
 
 		</div>

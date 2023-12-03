@@ -1,25 +1,23 @@
 <!-- Body -->
 
-<style>
-    body {
-        background-image: url(<?= $CONTENT_URL ?>/assets/img/hero-bg.jpg);
-        background-size: 100%;
-        /* Có thể điều chỉnh kích thước ảnh nếu cần */
-        /* Thêm các thuộc tính CSS khác tùy theo nhu cầu của bạn */
-    }
-    #back-home{
-        color: white;
-        background-color: #cda45e;
-        margin-left: 2rem;
-    }
-    #back-home:hover{
-        color: #cda45e;
-        background-color: white;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?=$CONTENT_URL?>/assets/css/liet-ke.css" rel="stylesheet">
+ <style>
+ body {
+    background-image: url('<?=$CONTENT_URL ?>/assets/img/hero-bg.jpg');
+    background-size: cover; /* Use cover for a better background image display */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a common font family */
+    background-size: 100%;
+}
 </style>
-
+</head>
 <body>
-    <div class="container " id="container " data-aos="zoom-in" data-aos-delay="60">
+<div class="container " id="container " data-aos="zoom-in" data-aos-delay="60">
         <div class="row" style="background-url">
             <div class="col-md-4 " style="margin-top: 12rem">
                 <div class="col-md-10">
@@ -31,7 +29,7 @@
                 </div>
 
             </div>
-            <!-- Sản phẩm -->
+            <!-- Sản phẩm -->   
             <div class="col-md-8" style="margin-top: 150px;">
                 <h2 class=" text-center   " style="margin-top: 2rem; background-color:  #cda45e;  ; color:white">
                     Thực đơn của SIMPLE SAVORY </h2>
@@ -96,3 +94,4 @@
         </div>
     </div>
 </body>
+</html>

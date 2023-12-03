@@ -1,3 +1,38 @@
+<style>
+    .card {
+        border: 1px solid #ddd; 
+        border-radius: 10px; 
+        overflow: hidden; 
+    }
+
+    .card-header {
+        border-bottom: 1px solid #cda45e; 
+    }
+
+    .card-header a {
+        text-decoration: none; 
+    }
+
+    .list-group-item {
+        border: none; 
+        border-bottom: 1px solid #ddd;
+    }
+
+    .list-group-item:hover {
+        background-color: #f8f9fa; 
+    }
+
+    .thumbnail {
+        overflow: hidden;
+        border-radius: 5px; 
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px; 
+    }
+</style>
 <div class="card mt-3">
     <div class="card-header text-white text-uppercase" role="tab" id="headingThree" style="background-color: #cda45e">
         <h6 class="mb-0">
@@ -9,14 +44,13 @@
     </div>
     <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
         <ul class="list-group category_block">
-            <?php foreach ($hh_db as $hh_db) : ?>
+            <?php foreach ($hh_db as $hh_item) : ?>
             <li class="list-group-item px-2 py-3">
-                <a class="d-flex align-items-center"
-                    href="<?= $SITE_URL . '/mon-an/chi-tiet.php?ma_mon_an=' . $hh_db['ma_mon_an'] ?>">
-                    <div class="">
-                        <img class="img-fluid img-list" src="<?= $UPLOAD_URL . '/products/' . $hh_db['hinh'] ?>" alt=""  height="50px" width="40px">
+                <a class="d-flex align-items-center" href="<?= $SITE_URL . '/mon-an/chi-tiet.php?ma_mon_an=' . $hh_item['ma_mon_an'] ?>">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="<?= $UPLOAD_URL . '/products/' . $hh_item['hinh'] ?>" alt="<?= $hh_item['ten_mon_an'] ?>" height="50px" width="40px">
                     </div>
-                    <span class="ml-2 d-blocke"><?= $hh_db['ten_mon_an'] ?></span>
+                    <span class="ml-2 d-block"><?= $hh_item['ten_mon_an'] ?></span>
                 </a>
             </li>
             <?php endforeach ?>

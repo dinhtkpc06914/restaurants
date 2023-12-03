@@ -1,0 +1,120 @@
+
+
+#back-home {
+    color: white;
+    background-color: #cda45e;
+    margin-left: 2rem;
+    padding: 8px 16px; /* Add padding for better button appearance */
+    text-decoration: none; /* Remove default underline */
+    border-radius: 4px; /* Add some border-radius for rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth hover effect */
+}
+
+#back-home:hover {
+    color: #cda45e;
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px; /* Set a max-width for better content visibility */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding for content spacing */
+}
+
+
+
+.row {
+    margin-top: 2rem; /* Adjust top margin for better spacing */
+}
+
+.col-md-4 {
+    margin-top: 2rem; /* Adjust top margin for better spacing */
+}
+
+.col-md-8 {
+    margin-top: 2rem; /* Adjust top margin for better spacing */
+}
+
+.card {
+    border: none; /* Remove default card border */
+    transition: box-shadow 0.3s; /* Add transition for card shadow effect */
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box-shadow on hover */
+}
+
+.product-card {
+    position: relative; /* Position relative for badge positioning */
+}
+
+.product-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: white;
+}
+
+.product-thumb {
+    display: block; /* Remove default underline from anchor */
+}
+
+.product-img {
+    object-fit: cover; /* Use object-fit for better image scaling */
+}
+
+.product-title {
+    color: #cda45e;
+    margin-top: 1rem; /* Adjust top margin for better spacing */
+}
+
+.product-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fz-14 {
+    font-size: 14px; /* Adjust font size */
+}
+
+.fz-20 {
+    font-size: 20px; /* Adjust font size */
+}
+
+.btn-outline-dark {
+    color: #cda45e;
+    border-color: #cda45e;
+}
+
+.btn-outline-dark:hover {
+    color: white;
+    background-color: #cda45e;
+}
+
+.pagination {
+    margin-top: 20px; /* Adjust top margin for pagination */
+    display: flex;
+    justify-content: center;
+}
+
+.page-item {
+    margin: 0 4px; /* Adjust margin for pagination items */
+}
+
+.page-link {
+    color: #cda45e;
+    background-color: white;
+    border: 1px solid #cda45e;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    color: white;
+    background-color: #cda45e;
+}

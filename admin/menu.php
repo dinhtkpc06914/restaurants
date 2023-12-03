@@ -67,7 +67,7 @@
                                     lý loại món ăn</a></li>
                             <li><a href="<?=$ADMIN_URL?>/binh-luan/index.php?btn_list" class="nav-item nav-link">Quản
                                     lý bình luận</a></li>
-                            <li><a href="<?=$ADMIN_URL?>/don-dat-mon/index.php?btn_list" class="nav-item nav-link">Quản lý đơn đặt </a></li>
+                            <li><a href="<?=$ADMIN_URL?>/hoa-don/index.php?btn_list" class="nav-item nav-link">Quản lý đơn đặt món </a></li>
                             <li><a <a href="<?=$ADMIN_URL?>/dat-ban/index.php?btn_list" class="nav-item nav-link">Quản lý đặt bàn</a></li>
 
                         </ul>

@@ -13,8 +13,6 @@ require_once '../../dao/loai_mon.php';
     $top10 = mon_an_select_top10();
     $VIEW_NAME = "trang-chinh/trang-chu.php";
 }
-
-
 ?>
 
 <?php require "../layout.php"
