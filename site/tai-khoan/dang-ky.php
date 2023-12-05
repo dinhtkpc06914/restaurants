@@ -7,16 +7,21 @@ extract($_REQUEST);
 $VIEW_NAME = "tai-khoan/dang-ky-form.php";
 
 extract($_REQUEST);
+$field = isset($_GET['field']) ? $_GET['field'] : "";
+$value = isset($_GET['value']) ? $_GET['value'] : "";
+
+$response = ["exists" => false, "message" => ""];
 
 if (exist_param("btn_register")) {
     if ($mat_khau != $mat_khau2) {
         $MESSAGE = "Mật khẩu phải trùng nhau";
     } elseif (khach_hang_exist($ma_kh)) {
         $MESSAGE = "Tên đăng nhập đã tồn tại";
+    } elseif(khach_hang_exist_email($email)){
+        $MESSAGE = "Email đã tồn tại";
     } else {
         // Mã hóa mật khẩu bằng Argon2
         $hashed_password = password_hash($mat_khau, PASSWORD_ARGON2I);
-
         $file_name = save_file("up_hinh", "$UPLOAD_URL/users/");
         $hinh = $file_name ? $file_name : "";
         try {

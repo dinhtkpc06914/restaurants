@@ -1,22 +1,57 @@
+<style>
+    body {
+        background-image: url('<?= $CONTENT_URL ?>/assets/img/hero-bg.jpg');
+        background-size: cover;
+        /* Use cover for a better background image display */
+        margin: 0;
+        /* Remove default margin */
+        font-family: Arial, sans-serif;
+        /* Set a common font family */
+        background-size: 100%;
+        margin-top: 12rem;
+    }
 
-<link href="<?=$CONTENT_URL?>/assets/css/chitiet-ui.css" rel="stylesheet">
+    .img-fluid {
+        width: 28   rem;
+        border-radius: 2rem;
+    }
+    #sanpham-ui {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    margin-bottom: 2rem;
+}
+</style>
+
 <body>
-    <!-- Chi tiết sản phẩm -->
+    <!-- Product-detail -->
     <div class="container">
-        <div class="row">      
-            <div class="col-md-12 col-lg-6">
-                <div class="card mb-3 ">
-                    <div class="card-body text-center col-md-12">
+        <div class="row">
+            <!-- Image -->
+            <div class=" col-lg-5">
+                <div class="card mb-3">
+                    <div class="card-body text-center ">
                         <a href="#" data-toggle="modal" data-target="#productModal">
+                            <!-- Ảnh sản phẩm -->
                             <img class="img-fluid" src="<?= $UPLOAD_URL . "/products/" . $hinh ?>" />
                             <p class="text-center">Xem ảnh</p>
                         </a>
-                        <h4 class="card-title " style="color: #cda45e">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add to cart -->
+            <div class="col-12 col-lg-7 add_to_cart_block">
+                <div class="card  mb-3">
+                    <div class="card-body text-center text-dark">
+                        <h4 style="background-color: #cda45e"  class="card-header text-white">
                             <?= $ten_mon_an ?>
                         </h4>
+                        <!-- Giá sản phẩm -->
                         <?php
                         if (!empty($items) && is_array($items)) {
-                            foreach ($items as $item) {
+                            foreach ($items as $item):
                                 extract($item);
                                 if ($don_gia > 0) {
                                     $percent_discount = number_format($gia_giam / $don_gia * 100);
@@ -24,7 +59,7 @@
                                     $percent_discount = 0;
                                 }
                                 // Rest of the code
-                            }
+                            endforeach;
                         }
                         ?>
                         <div class="product-price">
@@ -38,21 +73,29 @@
                             </div>
                         </div>
 
+                        <!-- <p class="price_discounted">149.90 $</p> -->
                         <form method="get" action="liet-ke.php">
                             <div class="form-group">
                                 <div class="input-group mb-3 justify-content-center">
                                 </div>
                             </div>
                         </form>
-                        <a href="<?= $SITE_URL . "/cart/add-cart.php?id=" . $mon_an['ma_mon_an'] ?>" class="btn btn-outline-dark mt-3">Thêm vào giỏ hàng</a>
-                        <div class="product_rassurance mt-5">
+
+                        <div class=" mt-2">
+                            <a href="<?= $SITE_URL . "/cart/add-cart.php?id=" . $ma_mon_an ?>"
+                                class=" btn btn-outline-dark  ">Thêm vào giỏ hàng</a>
+
+                        </div>
+                        <div class="product_rassurance mt-3">
                             <ul class="list-inline">
                                 <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br />Giao hàng nhanh</li>
-                                <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br />Bảo mật</li>
-                                <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br />0101010101101</li>
+                                <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br />Bảo mật
+                                </li>
+                                <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br />0101010101101
+                                </li>
                             </ul>
                         </div>
-                        <div class="reviews_product p-3 ">
+                        <div class="reviews_product p-3 mb-2 ">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -61,55 +104,54 @@
                             (4/5)
                             <a class="pull-right" href="#reviews">Xem tất cả đánh giá</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Mô tả và Bình luận -->
-            <div class="col-md-12 col-lg-6 ">
-                <div class="row">
-                    <!-- Mô tả -->
-                    <div class="col-sm-12" id="danh_gia">
-                        <div class="card mb-3">
-                            <div class="card-header text-white text-uppercase" style="background-color: #cda45e"><i class="fa fa-align-justify"></i>
-                                Mô tả sản phẩm
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <?= $mo_ta_mon ?>
-                                </p>
+                        <div class="row ">
+                            <!-- Description -->
+                            <div class="col-lg-12 mt-4 ">
+                                <div class="card mb-3" >
+                                    <h5  style="background-color: #cda45e"  class="card-header text-white"><i class="fa fa-align-justify float-left"></i>
+                                        Mô tả sản phẩm
+                                    </h5>
+                                    <div class="card-body text-dark">
+                                        <p class="card-text ">
+                                            <?= $mo_ta_mon ?>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Bình luận -->
-                    <div class="col-md-12">
-                        <?php require "binh-luan.php"; ?>
-                    </div>
                 </div>
             </div>
+            <!-- Reviews -->
+            <?php require "binh-luan.php"; ?>
+         
         </div>
-        <!-- Sản phẩm cùng loại -->
-        <section class="col-md-10 mx-auto">
-            <h2 class="title text-center" style="background-color: #cda45e; color:white;">Sản phẩm cùng loại</h2>
-            <?php require "hang-cung-loai.php"; ?>
-        </section>
-        <!-- Modal ảnh -->
-        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h5 class="modal-title" id="productModalLabel">
-                            <?= $ten_mon_an ?>
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <img class="img-fluid" src="<?= $UPLOAD_URL . "/products/" . $hinh ?>" />
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+        <section id="sanpham-ui"  class="same-product col-sm-12">
+        <h2 style="color: #cda45e; " class="card-header text-center">Có thể bạn sẽ thích</h2>
+        <?php require "hang-cung-loai.php"; ?>
+    </section>
+    </div>
+    <!-- Same product -->
+   
+
+    <!-- Modal image -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title" id="productModalLabel">
+                        <?= $ten_mon_an ?>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img class="img-fluid" src="<?= $UPLOAD_URL . "/products/" . $hinh ?>" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

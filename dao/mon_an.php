@@ -73,8 +73,8 @@ function mon_an_select_by_loai($ma_loai_mon)
 function mon_an_select_keyword($keyword)
 {
     $sql = "SELECT * FROM mon_an mon_an "
-        . " JOIN loai lo ON lo.ma_loai_mon=mon_an.ma_loai_mon "
-        . " WHERE ten_mon_an LIKE ? OR ten_loai LIKE ?";
+        . " JOIN loai_mon lo ON lo.ma_loai_mon=mon_an.ma_loai_mon "
+        . " WHERE ten_mon_an LIKE ? OR ten_loai_mon LIKE ?";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
 function mon_an_select_page($order, $limit)

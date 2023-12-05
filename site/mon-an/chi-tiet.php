@@ -24,7 +24,7 @@ if (exist_param("noi_dung")) {
 }
 
 // Lấy list bình luận ra
-$binh_luan_list = binh_luan_select_by_mon_an($ma_mon_an, 3);
+$binh_luan_list = binh_luan_select_by_mon_an($ma_mon_an, 4);
 
 $VIEW_NAME = "mon-an/chi-tiet-ui.php";
 require '../layout.php';

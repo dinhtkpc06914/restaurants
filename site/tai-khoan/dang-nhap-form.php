@@ -4,7 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<?php $google_client = new Google_Client();
+<!-- <?php $google_client = new Google_Client();
 
 $google_client->setClientId('940855314149-67fe9njgq76gnpra61db8al3q7f3oee6.apps.googleusercontent.com');
 $google_client->setClientSecret('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');
@@ -58,7 +58,7 @@ if (isset($_GET["code"])) {
     } catch (Exception $e) {
         echo 'Caught exception: ', $e->getMessage(), "\n";
     }
-}?>
+}?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,7 +84,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		rel="stylesheet">
 	<!-- //web-fonts -->
 </head>
-
+<style>
+	 #sanpham-ui {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    margin-bottom: 2rem;}
+</style>
 <body>
 	<!--header-->
 	<div class="header-w3l">
@@ -94,8 +101,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!--main-->
 	<div class="main-w3layouts-agileinfo">
 		<!--form-stars-here-->
-		<div class="wthree-form">
-			<h2></h2>
+		<div class="wthree-form" id="sanpham-ui">
+			<h2>Đăng nhập</h2>
 			<form action="<?= $SITE_URL ?>/tai-khoan/dang-nhap.php" method="post" id="form_login"
 				onsubmit="return validateForm()">
 				<div class="form-sub-w3">
@@ -125,22 +132,23 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="submit-agileits">
 					<input type="submit" name="btn_login" value="Gửi">
 				</div>
-				<a  href="<?= $google_client->createAuthUrl() ?>" class="btn-google m-b-20 text-white">
+				<a  href="<?= $google_client->createAuthUrl() ?>" class="btn-google text-white mt-5">
                     <img src="../../content/contentCilent/images/icon-google.png" >
                    Đăng nhập với google
                 </a>
+				<div class="footer">
+		<p>Bạn chưa có tài khoản ? <a style="font-weight: bold;" href="<?= $SITE_URL ?>/tai-khoan/dang-ky.php">Đăng
+				Ký</a></p>
+	</div>
 			</form>
 
 		</div>
 		<!--//form-ends-here-->
-
+		
 	</div>
 	<!--//main-->
 	<!--footer-->
-	<div class="footer">
-		<p>Bạn chưa có tài khoản ? <a style="font-weight: bold;" href="<?= $SITE_URL ?>/tai-khoan/dang-ky.php">Đăng
-				Ký</a></p>
-	</div>
+	
 	<!--//footer-->
 </body>
 

@@ -3,16 +3,18 @@
         background-color: #cda45e;
       
     }
-
+    #reviews{
+        margin-bottom: 5rem;
+    }
 </style>
 <div class="container">
-    <div class="row">
-    <div class="col-sm-12" id="reviews">
-    <div class="card border-light">
+   
+    <div class="" id="reviews">
+    <div class="card  " id="reviews">
         <div class="card-header text-white text-uppercase" style="background-color: #cda45e"><i
-                class="fa fa-comment"></i> Đánh giá
+                class="fa fa-comment text-center"></i> Đánh giá
         </div>
-        <div class="card-body">
+        <div class="card-body text-dark" >
             <?php foreach ($binh_luan_list as $bl): ?>
                 <div class="review">
                     <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
@@ -86,4 +88,3 @@
     </div>
 </div>
     </div>
-</div>

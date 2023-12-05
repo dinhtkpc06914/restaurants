@@ -1,8 +1,53 @@
+<style>
+    /* Màu cho các option chờ xác nhận */
+    .select-wrapper[data-value="0"] {
+        background-color: #FFD700;
+        /* Màu vàng */
+        color: #000;
+        /* Màu chữ đen */
+    }
+
+    /* Màu cho các option đã xác nhận */
+    .select-wrapper[data-value="1"] {
+        background-color: #15a362;
+        /* Màu xanh lá cây */
+        color: #000;
+        /* Màu chữ đen */
+    }
+
+    /* Màu cho các option đã hủy */
+
+    .select-wrapper {
+        position: relative;
+        width: 120px;
+        text-align: center;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .select-wrapper select {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .select-value {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
 <?php
-// Lấy danh sách đặt bàn từ CSDL
-$dat_ban_items = get_danh_sach_dat_ban();
+
+$items = dat_ban_select_page('ma_dat_ban', 6);
+
 ?>
-<div>
+<div id="">
     <div class="page-title">
         <div class="title_left">
             <h3>DANH SÁCH ĐẶT BÀN</h3>
@@ -26,84 +71,130 @@ $dat_ban_items = get_danh_sach_dat_ban();
                     <h4>Danh sách đặt bàn</h4>
                     <table width="100%" class="table table-hover table-bordered text-center">
                         <!-- Thêm tiêu đề cho danh sách đặt bàn -->
-                        <thead style="background-color: #2A3F54;">
-                            <tr class="text-white">
-                                <th><input type="checkbox" id="select-all"></th>
-                                <th>Mã đặt bàn</th>
-                                <th>Tên khách hàng</th>
-                                <th>Số điện thoại</th>
+                        <thead>
+                            <tr>
+                                <th>Mã Đặt Bàn</th>
+                                <th>Tên Khách Hàng</th>
+                                <th>Số Điện Thoại</th>
+                                <th>Email</th>
                                 <th>Ngày đặt</th>
                                 <th>Giờ đặt</th>
                                 <th>Số người</th>
+                                <th>Tên bàn</th>
                                 <th>Ghi chú</th>
-                                <th>Trạng Thái</th>
-                                <th>Loại bàn</th>
-
-
-                                <th></th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                                <!-- Thêm các cột khác tương ứng với thông tin đặt bàn -->
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            foreach ($dat_ban_items as $dat_ban_item) {
-                                extract($dat_ban_item);
-                                $sua_dat_ban = "index.php?btn_edit&ma_dat_ban=" . $ma_dat_ban;
-                                $xoa_dat_ban = "index.php?btn_delete&ma_dat_ban=" . $ma_dat_ban;
+                            <?php foreach ($items as $datBan):
+
                                 ?>
-                                <tr class="mx-auto">
-                                    <td></td>
+
+                                <tr>
                                     <td>
-                                        <?= $ma_dat_ban ?>
+                                        <?= $datBan['ma_dat_ban'] ?>
                                     </td>
                                     <td>
-                                        <?= $ten_kh ?>
+                                        <?= $datBan['ten_kh'] ?>
                                     </td>
                                     <td>
-                                        <?= $so_dien_thoai ?>
+                                        <?= $datBan['sdt'] ?>
                                     </td>
                                     <td>
-                                        <?= $ngay_dat ?>
+                                        <?= $datBan['email'] ?>
                                     </td>
                                     <td>
-                                        <?= $gio_dat ?>
+                                        <?= $datBan['ngay_dat'] ?>
                                     </td>
                                     <td>
-                                        <?= $so_nguoi ?>
+                                        <?= $datBan['gio_dat'] ?>
                                     </td>
                                     <td>
-                                        <?= $ghi_chu ?>
+                                        <?= $datBan['so_nguoi'] ?>
                                     </td>
                                     <td>
-                                        <form action="process.php" method="post">
-                                            <input type="hidden" name="ma_dat_ban" value="<?= $ma_dat_ban ?>">
-                                            <select name="trang_thai">
-                                                <option value="Chờ xác nhận" <?= ($trang_thai == "Chờ xác nhận") ? "selected" : "" ?>>Chờ xác nhận</option>
-                                                <option value="Đã xác nhận" <?= ($trang_thai == "Đã xác nhận") ? "selected" : "" ?>>Đã xác nhận</option>
-                                                <!-- Thêm các trạng thái khác nếu cần -->
-                                            </select>
-                                            <button type="submit" name="btn_update_trang_thai" style="width: 50%;" class="mt-2">Cập nhật </button>
+                                        <?= $datBan['ten_loai_ban'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $datBan['loi_nhan'] ?>
+                                    </td>
+                                    <td>
+                                        <form action="index.php" method="post">
+                                            <div class="select-wrapper" data-value="<?= $datBan['trang_thai'] ?>">
+                                                <div class="select-value">
+                                                    <?php
+                                                    switch ($datBan['trang_thai']) {
+                                                        case 0:
+                                                            echo "Chờ xác nhận";
+                                                            break;
+                                                        case 1:
+                                                            echo "Đã xác nhận";
+                                                            break;
+
+                                                        case 2:
+                                                            echo "Đang giao";
+                                                            break;
+                                                        case 3:
+                                                            echo "Đã giao";
+                                                            break;
+                                                        case 4:
+                                                            echo "Đã hủy";
+                                                            break;
+                                                        default:
+                                                            echo "";
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <input type="hidden" name="ma_dat_ban" value="<?= $datBan['ma_dat_ban'] ?>">
+                                                <select name="trang_thai" class="custom-select p-1" class="<?= $color ?>">
+                                                    <option value="0" <?= ($datBan['trang_thai'] == 0) ? 'selected' : ''; ?>>
+                                                        Chờ xác nhận
+                                                    </option>
+                                                    <option value="1" <?= ($datBan['trang_thai'] == 1) ? 'selected' : ''; ?>>
+                                                        Đã xác nhận
+                                                    </option>
+                                                </select>
+
+                                            </div>
+                                            <button type="submit" style="background: #2A3F54;"
+                                                class='btn p-1 text-white p-2' name="btn_xacnhan">
+                                                Cập nhật
+                                            </button>
                                         </form>
                                     </td>
                                     <td>
-                                        <?= $ten_loai_ban ?>
-                                    </td> <!-- Thêm cột hiển thị tên loại bàn -->
-                                    <td class="text-end">
-                                        <a href="<?= $sua_dat_ban ?>" class="btn btn-outline-info btn-rounded"><i
-                                                class="fas fa-pen"></i></a>
-                                        <a href="<?= $xoa_dat_ban ?>" class="btn btn-outline-danger btn-rounded"
-                                            onclick="return checkDelete()"><i class="fas fa-trash"></i></a>
+                                        <form action="index.php" method="post">
+                                            <!-- Các input và button cần thiết cho chức năng xóa -->
+                                            <input type="hidden" name="ma_dat_ban" value="<?= $datBan['ma_dat_ban'] ?>">
+                                            <button type="submit" style="background: #FF0000;"
+                                                class='btn p-1 text-white p-2' name="btn_delete">
+                                                Xóa
+                                            </button>
+                                        </form>
                                     </td>
+                                    <!-- Thêm các ô khác tương ứng với thông tin đặt bàn -->
                                 </tr>
-                                <?php
-                            }
-                            ?>
-
-                        </tbody>
+                            </tbody>
+                        <?php endforeach; ?>
                     </table>
-
                     <!-- Nút thêm mới -->
-
                 </div>
+            </div>
+            <div class="mt-3" width="100%">
+                <ul class="pagination justify-content-center">
+                    <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
+
+                        <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
+                            <a class="page-link" href="?btn_list&page=<?= $i ?>">
+                                <?= $i ?>
+                            </a>
+                        </li>
+
+                    <?php } ?>
+
+                </ul>
             </div>
         </div>
     </div>

@@ -23,9 +23,7 @@
 <?php require "../trang-chinh/su-kien.php"; ?>
 </section>
 <!-- ======= Đặt bàn  ======= -->
-<section id="book-a-table" class="book-a-table">
-<?php require "../trang-chinh/dat-ban.php"; ?>
-</section>
+
 <!-- ======= Lời khen của khách hàng  ======= -->
 <section id="testimonials" class="testimonials section-bg">
 <?php require "../trang-chinh/loi-khen.php"; ?>

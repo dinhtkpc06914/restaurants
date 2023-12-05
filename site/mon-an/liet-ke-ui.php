@@ -13,13 +13,22 @@
     margin: 0; /* Remove default margin */
     font-family: Arial, sans-serif; /* Set a common font family */
     background-size: 100%;
+    margin-top: 6rem;
 }
+#sanpham-ui {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    margin-bottom: 2rem;
+}
+
 </style>
 </head>
 <body>
 <div class="container " id="container " data-aos="zoom-in" data-aos-delay="60">
         <div class="row" style="background-url">
-            <div class="col-md-4 " style="margin-top: 12rem">
+            <div class="col-md-4 "  id="">
                 <div class="col-md-10">
                     <!-- Danh mục -->
                     <div id="accordion " class="col-sm-12">
@@ -30,9 +39,9 @@
 
             </div>
             <!-- Sản phẩm -->   
-            <div class="col-md-8" style="margin-top: 150px;">
-                <h2 class=" text-center   " style="margin-top: 2rem; background-color:  #cda45e;  ; color:white">
-                    Thực đơn của SIMPLE SAVORY </h2>
+            <div class="col-md-8" id="sanpham-ui">
+                <h1 class=" text-center   " style="margin-top: 2rem; background-color:  #cda45e;  ; color:white; border-radius:2rem;">
+                    Thực đơn của SIMPLE SAVORY </h1>
                 <div class="row ">
                     <?php foreach ($items as $item):
                         extract($item);

@@ -10,7 +10,7 @@
         ?>
     </div>
     <div class="row">
-        <div class="  col-sm-10 col-md-10 ">
+        <div class="col-md-12 ">
             <div class="x_panel">
                 <div class="x_title">
                     <div class="clearfix"></div>

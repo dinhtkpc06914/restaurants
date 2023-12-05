@@ -44,12 +44,9 @@ $monAnList = mon_an_select_page1("ma_mon_an", $limit, $page);
                 <?= $monAn['don_gia'] ?>vnd
               </span>
             <?php endif; ?>
-          </div>
-          <div class="menu-ingredients">
-            <?= $monAn['mo_ta_mon'] ?>
-          </div>
-          <a href="<?= $SITE_URL . "/cart/add-cart.php?id=" . $item['ma_mon_an'] ?>"
-            class=" btn-book animated fadeInUp scrollto ">Xem món </a>
+          </div>     
+          <a   href="<?= $SITE_URL . '/mon-an/chi-tiet.php?ma_mon_an=' . $monAn['ma_mon_an'] ?>"
+            class=" btn-book animate ">Xem món </a>
         </div>
       <?php endforeach; ?>
     </div>

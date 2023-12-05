@@ -30,18 +30,25 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
         rel="stylesheet">
     <!-- //web-fonts -->
 </head>
-
+<script src="check_exist.js"></script>
+<style>
+     #sanpham-ui {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    margin-bottom: 2rem;
+}
+</style>
 <body>
     <!--header-->
     <div class="header-w3l">
         <h1>...</h1>
-    </div>
-    <!--//header-->
-    <!--main-->
+    </div>  
     <div class="main-w3layouts-agileinfo">
         <!--form-stars-here-->
-        <div class="wthree-form">
-            <h2></h2>
+        <div class="wthree-form" id="sanpham-ui">
+            <h2>Đăng ký thành viên</h2>
             <form action="<?= $SITE_URL ?>/tai-khoan/dang-ky.php" method="post" enctype="multipart/form-data"
                 id="form_dang_ki" onsubmit="return validateForm()">
                 <div class="form-sub-w3">
@@ -55,14 +62,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                 <div class="form-sub-w3">
                     <input type="text" name="ma_kh" placeholder="Tên đăng nhập" id="ma_kh" />
                     <p id="ma_kh_error" style="color: red;"></p>
+                    <span id="ma_kh-message" style="color: red;"></span>
                     <div class="icon-w3">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                 </div>
 
                 <div class="form-sub-w3">
-                    <input type="text" name="email" placeholder="Địa chỉ email" />
+                    <input type="text" id="email" name="email" placeholder="Địa chỉ email" />
                     <p id="email_error" style="color: red;"></p>
+                    <span id="email-message" style="color: red;"></span>
                     <div class="icon-w3">
                         <i class="bi bi-envelope" aria-hidden="true"></i>
                     </div>

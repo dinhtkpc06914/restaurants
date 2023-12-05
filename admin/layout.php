@@ -36,17 +36,21 @@
     <!-- Custom Theme Style -->
     <link href="<?= $CONTENT_ADMIN ?>/build/css/custom.min.css" rel="stylesheet">
 </head>
-
-<body class="nav-md bg-white">
+<style>
+    #ngunguc{
+        margin-left: 15rem;
+    }
+</style>
+<body class="nav-md bg-white ">
     <div class="container body">
  
-        <div class="main_container">
+        <div class="main_container  float-left">
             <?php require "menu.php";
             ?>
         </div>
-        <div class="main_container">
+        <div class="main_container " id="ngunguc">
             
-            <div class="col-md-12 right_col ">
+            <div class="col-md-12 ">
             <?php include $VIEW_NAME ?> 
         </div>
 

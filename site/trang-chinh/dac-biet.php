@@ -1,13 +1,31 @@
+<style>
+  body{
+    margin-top: 150px; /* Điều chỉnh margin-top để cân bằng với chiều cao của thanh điều hướng */
+    font-family: 'Arial', sans-serif;
+    background-image: url(<?= $CONTENT_URL ?>/assets/img/events-bg.jpg);
+        background-size: 100%;
+      
+  }
+  #db{
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    margin-bottom: 2rem;
+  }
+</style>
+<body>
+  
  <!-- ======= Specials Section ======= -->
  <section id="specials" class="specials">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Khuyến mãi</h2>
-          <p>sản phẩm đặc biệt</p>
+          <p>Giới thiệu các sản phẩm khuyến mãi (35/13/2080)</p>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="row" data-aos="fade-up" data-aos-delay="100" id="db">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
@@ -93,3 +111,4 @@
 
       </div>
     </section><!-- End Specials Section -->
+</body>

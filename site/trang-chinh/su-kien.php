@@ -1,3 +1,11 @@
+<style>
+  body{
+    margin-top: 150px; /* Điều chỉnh margin-top để cân bằng với chiều cao của thanh điều hướng */
+    font-family: 'Arial', sans-serif;
+  }
+</style>
+<body>
+  
   <!-- ======= Events Section ======= -->
   <section id="events" class="events">
       <div class="container" data-aos="fade-up">
@@ -86,3 +94,4 @@
 
       </div>
     </section><!-- End Events Section -->
+</body>

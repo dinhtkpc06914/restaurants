@@ -52,4 +52,15 @@ function khach_hang_change_password($ma_kh, $mat_khau_moi)
     $sql = "UPDATE khach_hang SET mat_khau=? WHERE ma_kh=?";
     pdo_execute($sql, $mat_khau_moi, $ma_kh);
 }
+function khach_hang_select_by_email($email)
+{
+    $sql = "SELECT * FROM khach_hang WHERE email=?";
+    return pdo_query_one($sql, $email);
+}
+function khach_hang_change_Email($email, $mat_khau_moi)
+{
+
+    $sql = "UPDATE khach_hang SET mat_khau=? WHERE email=?";
+    pdo_execute($sql, $mat_khau_moi, $email);
+}
 ?>

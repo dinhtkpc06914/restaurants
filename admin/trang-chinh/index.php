@@ -10,5 +10,9 @@ $mon_an = count(mon_an_select_all());
 $khach_hang = count(khach_hang_selectall_by_role());
 $binh_luan = count(binh_luan_select_all());
 
-$VIEW_NAME = "trang-chinh/home.php";
+
+
+$items = mon_an_select_all();
+
+$VIEW_NAME = "home.php";
 require "../layout.php";

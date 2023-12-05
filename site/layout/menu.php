@@ -7,80 +7,7 @@
   <title>Document</title>
 </head>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-
-*{
-  box-sizing: border-box;
-}
-
-.search-box{
-  width: fit-content;
-  height: fit-content;
-  position: relative;
-}
-.input-search{
-  height: 50px;
-  width: 50px;
-  border-style: none;
-  padding: 10px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  outline: none;
-  border-radius: 25px;
-  transition: all .5s ease-in-out;
-  background-color:#cda45e;;
-  padding-right: 40px;
-  color:#fff;
-}
-.input-search::placeholder{
-  color:rgba(255,255,255,.5);
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: 100;
-}
-.btn-search{
-  width: 50px;
-  height: 50px;
-  border-style: none;
-  font-size: 20px;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  right: 0px;
-  color:#ffffff ;
-  background-color:transparent;
-  pointer-events: painted;  
-}
-.btn-search:focus ~ .input-search{
-  width: 200px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-}
-.input-search:focus{
-  width: 200px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-}
-#user-img{
-  border-radius: 50%;
-}
-#dropdown-menu{
-  background-color: #0c0b09;
-}
-#dropdown-menu a{
-  color: #cda45e;
-}
-.widget-header{
-padding: 10px ;
-}
-</style>
+<link href="<?= $CONTENT_URL ?>/assets/css/menu.css" rel="stylesheet">
 
 <body>
   <div id="topbar" class="d-flex align-items-center fixed-top">
@@ -99,110 +26,105 @@ padding: 10px ;
       </div>
     </div>
   </div>
-  
+
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-cente ml-5  ">
+  <header id="header" class="fixed-top d-flex align-items-cente   ">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      <nav id="navbar" class="navbar order-last order-lg-0">
-      <?php
-                if (isset($_SESSION['name_page'])) {
-                    $name_page = $_SESSION['name_page'];
-                }
-                ?>
-                    <ul class="m-auto nav">
-                <?php
-                if (isset($_SESSION['name_page'])) {
-                    $name_page = $_SESSION['name_page'];
-                }
-                ?>
-        <ul>
-          <li>  <img style="width: 6rem;" src="<?=$CONTENT_URL?>/assets/img/lo-go.png"  alt=""></li>
-          <li><a class="nav-link scrollto <?= $name_page == 'trang_chu' ? 'active' : '' ?> " href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang chủ</a></li>
-          <li><a class="nav-link scrollto" href="#about">Về chúng tôi</a></li>
-          <li><a class="" href="<?= $SITE_URL ?>/mon-an/liet-ke.php">Thực đơn</a></li>
-          <li><a class="nav-link scrollto" href="#specials">Khuyến mãi</a></li>
-          <li><a class="nav-link scrollto" href="#events">Sự kiện</a></li>
-          <li><a class="nav-link scrollto" href="#chefs">Đầu bếp</a></li>
-          <li><a class="nav-link scrollto" href="#gallery">Phòng trưng bày</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Liên hệ</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- navbar -->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+  <ul>
+    <li><img style="width: 6rem;" src="<?= $CONTENT_URL ?>/assets/img/lo-go.png" alt=""></li>
+    <li class=" <?= $name_page == 'trang_chu' ? 'active' : '' ?>"><a  href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang chủ</a></li>
+    <li ><a  " href="#about">Về chúng tôi</a></li>
+    <li ><a  href="<?= $SITE_URL ?>/mon-an/liet-ke.php">Thực đơn</a></li>
+    <li class="<?= $name_page == 'dac_biet' ? 'active' : '' ?>"><a href="<?= $SITE_URL ?>/trang-chinh/index.php?dac_biet">Khuyến mãi</a></li>
+    <li class=" <?= $name_page == 'su_kien' ? 'active' : '' ?>"><a  href="<?= $SITE_URL ?>/trang-chinh/index.php?su_kien">Sự kiện</a></li>
+    <li class="<?= $name_page == 'phong_trung_bay' ? 'active' : '' ?>"><a  href="#gallery">Phòng trưng bày</a></li>
+
+    <li class=" <?= $name_page == 'dat_bat' ? 'active' : '' ?>"><a  href="<?= $SITE_URL ?>/trang-chinh/index.php?dat_ban">Đặt bàn</a></li>
+    <li><a class="nav-link " href="#contact">Liên hệ</a></li>
+  </ul>
+  <i class="bi bi-list mobile-nav-toggle"></i>
+</nav>
+
       <!-- Tìm kiếm  -->
-      <div class="search-box">
-    <button class="btn-search"><i class="bi bi-search"></i></button>
-    <input type="text" class="input-search" placeholder="Type to Search...">
-    
-  </div>
-  <div class="widget-header d-flex ">
-                
-                <a href="<?= $SITE_URL . "/cart/list-cart.php" ?>" class="icon icon-sm "><i
-                         class="bi bi-basket" ></i></a>
-                <span class="badge badge-pill text-danger">
-                    <?php
-                    if (isset($_SESSION['total_cart'])) {
-                        echo $_SESSION['total_cart'];
-                    } else {
-                        echo 0;
-                    }
-                    ?>
-                </span>
-                <a href="#" class="icon icon-sm  " id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <?php
-                        if (isset($_SESSION['user']) && $_SESSION['user']['hinh'] != "") { ?>
-                        <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['hinh'] ?>" width="60" height="50"
-                        class="mb-2 object-fit-cover" alt="" id="user-img" alt="">
-                        <?php } else { ?>
-                        <i class="bi bi-person" ></i>
-                        <?php }  ?>
-                    </a>
-                    <div class="text" >       
-                   
-                        <?php
-                        if (isset($_SESSION['user'])) { ?>
-                        <div class="text-white"><?= $_SESSION['user']['ho_ten'] ?></div>
-                        <?php } else { ?>
-                      
-                        <?php }  ?>
-                        <div class="dropdown-menu " aria-labelledby="dropdownMenu1" id="dropdown-menu">
-                            <?php
-                            if (isset($_SESSION['user'])) { ?>
 
-                            <?php if ($_SESSION['user']['vai_tro'] == 1) { ?>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Quản trị
-                                admin</a>
-                            <?php }  ?>
+      <form action="  <?= $SITE_URL ?>/mon-an/liet-ke.php" method="POST">
+        <div class="search-box">
+          <button class="btn-search" name="timkiem" type="submit"><i class="bi bi-search"></i></button>
+          <input type="text " name="kyw" class="input-search" placeholder="Type to Search...">
 
-                            <a class="dropdown-item pl-3 py-2"
-                                href="<?= $SITE_URL . '/tai-khoan/cap-nhat-tk.php' ?>">Cập nhật tài khoản</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/doi-mk.php' ?>">Đổi mật
-                                khẩu</a>
-                                <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/cart/hoadon.php' ?>">Danh sách đơn hàng</a>
-                            <a class="dropdown-item pl-3 py-2"
-                                href="<?= $SITE_URL . '/tai-khoan/dang-nhap.php?btn_logout' ?>">Đăng xuất</a>
+        </div>
+      </form>
 
+      <div class="widget-header d-flex ">
 
-                            <?php } else { ?>
+        <a href="<?= $SITE_URL . "/cart/list-cart.php" ?>" class="icon icon-sm "><i class="bi bi-basket"></i></a>
+        <span class="badge badge-pill text-danger">
+          <?php
+          if (isset($_SESSION['total_cart'])) {
+            echo $_SESSION['total_cart'];
+          } else {
+            echo 0;
+          }
+          ?>
+        </span>
+        <a href="#" class="icon icon-sm  " id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <?php
+          if (isset($_SESSION['user']) && $_SESSION['user']['hinh'] != "") { ?>
+            <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['hinh'] ?>" width="60" height="50"
+              class="mb-2 object-fit-cover" alt="" id="user-img" alt="">
+          <?php } else { ?>
+            <i class="bi bi-person"></i>
+          <?php } ?>
+        </a>
+        <div class="text">
 
-                            <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/dang-nhap.php' ?>">Đăng
-                                nhập</a>
-                            <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/dang-ky.php' ?>">Đăng
-                                ký</a>
-
-                            <?php }  ?>
-            </div>   
+          <?php
+          if (isset($_SESSION['user'])) { ?>
+            <div class="text-white">
+              <?= $_SESSION['user']['ho_ten'] ?>
             </div>
+          <?php } else { ?>
+
+          <?php } ?>
+          <div class="dropdown-menu " aria-labelledby="dropdownMenu1" id="dropdown-menu">
+            <?php
+            if (isset($_SESSION['user'])) { ?>
+
+              <?php if ($_SESSION['user']['vai_tro'] == 1) { ?>
+                <a class="dropdown-item pl-3 py-2" href="<?= $ADMIN_URL . "/trang-chinh/" ?>">Quản trị
+                  admin</a>
+              <?php } ?>
+
+              <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/cap-nhat-tk.php' ?>">Cập nhật tài
+                khoản</a>
+              <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/doi-mk.php' ?>">Đổi mật
+                khẩu</a>
+              <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/cart/hoadon.php' ?>">Danh sách đơn hàng</a>
+              <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/dang-nhap.php?btn_logout' ?>">Đăng
+                xuất</a>
+
+
+            <?php } else { ?>
+
+              <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/dang-nhap.php' ?>">Đăng
+                nhập</a>
+              <a class="dropdown-item pl-3 py-2" href="<?= $SITE_URL . '/tai-khoan/dang-ky.php' ?>">Đăng
+                ký</a>
+
+            <?php } ?>
+          </div>
+        </div>
       </div>
     </div>
+
   </header>
   <!-- End Header -->
-  
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
