@@ -111,7 +111,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                     <input type="text" name="dia_chi" placeholder="Nhập địa chỉ " /><br>
                     <p id="dia_chi_error" style="color: red;"></p>
                     <div class="icon-w3">
-                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                     </div>
                 </div>
                 <label class="anim">

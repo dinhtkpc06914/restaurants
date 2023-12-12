@@ -12,6 +12,14 @@
         font-size: 20px;
         font-weight: bold;
     }
+
+    .container{
+        padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    margin-bottom: 2rem;
+    }
     </style>
 <body>
 <div class="container">

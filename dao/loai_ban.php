@@ -2,13 +2,13 @@
 require_once 'pdo.php';
 function loai_insert($ten_loai_ban, $mo_ta,$trang_thai)
 {
-    $sql = "INSERT INTO loai_ban(ten_loai_ban, mo_ta, trang_thai) VALUES(?,?,?)";
+    $sql = "INSERT INTO loai_ban(ten_loai_ban, mo_ta) VALUES(?,?,?)";
     pdo_execute($sql, $ten_loai_ban,$mo_ta,$trang_thai);
 }
-function loai_update(  $ma_loai_ban,$ten_loai_ban,$mo_ta,$trang_thai)
+function loai_update(  $ma_loai_ban,$ten_loai_ban,$mo_ta)
 {
-    $sql = "UPDATE loai_ban SET ten_loai_ban=?,mo_ta=?, trang_thai=? WHERE ma_loai_ban=?";
-    pdo_execute($sql, $ten_loai_ban, $mo_ta,$trang_thai, $ma_loai_ban);
+    $sql = "UPDATE loai_ban SET ten_loai_ban=?,mo_ta=?WHERE ma_loai_ban=?";
+    pdo_execute($sql, $ten_loai_ban, $mo_ta,$ma_loai_ban);
 }
 function loai_delete($ma_loai_ban)
 {

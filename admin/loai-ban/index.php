@@ -17,9 +17,9 @@ if (exist_param("btn_list")) {
     #lấy dữ liệu từ form
     $ten_loai_ban = $_POST['ten_loai_ban'];
     $mo_ta = $_POST['mo_ta'];
-    $trang_thai = $_POST['trang_thai'];
+ 
     //insert vào db
-    loai_insert($ten_loai_ban, $mo_ta, $trang_thai);
+    loai_insert($ten_loai_ban, $mo_ta);
     //show dữ liệu
     $items = loai_select_all();
     $VIEW_NAME = "list.php";
@@ -40,24 +40,14 @@ if (exist_param("btn_list")) {
 
     $items = loai_select_all();
     $VIEW_NAME = "list.php";
-} else if (exist_param("btn_delete_all")) {
-    try {
-        $arr_ma_loai_ban = $_POST['ma_loai_ban'];
-        loai_delete($arr_ma_loai_ban);
-        $MESSAGE = "Xóa thành công!";
-    } catch (Exception $exc) {
-        $MESSAGE = "Xóa thất bại!";
-    }
-    $items = loai_select_all();
-    $VIEW_NAME = "list.php";
-} else if (isset($_POST['btn_update'])) {
+}  else if (isset($_POST['btn_update'])) {
     // Lấy dữ liệu từ biểu mẫu
     $ma_loai_ban = $_POST['ma_loai_ban'];
     $ten_loai_ban = $_POST['ten_loai_ban'];
     $mo_ta = $_POST['mo_ta'];
-    $trang_thai = $_POST['trang_thai'];
+   
     // Cập nhật dữ liệu trong cơ sở dữ liệu
-    loai_update( $ma_loai_ban,$ten_loai_ban, $mo_ta, $trang_thai);
+    loai_update( $ma_loai_ban,$ten_loai_ban, $mo_ta);
     //hiển thị danh sách
     header('Location: index.php?btn_list');
     exit;

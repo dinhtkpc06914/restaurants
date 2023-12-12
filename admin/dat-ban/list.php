@@ -59,7 +59,7 @@ $items = dat_ban_select_page('ma_dat_ban', 6);
         ?>
     </div>
     <div class="row">
-        <div class="col-sm-10 col-md-10">
+        <div class="col-sm-12 col-md-12">
             <div class="x_panel">
                 <div class="x_title">
                     <div class="clearfix"></div>
@@ -89,9 +89,7 @@ $items = dat_ban_select_page('ma_dat_ban', 6);
                         </thead>
                         <tbody>
                             <?php foreach ($items as $datBan):
-
                                 ?>
-
                                 <tr>
                                     <td>
                                         <?= $datBan['ma_dat_ban'] ?>
@@ -149,7 +147,7 @@ $items = dat_ban_select_page('ma_dat_ban', 6);
                                                 </div>
                                                 <input type="hidden" name="ma_dat_ban" value="<?= $datBan['ma_dat_ban'] ?>">
                                                 <select name="trang_thai" class="custom-select p-1" class="<?= $color ?>">
-                                                    <option value="0" <?= ($datBan['trang_thai'] == 0) ? 'selected' : ''; ?>>
+                                                    <option w  value="0" <?= ($datBan['trang_thai'] == 0) ? 'selected' : ''; ?>>
                                                         Chờ xác nhận
                                                     </option>
                                                     <option value="1" <?= ($datBan['trang_thai'] == 1) ? 'selected' : ''; ?>>
@@ -160,7 +158,7 @@ $items = dat_ban_select_page('ma_dat_ban', 6);
                                             </div>
                                             <button type="submit" style="background: #2A3F54;"
                                                 class='btn p-1 text-white p-2' name="btn_xacnhan">
-                                                Cập nhật
+                                                <i class="fas fa-check"></i>
                                             </button>
                                         </form>
                                     </td>
@@ -172,6 +170,7 @@ $items = dat_ban_select_page('ma_dat_ban', 6);
                                                 class='btn p-1 text-white p-2' name="btn_delete">
                                                 Xóa
                                             </button>
+                                         
                                         </form>
                                     </td>
                                     <!-- Thêm các ô khác tương ứng với thông tin đặt bàn -->

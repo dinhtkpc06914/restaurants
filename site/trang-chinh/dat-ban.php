@@ -67,7 +67,7 @@ require_once "../../dao/dat_ban.php"
         <div class="col-lg-4 col-md-6 form-group mt-3">
           <label for="time">Giờ</label>
           <input type="time" class="form-control" name="time" id="time" data-rule="minlen:4"
-            data-msg="Vui lòng nhập ít nhất 4 ký tự">
+            data-msg="Vui lòng nhập ít nhất 4 ký tự" >
           <div class="validate"> </div>
         </div>
 
@@ -99,13 +99,15 @@ require_once "../../dao/dat_ban.php"
         <div class="validate"></div>
       </div>
     
-      <div class="text-center"><button type="submit" class="btn text-white form-control">Đặt bàn</button></div>
+      <div class="text-center"><button  style="background-color: #cda45e" type="submit" class=" col-sm-4 btn btn-outline-dark text-white form-control">Đặt bàn</button></div>
     </form>
 
   </div>
 </section><!-- End Book A Table Section -->
 </body>
+
 <script>
+  console.log(new Date());
   function validateForm() {
     var isValid = true;
 
@@ -119,7 +121,7 @@ require_once "../../dao/dat_ban.php"
     var time = document.getElementById('time').value;
     var people = document.getElementById('people').value;
     var maLoaiBan = document.getElementById('ma_loai_ban').value;
-
+    
     // Kiểm tra lỗi cho từng trường và hiển thị thông báo
     if (name.trim() === "") {
       showError('name', 'Vui lòng nhập tên của bạn');
@@ -148,6 +150,7 @@ require_once "../../dao/dat_ban.php"
       showError('people', 'Vui lòng chọn số lượng người  ');
       isValid = false;
     }
+   
     // Thêm các kiểm tra khác cho date, time, people, maLoaiBan nếu cần
 
     return isValid; // Nếu không có lỗi, cho phép form được submit

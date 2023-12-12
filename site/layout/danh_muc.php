@@ -70,13 +70,13 @@
 </style>
 
 <div class="card">
-    <div class="card-header  text-white text-uppercase" role="tab" id="headingOne" style="background-color: #cda45e" >
+    <div class="card-header text-white text-uppercase" role="tab" id="headingOne" style="background-color: #cda45e" >
         <h6 class="mb-0" >
             <a class="text-white d-block" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
                 aria-controls="collapseOne" >
                 <i class="fa fa-list"></i> Danh mục
             </a>
-        </h6>
+        </h6>   
     </div>
 
     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">

@@ -1,7 +1,4 @@
-<?php
-require_once  '../../vendor/autoload.php';
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +11,9 @@ require_once  '../../vendor/autoload.php';
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?=$CONTENT_URL?>/assets/img/favicon.png" rel="icon">
-  <link href="<?=$CONTENT_URL?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="<?=$CONTENT_URL?>/assets/img/lo-go.png" rel="icon">
+ 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">

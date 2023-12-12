@@ -24,10 +24,20 @@ if (exist_param("btn_list")) {
     $items =dat_ban_select_page('ma_dat_ban', 6);
     $VIEW_NAME = "list.php";
 }
-
+else if (exist_param("btn_delete_all")) {
+    try {
+        $arr_ma_dat_ban = $_POST['ma_dat_ban'];
+        dat_ban_delete($arr_ma_dat_ban);
+        $MESSAGE = "Xóa thành công!";
+    } catch (Exception $exc) {
+        $MESSAGE = "Xóa thất bại!";
+    }
+    $items =dat_ban_select_page('ma_dat_ban', 6);
+    $VIEW_NAME = "list.php";
+}
 //  else if (exist_param("btn_update")) {
 //     $ma_dat_ban = $_POST['ma_dat_ban'];
-//     $ten_kh = $_POST['ten_khach_hang'];
+//     $ten_kh = $_POST['ten_dat_ban'];
 //     $so_dien_thoai = $_POST['so_dien_thoai'];
 //     $ngay_dat = $_POST['ngay_dat'];
 //     $gio_dat = $_POST['gio_dat'];

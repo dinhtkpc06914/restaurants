@@ -12,7 +12,7 @@ if (exist_param("form_invoice")) {
         $kh = khach_hang_select_by_id($id['ma_kh']);
         extract($kh);
         $VIEW_NAME = "../cart/form_invoice.php";
-    } else {
+    }  else {
         header("location:" . $SITE_URL . "/tai-khoan/dang-nhap.php");
     }
 } else {

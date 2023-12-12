@@ -60,7 +60,10 @@
 </style>
 
 <body>
-    <div class="container" id="container" data-aos="zoom-in" data-aos-delay="60">
+   <div class="card">
+    <div class="card-body">
+    <h2 style="color: #cda45e; " class="card-header text-center">Có thể bạn sẽ thích</h2>
+    <div class="container" id="container" >
         <!-- Sản phẩm -->
         <div class="row">
 
@@ -106,4 +109,7 @@
             <?php endforeach; ?>
         </div>
     </div>
+    </div>
+    
+   </div>
 </body>

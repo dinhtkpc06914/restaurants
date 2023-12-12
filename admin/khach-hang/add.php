@@ -5,7 +5,7 @@
 
 </div>
 <div class="row">
-    <div class="col-md-10 col-sm-10 ">
+    <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
                 <div class="clearfix"></div>
@@ -67,21 +67,7 @@
                             <p id="sdt_error" style="color: red;"></p>
                         </div>
                     </div>
-                    <div class="row">
-                       
-                        <div class="form-group col-sm-12">
-                            <label>Vai trò</label>
-                            <div class="form-control">
-                                <label class="radio-inline mr-3">
-                                    <input type="hidden" value="0" name="vai_tro" id="vai_tro_0"<?php echo isset($vai_tro) && $vai_tro == 0 ? 'checked' : ''; ?>>Khách hàng
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="hidden" value="1" name="vai_tro" id="vai_tro_1"<?php echo isset($vai_tro) && $vai_tro == 1 ? 'checked' : ''; ?>>Nhân viên
-                                </label>
-                            </div>
-                            <p id="vai_tro_error" style="color: red;"></p>
-                        </div>
-                    </div>
+                   
                     <div class="row"> <div class="form-group col-sm-12">
                             <label>Kích hoạt?</label>
                             <div class="form-control">
@@ -92,7 +78,17 @@
                                     <input type="radio" value="1" name="kich_hoat" checked>Kích hoạt
                                 </label>
                             </div>
-                        </div></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       
+                        <div class="form-group col-sm-12">
+                            <label for="sdt" class="form-label">Địa chỉ </label>
+                            <input type="text" name="dia_chi" id="dia_chi" class="form-control"
+                                placeholder="Nhập địa chỉ...">
+                            <p id="sdt_error" style="color: red;"></p>
+                        </div>
+                    </div>
                     <div class="mb-3 text-center mt-3">
                         <input type="submit" name="btn_insert" value="Thêm mới" class="btn btn-info mr-3"
                             style="background: #2A3F54;">

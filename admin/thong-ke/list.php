@@ -5,8 +5,8 @@
     </div>
 
 </div>
-<div class="row">
-    <div class="col-md-10 col-sm-10">
+<div class="row ">
+    <div class="col-md-10 col-sm-10 bg-light">
         <div class="x_panel">
             <div class="x_title">
                 <div class="clearfix"></div>

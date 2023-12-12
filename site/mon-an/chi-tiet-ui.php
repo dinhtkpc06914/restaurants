@@ -15,13 +15,7 @@
         width: 28   rem;
         border-radius: 2rem;
     }
-    #sanpham-ui {
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
-    margin-bottom: 2rem;
-}
+    
 </style>
 
 <body>
@@ -43,11 +37,12 @@
 
             <!-- Add to cart -->
             <div class="col-12 col-lg-7 add_to_cart_block">
-                <div class="card  mb-3">
-                    <div class="card-body text-center text-dark">
-                        <h4 style="background-color: #cda45e"  class="card-header text-white">
+                <div class="card mb-3 text-center">
+                <h4 style="background-color: #cda45e"  class="card-header text-white">
                             <?= $ten_mon_an ?>
                         </h4>
+                    <div class="card-body text-center text-dark">
+                       
                         <!-- Giá sản phẩm -->
                         <?php
                         if (!empty($items) && is_array($items)) {
@@ -127,7 +122,7 @@
          
         </div>
         <section id="sanpham-ui"  class="same-product col-sm-12">
-        <h2 style="color: #cda45e; " class="card-header text-center">Có thể bạn sẽ thích</h2>
+      
         <?php require "hang-cung-loai.php"; ?>
     </section>
     </div>

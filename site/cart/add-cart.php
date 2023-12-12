@@ -25,6 +25,7 @@ if (isset($id) && $id > 0) {
             $_SESSION['cart'][$id]['ma_mon_an'] = $ma_mon_an;
             $_SESSION['cart'][$id]['don_gia'] = $don_gia;
             $_SESSION['cart'][$id]['gia_giam'] = $gia_giam;
+            $_SESSION['cart'][$id]['hinh'] = $hinh;
       
 
             foreach ($_SESSION['cart'] as $key => $value) {
@@ -38,7 +39,7 @@ if (isset($id) && $id > 0) {
             $_SESSION['cart'][$id]['ma_mon_an'] = $ma_mon_an;
             $_SESSION['cart'][$id]['don_gia'] = $don_gia;
             $_SESSION['cart'][$id]['gia_giam'] = $gia_giam;
-         
+            $_SESSION['cart'][$id]['hinh'] = $hinh;
 
             foreach ($_SESSION['cart'] as $key => $value) {
                 $total += $_SESSION['cart'][$key]['sl'];
@@ -47,7 +48,7 @@ if (isset($id) && $id > 0) {
         } 
 
         // Không chuyển hướng ngay sau khi thêm vào giỏ hàng
-        // header("location:" . $SITE_URL . "/cart/list-cart.php");
+        header("location:" . $SITE_URL . "/cart/list-cart.php");
     } else {
         header("location:" . $SITE_URL . "/tai-khoan/dang-nhap.php");
     }

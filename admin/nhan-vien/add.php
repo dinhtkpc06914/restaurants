@@ -5,7 +5,7 @@
 
 </div>
 <div class="row">
-    <div class="col-md-10 col-sm-10 ">
+    <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
                 <div class="clearfix"></div>
@@ -68,6 +68,16 @@
                         </div>
                     </div>
                 
+                    <div class="row">
+                       
+                        <div class="form-group col-sm-12">
+                            <label for="dia_chi" class="form-label">Địa chỉ</label>
+                            <input type="text" name="sdt" id="dia_chi" class="form-control"
+                                placeholder="Nhập địa chỉ...">
+                            <p id="dia_chi_error" style="color: red;"></p>
+                        </div>
+                    </div>
+                
                     <div class="row"> <div class="form-group col-sm-12">
                             <label>Kích hoạt?</label>
                             <div class="form-control">
@@ -78,7 +88,8 @@
                                     <input type="radio" value="1" name="kich_hoat" checked>Kích hoạt
                                 </label>
                             </div>
-                        </div></div>
+                        </div>
+                    </div>
                     <div class="mb-3 text-center mt-3">
                         <input type="submit" name="btn_insert" value="Thêm mới" class="btn btn-info mr-3"
                             style="background: #2A3F54;">

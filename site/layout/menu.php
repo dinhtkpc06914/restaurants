@@ -28,34 +28,38 @@
   </div>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-cente   ">
+  <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-    <nav id="navbar" class="navbar order-last order-lg-0">
-  <ul>
-    <li><img style="width: 6rem;" src="<?= $CONTENT_URL ?>/assets/img/lo-go.png" alt=""></li>
-    <li class=" <?= $name_page == 'trang_chu' ? 'active' : '' ?>"><a  href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang chủ</a></li>
-    <li ><a  " href="#about">Về chúng tôi</a></li>
-    <li ><a  href="<?= $SITE_URL ?>/mon-an/liet-ke.php">Thực đơn</a></li>
-    <li class="<?= $name_page == 'dac_biet' ? 'active' : '' ?>"><a href="<?= $SITE_URL ?>/trang-chinh/index.php?dac_biet">Khuyến mãi</a></li>
-    <li class=" <?= $name_page == 'su_kien' ? 'active' : '' ?>"><a  href="<?= $SITE_URL ?>/trang-chinh/index.php?su_kien">Sự kiện</a></li>
-    <li class="<?= $name_page == 'phong_trung_bay' ? 'active' : '' ?>"><a  href="#gallery">Phòng trưng bày</a></li>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><img style="width: 6rem;" src="<?= $CONTENT_URL ?>/assets/img/lo-go.png" alt=""></li>
+          <li class=" <?= $name_page == 'trang_chu' ? 'active' : '' ?>"><a
+              href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang chủ</a></li>
+          <li><a " href=" #about">Về chúng tôi</a></li>
+          <li><a href="<?= $SITE_URL ?>/mon-an/liet-ke.php">Thực đơn</a></li>
+          <li class="<?= $name_page == 'dac_biet' ? 'active' : '' ?>"><a
+              href="<?= $SITE_URL ?>/trang-chinh/index.php?dac_biet">Khuyến mãi</a></li>
+          <li class=" <?= $name_page == 'su_kien' ? 'active' : '' ?>"><a
+              href="<?= $SITE_URL ?>/trang-chinh/index.php?su_kien">Sự kiện</a></li>
+          <li class="<?= $name_page == 'phong_trung_bay' ? 'active' : '' ?>"><a href="#gallery">Phòng trưng bày</a></li>
 
-    <li class=" <?= $name_page == 'dat_bat' ? 'active' : '' ?>"><a  href="<?= $SITE_URL ?>/trang-chinh/index.php?dat_ban">Đặt bàn</a></li>
-    <li><a class="nav-link " href="#contact">Liên hệ</a></li>
-  </ul>
-  <i class="bi bi-list mobile-nav-toggle"></i>
-</nav>
+          <li class=" <?= $name_page == 'dat_bat' ? 'active' : '' ?>"><a
+              href="<?= $SITE_URL ?>/trang-chinh/index.php?dat_ban">Đặt bàn</a></li>
+          <li><a class="nav-link " href="#contact">Liên hệ</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <div class="ml-1">
 
-      <!-- Tìm kiếm  -->
+        <form action="  <?= $SITE_URL ?>/mon-an/liet-ke.php" method="POST">
+          <div class="search-box">
+            <button class="btn-search" name="timkiem" type="submit"><i class="bi bi-search"></i></button>
+            <input type="text " name="kyw" class="input-search" placeholder="Type to Search...">
 
-      <form action="  <?= $SITE_URL ?>/mon-an/liet-ke.php" method="POST">
-        <div class="search-box">
-          <button class="btn-search" name="timkiem" type="submit"><i class="bi bi-search"></i></button>
-          <input type="text " name="kyw" class="input-search" placeholder="Type to Search...">
-
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
 
       <div class="widget-header d-flex ">
 

@@ -2,10 +2,9 @@
     <div class="title_left">
         <h3>SỬA THÔNG TIN LOẠI BÀN</h3>
     </div>
-
 </div>
 <div class="row">
-    <div class="col-md-10 col-sm-10 ">
+    <div class="col-md-12 ">
         <div class="x_panel">
             <div class="x_title">
                 <div class="clearfix"></div>
@@ -27,11 +26,7 @@
                                 rows="4"> <?= $mo_ta ?></textarea>
                                 <p id="mo_ta_error" style="color: red;"></p>
                         </div>
-                        <div class="mb-3">
-                            <label for="mo_ta" class="form-label">Trạng thái</label>
-                            <input type="text" name="trang_thai" class="form-control" id="trang_thai" value="<?= $trang_thai ?>" >
-                            <p id="trang_thai_error" style="color: red;"></p>
-                        </div>
+                      
                         <div class="mb-3 text-center">
                             <input  type="hidden" name="ma_loai_ban" value="<?= $ma_loai_ban ?>">
                             <input  style="background: #2A3F54;" type="submit" name="btn_update" value="Cập nhật" class="btn btn-info mr-3">

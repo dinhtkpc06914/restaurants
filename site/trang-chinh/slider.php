@@ -6,10 +6,10 @@
           <h1>Chào mừng đến <span>Simple Savory</span></h1>
           <h2>Cung cấp thực phẩm tuyệt vời trong hơn 18 năm!</h2>
 
-          <div class="btns">
-          <li class="  <?= $name_page == 'dat_bat' ? 'active' : '' ?>">       <a  class="btn-book animated fadeInUp"  href="<?= $SITE_URL ?>/trang-chinh/index.php?dat_ban">Đặt bàn</a></li>
+          <div class="btn d-flex">
+        
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">Menu của chúng tôi</a>
-         
+            <li class="  <?= $name_page == 'dat_bat' ? 'active' : '' ?>">       <a  class="btn-book animated fadeInUp"  href="<?= $SITE_URL ?>/trang-chinh/index.php?dat_ban">Đặt bàn</a></li>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
