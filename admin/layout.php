@@ -39,76 +39,77 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <style>
-    #ngunguc {
-        margin-left: 15rem;
-    }
+
 </style>
+<body class="nav-md">
+    <div class="container body">
+<?php require "menu.php";
+?>
 
-            <?php require "menu.php";
-            ?>
-        
-        <div class="" id="ngunguc">
+<div class="">
 
-            <div class="col-md-12 ">
-                <?php include $VIEW_NAME ?>
-            </div>
+    <div class="col-md-12 ">
+        <?php include $VIEW_NAME ?>
+    </div>
 
-            <?php require "footer.php";
-            ?>
-            <!-- /footer content -->
-        </div>
- 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <?php require "footer.php";
+    ?>
+    <!-- /footer content -->
+</div>
+</div>
+    
+</body>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Bootstrap -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- FastClick -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/fastclick/lib/fastclick.js"></script>
-        <!-- NProgress -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/nprogress/nprogress.js"></script>
-        <!-- Chart.js -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/Chart.js/dist/Chart.min.js"></script>
-        <!-- gauge.js -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/gauge.js/dist/gauge.min.js"></script>
-        <!-- bootstrap-progressbar -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-        <!-- iCheck -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/iCheck/icheck.min.js"></script>
-        <!-- Skycons -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/skycons/skycons.js"></script>
-        <!-- Flot -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.pie.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.time.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.stack.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.resize.js"></script>
-        <!-- Flot plugins -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/flot.curvedlines/curvedLines.js"></script>
-        <!-- DateJS -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/DateJS/build/date.js"></script>
-        <!-- JQVMap -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/jqvmap/dist/jquery.vmap.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-        <!-- bootstrap-daterangepicker -->
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/moment/min/moment.min.js"></script>
-        <script src="<?= $CONTENT_ADMIN ?>/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- Bootstrap -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- iCheck -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/iCheck/icheck.min.js"></script>
+<!-- Skycons -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.pie.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.time.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.stack.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="<?= $CONTENT_ADMIN ?>/vendors/moment/min/moment.min.js"></script>
+<script src="<?= $CONTENT_ADMIN ?>/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-        <!-- Custom Theme Scripts -->
-        <script src="<?= $CONTENT_ADMIN ?>/build/js/custom.min.js"></script>
-        <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
-        <script>
-            ClassicEditor
-                .create(document.querySelector('#editor'))
-                .catch(error => {
-                    console.error(error);
-                });
-        </script>
+<!-- Custom Theme Scripts -->
+<script src="<?= $CONTENT_ADMIN ?>/build/js/custom.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 
 
 <script>

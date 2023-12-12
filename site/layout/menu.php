@@ -33,7 +33,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><img style="width: 6rem;" src="<?= $CONTENT_URL ?>/assets/img/lo-go.png" alt=""></li>
+          <li><img style="width: 7rem;" src="<?= $CONTENT_URL ?>/assets/img/logongu.png" alt=""></li>
           <li class=" <?= $name_page == 'trang_chu' ? 'active' : '' ?>"><a
               href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang chủ</a></li>
           <li><a " href=" #about">Về chúng tôi</a></li>
@@ -63,7 +63,7 @@
 
       <div class="widget-header d-flex ">
 
-        <a href="<?= $SITE_URL . "/cart/list-cart.php" ?>" class="icon icon-sm "><i class="bi bi-basket"></i></a>
+        <a href="<?= $SITE_URL . "/cart/list-cart.php" ?>"class="icon icon-sm "><i class="bi bi-basket"></i></a>
         <span class="badge badge-pill text-danger">
           <?php
           if (isset($_SESSION['total_cart'])) {

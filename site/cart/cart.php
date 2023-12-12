@@ -22,7 +22,7 @@
 
         .table tbody tr td:before,
         .table tfoot tr td {
-            display: block;
+            display: block;z
             width: 100%;
         }
 
@@ -85,11 +85,12 @@
                                                         class="img-responsive" width="100">
                                                 </div>
                                                 <div class="col-sm-8 mt-4 ml-2">
-                                                    <h6 class="nomargin">
-                                                        <?= $item['ten_mon_an'] ?>
-                                                    </h6>
+                                                 
 
                                                 </div>
+                                                <h6 class="nomargin">
+                                                        <?= $item['ten_mon_an'] ?>
+                                                    </h6>
                                             </div>
                                         </td>
                                         <td data-th="Đơn giá" class="d-flex mr-2">                                
@@ -126,12 +127,7 @@
                                           
                                         </td>
                                     </tr>
-
-                                <?php endforeach; ?>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <?php endforeach; ?>                         
                                 <td >
                                 <a onclick="return confirm('Bạn chắc chắn muốn xóa tất cả ?');"
                                                 href="<?= $SITE_URL . "/cart/delete-cart.php?act=deleteAll" ?>"
@@ -139,7 +135,6 @@
                                 </td>
                             </tbody>
                             <tfoot>
-
                                 <tr>
                                     <td><a href="<?= $SITE_URL ?>/mon-an/liet-ke.php" class="btn btn-warning"
                                             previewlistener="true"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
@@ -167,10 +162,7 @@
             </div>
         </div>
     </div>
-
-
 </body>
-
 </html>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
@@ -194,7 +186,6 @@
                 // Add the subtotal to the total amount
                 totalAmount += subtotal;
             });
-
             // Display the total amount in the footer
             $('#tongdonhang .text-right td').text(totalAmount.toLocaleString() + ' đ');
         }

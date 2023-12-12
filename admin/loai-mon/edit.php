@@ -1,44 +1,73 @@
-<div class="page-title">
-    <div class="title_left">
-        <h3>Sửa thông tin loại món</h3>
-    </div>
 
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="x_panel">
-            <div class="x_title">
-                <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <br />
-                <div class="card-body col-sm-12">
-                    <form action="index.php?btn_update" method="POST" id="edit_loai" onsubmit="return validateForm()">
+<div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Sửa thông tin loại món</h3>
+                        </div>
+
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                  
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                <form action="index.php?btn_update" method="POST" id="edit_loai" onsubmit="return validateForm()">
                        
-                        <div class="mb-3">
-                            <label for="ten_loai_mon" class="form-label">Tên loại</label>
-                            <input type="text" name="ten_loai_mon" placeholder="Nhập tên loại" class="form-control"
-                                 value="<?= $ten_loai_mon ?>">
-                                <p id="ten_loai_mon_error" style="color: red;"></p>
+                       <div class="mb-3">
+                           <label for="ten_loai_mon" class="form-label">Tên loại</label>
+                           <input type="text" name="ten_loai_mon" placeholder="Nhập tên loại" class="form-control"
+                                value="<?= $ten_loai_mon ?>">
+                               <p id="ten_loai_mon_error" style="color: red;"></p>
+                       </div>
+                       <div class="mb-3">
+                           <label for="mo_ta" class="form-label">Mô tả</label>
+                           <textarea class="form-control" id="editor" name="mo_ta" placeholder="Nội dung mô tả..."
+                               rows="4"> <?= $mo_ta ?></textarea>
+                               <p id="mo_ta_error" style="color: red;"></p>
+                       </div>
+                       <div class="mb-3 text-center">
+                           <input type="hidden" name="ma_loai_mon" value="<?= $ma_loai_mon ?>">
+                           <input style="background-color: #2A3F54;" type="submit" name="btn_update" value="Cập nhật" class="btn btn-info mr-3">
+                           <a  href="index.php?btn_list"><input type="button" class="btn btn-success"
+                                   value="Danh sách" style="background-color: #2A3F54;"></a>
+                       </div>
+                   </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="mo_ta" class="form-label">Mô tả</label>
-                            <textarea class="form-control" id="editor" name="mo_ta" placeholder="Nội dung mô tả..."
-                                rows="4"> <?= $mo_ta ?></textarea>
-                                <p id="mo_ta_error" style="color: red;"></p>
-                        </div>
-                        <div class="mb-3 text-center">
-                            <input type="hidden" name="ma_loai_mon" value="<?= $ma_loai_mon ?>">
-                            <input style="background-color: #2A3F54;" type="submit" name="btn_update" value="Cập nhật" class="btn btn-info mr-3">
-                            <a  href="index.php?btn_list"><input type="button" class="btn btn-success"
-                                    value="Danh sách" style="background-color: #2A3F54;"></a>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+
 <script>
     function validateForm() {
         var valid = true;

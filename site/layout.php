@@ -12,7 +12,7 @@
 
   <!-- Favicons -->
 
-  <link href="<?=$CONTENT_URL?>/assets/img/lo-go.png" rel="icon">
+  <link href="<?=$CONTENT_URL?>/assets/img/logongu.png" rel="icon">
  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <!-- Google Fonts -->
