@@ -38,8 +38,8 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Bản tin của chúng tôi</h4>
         
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+            <form action="../layout/index.php" method="post" >
+              <input type="email" name="email"><input class="btn_submittt" type="submit" value="Subscribe">
             </form>
 
           </div>

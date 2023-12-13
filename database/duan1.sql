@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 09, 2023 lúc 04:38 AM
+-- Thời gian đã tạo: Th12 13, 2023 lúc 07:18 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -72,7 +72,6 @@ INSERT INTO `binh_luan` (`ma_binh_luan`, `ma_kh`, `ma_mon_an`, `noi_dung`, `ngay
 (67, 'admin', 12, 'ccc', '2023-12-04 11:00:19', 5),
 (68, 'admin', 12, 'cc', '2023-12-04 11:00:22', 5),
 (69, 'admin', 12, 'c', '2023-12-04 11:00:23', 5),
-(70, 'admin', 12, '', '2023-12-04 11:00:25', 5),
 (71, 'admin', 26, 'uk\r\n', '2023-12-04 11:07:48', 5),
 (72, 'admin', 26, 'uk\r\n', '2023-12-04 11:08:53', 5),
 (73, 'admin', 24, 'c', '2023-12-04 12:47:16', 5),
@@ -104,6 +103,13 @@ CREATE TABLE `dat_ban` (
   `trang_thai` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `dat_ban`
+--
+
+INSERT INTO `dat_ban` (`ma_dat_ban`, `ma_kh`, `ten_kh`, `sdt`, `email`, `ngay_dat`, `gio_dat`, `so_nguoi`, `ma_loai_ban`, `loi_nhan`, `trang_thai`) VALUES
+(38, NULL, 'an lê', '0363055450', 'phatcc@gmail.com', '2023-12-16', '11:47:00', 5, 11, 'ccccccccccccccccccccccccc', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -125,6 +131,14 @@ CREATE TABLE `hoa_don` (
   `ho_ten` varchar(255) NOT NULL,
   `ma_kh` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoa_don`
+--
+
+INSERT INTO `hoa_don` (`ma_hoa_don`, `ma_mon_an`, `don_gia`, `trang_thai`, `gia_giam`, `so_luong`, `tong_tien`, `ngay_dat`, `phuong_thuc`, `sdt`, `dia_chi`, `ho_ten`, `ma_kh`) VALUES
+(88, 26, 150000, 0, 30000, 5, 600.000, '2023-12-11 04:51:21', 0, 363055460, 'Ninh kiều cần câu', 'Trần Khải Đình', 'admin'),
+(89, 26, 150000, 3, 30000, 3, 360.000, '2023-12-11 07:22:55', 0, 363055460, 'Ninh kiều cần câu cc', 'Trần Khải Đình', 'admin');
 
 -- --------------------------------------------------------
 
@@ -149,12 +163,32 @@ CREATE TABLE `khach_hang` (
 --
 
 INSERT INTO `khach_hang` (`ma_kh`, `mat_khau`, `ho_ten`, `hinh`, `email`, `sdt`, `kich_hoat`, `vai_tro`, `dia_chi`) VALUES
+('adadad', '$argon2i$v=19$m=65536,t=4,p=1$b3lkZDNrSVBydkQ1NkxmMg$Vk78A/L/LU3oaIt3LFSoNX60DNVGHx6B1kRJgUBz2r4', 'buồn ơi là buồn', 'suon-cuu.jpg', 'dinh@gmail.com', 363055450, 1, 0, 'cccccccl'),
 ('admin', '$argon2i$v=19$m=65536,t=4,p=1$cFZsSENncllEdTQ2blRBcA$d8a7UCb3PeqUt4URC4977+Xa4dAZV2pnKyI6d1ktMns', 'Trần Khải Đình', 'bo-fu-ji.jpg', 'dinhtkpc06914@fpt.edu.vn', 363055460, 1, 1, 'Ninh kiều cần câu'),
 ('dinhtran', '$argon2i$v=19$m=65536,t=4,p=1$ak1LN1hreFRhektXVUhFVg$rtSsv6DLVqM1dDsOj02DGmws43pMh0/w/vHau4EayEA', 'Đình trần vn', 'salad-roket.jpg', 'tkd25092003@gmail.com', 363055450, 1, 0, 'Ninh kiều cần thơ cái răng bờ kè'),
-('linhnhi', '8fce2616242fc3b6b64c5eb5ea0e26ed', 'Đình svpoly', 'mtc4.jpg', 'nhi@gmail.com', 363055450, 1, 0, ''),
 ('ongtroi', '$argon2i$v=19$m=65536,t=4,p=1$S2xISjNyb1ZQQ3pla3VpWg$0u+7UQKq/3VlfOXj/HYc1ncz0Ud18kTpALEPnfrZbz0', 'trời ơi đất hởi', 'spinach-salad.jpg', 'troi@gmail.com', 363055450, 1, 0, 'Ninh kiều cần thơ cái răng bờ kè'),
 ('tinh123', '$argon2i$v=19$m=65536,t=4,p=1$MGl3TUN3d1N6Z3FUT3dOZQ$F8wd9TJOJNQAdqZLTe4WRqE9wixvc621eB6eovF+eJY', 'Phan Văn Tính', 'about-bg.jpg', ' admin@gmail.com.cu', 363055450, 1, 0, 'Ninh kiều cần thơ cái răng bờ kè'),
 ('youngtobi', '202cb962ac59075b964b07152d234b70', 'Ô bi tô', 'specials-4.png', 'dinh@gmail.com', 363055450, 1, 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `lien_he`
+--
+
+CREATE TABLE `lien_he` (
+  `id` int(6) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `lien_he`
+--
+
+INSERT INTO `lien_he` (`id`, `email`) VALUES
+(12, 'phatcc@gmail.comc'),
+(13, 'phatcc@gmail.comc'),
+(14, 'phatcc@gmail.comc');
 
 -- --------------------------------------------------------
 
@@ -177,7 +211,7 @@ INSERT INTO `loai_ban` (`ma_loai_ban`, `ten_loai_ban`, `mo_ta`, `trang_thai`) VA
 (2, 'Bàn tiệc ', '<p><strong>cccc</strong></p>', 'rùa'),
 (4, 'Bàn sinh nhật', '<p><strong>Rùa</strong></p>', 'anh ba đầu rùa'),
 (5, 'Bàn ngoài trời', '<p><strong>Bàn ấy</strong></p>', 'đầu rùa'),
-(11, 'Bàn gia đình', '<p>gia đình&nbsp;</p>', ' trống');
+(11, 'Bàn gia đình', '<p><strong>gia đình ngu</strong></p>', ' trống');
 
 -- --------------------------------------------------------
 
@@ -227,14 +261,14 @@ CREATE TABLE `mon_an` (
 
 INSERT INTO `mon_an` (`ma_mon_an`, `ten_mon_an`, `don_gia`, `gia_giam`, `hinh`, `mo_ta_mon`, `dac_biet`, `ngay_nhap`, `luot_xem`, `ma_loai_mon`) VALUES
 (12, 'Thịt trâu gác bếp ', '150000', 20000.000, 'trau-gac-bep.jpg', '<p><strong>Món \"Thịt trâu gác bếp\" sẽ là một sự kết hợp tuyệt vời giữa hương vị đặc trưng của thịt trâu, mùi thơm của lá thơm, và sự độc đáo của các gia vị. Đây có thể là một bữa ăn đặc sắc và lôi cuốn cho những người thưởng thức ẩm thực sáng tạo.</strong', 0, '2023-11-26', 6, 8),
-(13, 'Sườn cừu sốt lá thơm', '220000', 30000.000, 'suon-cuu.jpg', '<p><strong>Sườn cừu sốt lá thơm là một món ăn phức tạp và ngon miệng, nơi hương vị thơm ngon của lá thơm kết hợp với độ mềm mịn và đặc trưng của sườn cừu, không chỉ mang lại hương vị thơm ngon đặc trưng của lá thơm mà còn tận dụng được hương vị độc đáo củ', 0, '2023-11-26', 44, 8),
+(13, 'Sườn cừu sốt lá thơm', '220000', 30000.000, 'suon-cuu.jpg', '<p><strong>Sườn cừu sốt lá thơm là một món ăn phức tạp và ngon miệng, nơi hương vị thơm ngon của lá thơm kết hợp với độ mềm mịn và đặc trưng của sườn cừu, không chỉ mang lại hương vị thơm ngon đặc trưng của lá thơm mà còn tận dụng được hương vị độc đáo củ', 0, '2023-11-26', 46, 8),
 (14, 'Salads hoa quả tôm', '155000', 25000.000, 'salad-hoa-qua.jpg', 'Salad hoa quả tôm là một món ăn nhẹ, tươi mới và đầy dinh dưỡng, kết hợp giữa hương vị ngọt ngào của hoa quả và độ ngon của tôm,Món ăn này không chỉ làm hài lòng khẩu vị mà còn mang lại trải nghiệm ẩm thực sáng tạo và lành mạnh.', 0, '2023-11-26', 56, 10),
 (15, 'Salad mầm cải thịt bò', '120000', 25000.000, 'salad-mam-cai.jpg', '<p>Salad mầm cải thịt bò không chỉ ngon miệng mà còn cung cấp nhiều dưỡng chất từ rau củ và thịt bò. Hương vị tươi mới và sự kết hợp độc đáo giữa mầm cải và thịt bò làm cho món salad trở thành một lựa chọn ăn nhẹ hoàn hảo cho bữa trưa hoặc bữa tối.</p>', 0, '2023-11-29', 30, 10),
 (16, ' Lườn ngỗng xông khói', '165000', 50000.000, 'salad-roket.jpg', 'Lườn ngỗng xông khói là một món ăn thơm ngon và phổ biến trong nhiều nền văn hóa. Dưới đây là một mô tả tưởng tượng về lườn ngỗng xông khói:', 0, '2023-11-29', 19, 8),
 (23, 'Salad rong biển trứng cua', '125000', 25000.000, 'salad-rong-bien.jpg', 'Salad rong biển trứng cua là một món ăn nhẹ và đầy dinh dưỡng, kết hợp giữa hương vị biển cả của rong biển và độ thơm ngon của trứng cua. Dưới đây là một mô tả tưởng tượng về món salad này:', 0, '2023-11-29', 14, 10),
-(24, 'Bò Fuji nướng ', '450000', 120000.000, 'bo-fu-ji.jpg', '<p>Bò Fuji nướng là một món ăn độc đáo và ngon miệng, được chế biến từ những miếng thịt bò chất lượng cao, được ướp gia vị và nướng chín tới mức độ hoàn hảo. Tên gọi \"Fuji\" có thể xuất phát từ sự kết hợp của hương vị phong phú và hình dáng nấu ăn sáng tạo', 1, '2023-11-30', 72, 8),
-(25, 'Phô mai dây', '120000', 15000.000, 'pho-mai-day.jpg', '<p><strong>Phô mai dây là một món ăn nhẹ và thú vị, thường được làm từ phô mai mềm và đàn hồi. Được biết đến với hình dạng dạng sợi, phô mai dây có thể được cuộn lại thành các cuộn nhỏ giống như dây, tạo nên một hình thức độc đáo và thú vị.</strong></p>', 0, '2023-11-30', 2, 7),
-(26, 'Lườn ngỗng áp chảo', '150000', 30000.000, 'luon-nghong.jpg', '<p>Lườn ngỗng áp chảo là một món ăn sang trọng và đặc sắc, nổi bật với sự kết hợp tinh tế giữa thịt ngỗng tươi ngon và các loại gia vị hảo huyền. Đầu tiên, lườn ngỗng được chuẩn bị một cách cẩn thận</p>', 1, '2023-11-30', 408, 11),
+(24, 'Bò Fuji nướng ', '450000', 120000.000, 'bo-fu-ji.jpg', '<p>Bò Fuji nướng là một món ăn độc đáo và ngon miệng, được chế biến từ những miếng thịt bò chất lượng cao, được ướp gia vị và nướng chín tới mức độ hoàn hảo. Tên gọi \"Fuji\" có thể xuất phát từ sự kết hợp của hương vị phong phú và hình dáng nấu ăn sáng tạo', 1, '2023-11-30', 73, 8),
+(25, 'Phô mai dây', '120000', 15000.000, 'pho-mai-day.jpg', '<p><strong>Phô mai dây là một món ăn nhẹ và thú vị, thường được làm từ phô mai mềm và đàn hồi. Được biết đến với hình dạng dạng sợi, phô mai dây có thể được cuộn lại thành các cuộn nhỏ giống như dây, tạo nên một hình thức độc đáo và thú vị.</strong></p>', 0, '2023-11-30', 3, 7),
+(26, 'Lườn ngỗng áp chảo', '150000', 30000.000, 'luon-nghong.jpg', '<p>Lườn ngỗng áp chảo là một món ăn sang trọng và đặc sắc, nổi bật với sự kết hợp tinh tế giữa thịt ngỗng tươi ngon và các loại gia vị hảo huyền. Đầu tiên, lườn ngỗng được chuẩn bị một cách cẩn thận</p>', 1, '2023-11-30', 410, 11),
 (27, 'Cồi sò xào ngủ sắc', '190000', 15000.000, 'coi-xo-xao.jpg', '<p>Cồi sò xào ngủ sắc là một món hấp dẫn và hương vị độc đáo, đậm đà biểu tượng cho hương vị biển cả. Nhìn chung, món ăn này bắt đầu với những cồi sò tươi ngon, được lựa chọn kỹ lưỡng và làm sạch.</p>', 1, '2023-11-30', 13, 11);
 
 --
@@ -254,7 +288,8 @@ ALTER TABLE `binh_luan`
 --
 ALTER TABLE `dat_ban`
   ADD PRIMARY KEY (`ma_dat_ban`),
-  ADD UNIQUE KEY `ma_kh` (`ma_kh`);
+  ADD UNIQUE KEY `ma_kh` (`ma_kh`),
+  ADD KEY `ma_loai_ban` (`ma_loai_ban`);
 
 --
 -- Chỉ mục cho bảng `hoa_don`
@@ -272,6 +307,12 @@ ALTER TABLE `hoa_don`
 ALTER TABLE `khach_hang`
   ADD PRIMARY KEY (`ma_kh`),
   ADD KEY `ma_kh` (`ma_kh`);
+
+--
+-- Chỉ mục cho bảng `lien_he`
+--
+ALTER TABLE `lien_he`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `loai_ban`
@@ -307,13 +348,19 @@ ALTER TABLE `binh_luan`
 -- AUTO_INCREMENT cho bảng `dat_ban`
 --
 ALTER TABLE `dat_ban`
-  MODIFY `ma_dat_ban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ma_dat_ban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
-  MODIFY `ma_hoa_don` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `ma_hoa_don` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+
+--
+-- AUTO_INCREMENT cho bảng `lien_he`
+--
+ALTER TABLE `lien_he`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `loai_ban`
@@ -348,7 +395,8 @@ ALTER TABLE `binh_luan`
 -- Các ràng buộc cho bảng `dat_ban`
 --
 ALTER TABLE `dat_ban`
-  ADD CONSTRAINT `dat_ban_ibfk_1` FOREIGN KEY (`ma_kh`) REFERENCES `khach_hang` (`ma_kh`);
+  ADD CONSTRAINT `dat_ban_ibfk_1` FOREIGN KEY (`ma_kh`) REFERENCES `khach_hang` (`ma_kh`),
+  ADD CONSTRAINT `dat_ban_ibfk_2` FOREIGN KEY (`ma_loai_ban`) REFERENCES `loai_ban` (`ma_loai_ban`);
 
 --
 -- Các ràng buộc cho bảng `hoa_don`
