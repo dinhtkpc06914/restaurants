@@ -3,7 +3,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>DANH SÁCH KHÁCH HÀNG</h3>
+                <h3>DANH SÁCH NHÂN VIÊN</h3>
             </div>
 
             <div class="title_right">
@@ -78,25 +78,35 @@
                             <a href="index.php" class="btn text-white" style="background-color: #2A3F54;">Thêm mới <i class="fas fa-plus-circle"></i></a>
                         </form>
                         <div class="mt-3" width="100%">
-                            <ul class="pagination justify-content-center">
-                                <?php
-                                if (isset($_SESSION['total_page'])) {
-                                    for ($i = 1; $i <= $_SESSION['total_page']; $i++) {
-                                        ?>
+                                <ul class="pagination justify-content-center">
+                                    <!-- Mũi tên sang trái -->
+                                    <li class="page-item <?= $_SESSION['page'] == 1 ? 'disabled' : '' ?>">
+                                        <a class="page-link" href="?btn_list&page=<?= max(1, $_SESSION['page'] - 1) ?>"
+                                            aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+
+                                    <?php
+                                    for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
                                         <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
                                             <a class="page-link" href="?btn_list&page=<?= $i ?>">
                                                 <?= $i ?>
                                             </a>
                                         </li>
-                                        <?php
-                                    }
-                                } else {
-                                    echo "Total pages not set!";
-                                }
-                                ?>
-                            </ul>
-                        </div>
+                                    <?php } ?>
 
+                                    <!-- Mũi tên sang phải -->
+                                    <li
+                                        class="page-item <?= $_SESSION['page'] == $_SESSION['total_page'] ? 'disabled' : '' ?>">
+                                        <a class="page-link"
+                                            href="?btn_list&page=<?= min($_SESSION['page'] + 1, $_SESSION['total_page']) ?>"
+                                            aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
 
                     </div>
                 </div>

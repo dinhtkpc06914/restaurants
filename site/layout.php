@@ -30,10 +30,12 @@
   <!-- Template Main CSS File -->
   <link href="<?=$CONTENT_URL?>/assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- ======= Top Bar ======= -->
   <?php 
     include '../layout/menu.php';
+   
     ?>
   <main id="main">
   <?php 

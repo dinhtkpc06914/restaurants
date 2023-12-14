@@ -134,16 +134,32 @@
                                 <i class="fas fa-plus-circle"></i></a>
                             <div class="mt-3" width="100%">
                                 <ul class="pagination justify-content-center">
-                                    <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
+                                    <!-- Mũi tên sang trái -->
+                                    <li class="page-item <?= $_SESSION['page'] == 1 ? 'disabled' : '' ?>">
+                                        <a class="page-link" href="?btn_list&page=<?= max(1, $_SESSION['page'] - 1) ?>"
+                                            aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
 
+                                    <?php
+                                    for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
                                         <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
                                             <a class="page-link" href="?btn_list&page=<?= $i ?>">
                                                 <?= $i ?>
                                             </a>
                                         </li>
-
                                     <?php } ?>
 
+                                    <!-- Mũi tên sang phải -->
+                                    <li
+                                        class="page-item <?= $_SESSION['page'] == $_SESSION['total_page'] ? 'disabled' : '' ?>">
+                                        <a class="page-link"
+                                            href="?btn_list&page=<?= min($_SESSION['page'] + 1, $_SESSION['total_page']) ?>"
+                                            aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </form>

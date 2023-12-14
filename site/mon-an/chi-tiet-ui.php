@@ -84,9 +84,8 @@
                         <div class="product_rassurance mt-3">
                             <ul class="list-inline">
                                 <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br />Giao hàng nhanh</li>
-                                <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br />Bảo mật
-                                </li>
-                                <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br />0101010101101
+                               
+                                <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br />0363055450
                                 </li>
                             </ul>
                         </div>

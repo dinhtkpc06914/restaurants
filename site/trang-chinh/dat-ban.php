@@ -41,15 +41,15 @@ require_once "../../dao/dat_ban.php"
 <body>
   <section id="book-a-table" class="book-a-table">
     <div class="container" data-aos="fade-up">
-      <div class="card">
+      <div class="card bg-light">
         <form action="<?= $SITE_URL . '/dat-ban/index.php' ?>" method="post" role="form" enctype="multipart/form-data"
           data-aos="fade-up" data-aos-delay="100" onsubmit="event.preventDefault(); validateForm();">
           <div class="row justify-content-center">
-            <div class="col-lg-10 col-md-6 form-group">
-              <div class="section-title text-center">
-                <p>Đặt bàn</p>
+            <div class="col-lg-8 col-md-6 form-group">
+              <div class="section-title text-center " style="background-color: #cda45e" >
+                <p class="text-white">Đặt bàn</p>
               </div>
-              <input type="text" name="name" class="form-control " id="name" placeholder="Tên của bạn"
+              <input type="text" name="name" class="form-control mt-3" id="name" placeholder="Tên của bạn"
                 data-rule="minlen:4" data-msg="Please enter at least 4 chars">
               <p id="name_error" class="text-danger"></p>
               <input type="email" class="form-control mt-4 " name="email" id="email" placeholder="Email của bạn"

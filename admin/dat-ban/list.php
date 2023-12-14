@@ -41,6 +41,40 @@
         border-radius: 4px;
         cursor: pointer;
     }
+    @media only screen and (max-width: 767px) {
+        .title_left,
+        .title_right {
+            text-align: center;
+        }
+
+        .form-group.pull-right.top_search {
+            margin-top: 15px;
+        }
+
+        .x_content {
+            padding: 10px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .select-wrapper,
+        .select-value,
+        .custom-select {
+            width: 100%;
+        }
+
+        .select-value {
+            margin-bottom: 10px;
+        }
+
+        .page-title h3 {
+            font-size: 20px;
+        }
+    }
 </style>
 <?php
 
@@ -103,7 +137,7 @@ $items = dat_ban_select_page('ma_dat_ban', 6);
                             echo '<h5 class="alert alert-warning">' . $MESSAGE . '</h5>';
                         }
                         ?>
-                        <table width="100%" class="table table-hover table-bordered text-center">
+                        <table width="100%" class=" col-sm-12 table table-hover table-bordered text-center">
                             <!-- Thêm tiêu đề cho danh sách đặt bàn -->
                             <thead>
                                 <tr>

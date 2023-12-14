@@ -142,8 +142,8 @@
                                         id="phuong_thuc">Thanh toán khi nhận
                                         hàng</span>
                                     <br>
-                                    <input type="radio" name="phuong_thuc" value="1" placeholder=""> <span class="text-dark"
-                                        id="phuong_thuc">Thanh toán VNPAY</span>
+                                
+                                    <a href="thanh-toan-momo" class="btn-momo primary-btn mt-3">THANH TOÁN MOMO</a>
                                 </div>
 
                                 <div class="form-group">

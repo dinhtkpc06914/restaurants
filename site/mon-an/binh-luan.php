@@ -22,7 +22,7 @@
                     <?= $bl['ngay_binh_luan'] ?>
 
                     <?php for ($i = 1; $i <= $bl['xep_hang']; $i++) {
-                        echo '<span class="review_xep_hang fa fa-star"></span>';
+                        echo '<span class="review_xep_hang fa fa-star"style="color:#cda45e ;"></span>';
                     } ?>
 
                     bởi <b>
@@ -42,7 +42,7 @@
                 <ul class="pagination justify-content-center">
                     <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
                         <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
-                            <a  id="page-item" class="page-link" href="?ma_mon_an=<?= $ma_mon_an ?>&page=<?= $i ?>">
+                            <a  id="page-item" class="page-link mr-2" href="?ma_mon_an=<?= $ma_mon_an ?>&page=<?= $i ?>">
                                 <?= $i ?>
                             </a>
                         </li>
@@ -61,7 +61,7 @@
             <div class="text-center" id="bl">
                 <h5>Đánh giá</h5>
                 <form action="" method="POST">
-                    <div class="xep_hang">
+                    <div class="xep_hang " style="color:#cda45e ;">
                         <input type="radio" name="xep_hang" value="5" id="5" checked>
                         <label for="5"><i class="bi bi-star-fill"></i></label>
                         <input type="radio" name="xep_hang" value="4" id="4">

@@ -63,4 +63,20 @@ function khach_hang_change_Email($email, $mat_khau_moi)
     $sql = "UPDATE khach_hang SET mat_khau=? WHERE email=?";
     pdo_execute($sql, $mat_khau_moi, $email);
 }
-?>
+function khach_hang_select_page($order, $limit)
+{
+    if (!isset($_REQUEST['page'])) {
+        $_SESSION['page'] = 1;
+    }
+    if (!isset($_SESSION['total_page'])) {
+        $_SESSION['total_page'] = 1;
+    }
+    $_SESSION['total_pro'] = pdo_query_value("SELECT count(*) FROM khach_hang WHERE vai_tro = 0"); // Thêm điều kiện vai_tro = 0
+    if (exist_param("page")) {
+        $_SESSION['page'] = $_REQUEST['page'];
+    }
+    $begin = ($_SESSION['page'] - 1) * $limit;
+    $_SESSION['total_page'] = ceil($_SESSION['total_pro'] / $limit);
+    $sql = "SELECT * FROM khach_hang WHERE vai_tro = 0 ORDER BY $order DESC LIMIT $begin, $limit"; // Thêm điều kiện vai_tro = 0
+    return pdo_query($sql);
+}

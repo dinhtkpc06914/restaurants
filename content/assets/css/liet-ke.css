@@ -1,15 +1,4 @@
 
-
-#back-home {
-    color: white;
-    background-color: #cda45e;
-    margin-left: 2rem;
-    padding: 8px 16px; /* Add padding for better button appearance */
-    text-decoration: none; /* Remove default underline */
-    border-radius: 4px; /* Add some border-radius for rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth hover effect */
-}
-
 #back-home:hover {
     color: #cda45e;
     background-color: white;
@@ -102,7 +91,7 @@
 }
 
 .page-item {
-    margin: 0 4px; /* Adjust margin for pagination items */
+    margin: 0 2px; /* Adjust margin for pagination items */
 }
 
 .page-link {

@@ -34,14 +34,14 @@ $monAnList = mon_an_select_page1("ma_mon_an", $limit, $page);
             </a>
             <?php if ($monAn['gia_giam'] > 0): ?>
               <span class="discount-price">
-                <?= $monAn['don_gia'] - $monAn['gia_giam'] ?>vnd
+                <?= number_format($monAn['don_gia'] - $monAn['gia_giam'],0,".",".") ?>đ
               </span>
               <span class="original-price"><del>
-                  <?= $monAn['don_gia'] ?>vnd
+                  <?= number_format($monAn['don_gia'],0,".",".") ?>đ
                 </del></span>
             <?php else: ?>
               <span class="original-price">
-                <?= $monAn['don_gia'] ?>vnd
+                <?= number_format($monAn['don_gia'],0,".",".") ?>đ
               </span>
             <?php endif; ?>
           </div>     

@@ -6,10 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="<?= $CONTENT_URL ?>/assets/css/liet-ke.css" rel="stylesheet">
     <style>
-        
-
         body {
             font-family: Arial, sans-serif;
             background-image: url(<?= $CONTENT_URL ?>/assets/img/hero-bg.jpg);
@@ -17,18 +16,20 @@
             margin-top: 6rem;
 
         }
-      
+
+        .pagination a span {
+            font-size: 20px;
+            /* Điều chỉnh kích thước của mũi tên */
+        }
     </style>
 </head>
 
 <body>
-    <div class="container" >
+    <div class="container">
         <div class="container mt-5">
             <div class="card">
-                <div class="card-header text-center">
-                    <h3 cla>THỰC ĐƠN CỦA CHÚNG TÔI</h3>
-                </div>
-                <div class="card-body mb-5"> 
+
+                <div class="card-body mb-5">
                     <div class="row" style="background-url">
                         <div class="col-md-4">
                             <div class="col-md-10">
@@ -41,7 +42,13 @@
                         </div>
                         <!-- Sản phẩm -->
                         <div class="col-md-8">
-                            <div class="row " >
+                            <div class="card-header text-center">
+                                <h3 cla>
+                                    <?= $title_site ?>
+                                </h3>
+
+                            </div>
+                            <div class="row ">
                                 <?php foreach ($items as $item):
                                     extract($item);
                                     if ($don_gia > 0) {
@@ -90,13 +97,31 @@
                             </div>
                             <div class="row mt-5 justify-content-center">
                                 <ul class="pagination">
+                                    <!-- Mũi tên sang trái -->
+                                    <li class="page-item <?= $_SESSION['page'] == 1 ? 'disabled' : '' ?>">
+                                        <a style="background-color: #cda45e" class="page-link mr-2 text-dark"
+                                            href="?page=<?= max(1, $_SESSION['page'] - 1) ?>">
+                                            <span>&laquo;</span>
+                                        </a>
+                                    </li>
+
                                     <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
                                         <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
-                                            <a class="page-link" id="back-home" href="?page=<?= $i ?>">
+                                            <a style="background-color: #cda45e" class="page-link mr-2 text-dark"
+                                                href="?page=<?= $i ?>">
                                                 <?= $i ?>
                                             </a>
                                         </li>
                                     <?php } ?>
+
+                                    <!-- Mũi tên sang phải -->
+                                    <li
+                                        class="page-item <?= $_SESSION['page'] == $_SESSION['total_page'] ? 'disabled' : '' ?>">
+                                        <a style="background-color: #cda45e" class="page-link mr-2 text-dark"
+                                            href="?page=<?= $_SESSION['page'] + 1 ?>">
+                                            <span>&raquo;</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

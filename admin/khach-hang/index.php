@@ -5,7 +5,7 @@ require "../../global.php";
 
 extract($_REQUEST);
 if(exist_param("btn_list")){
-    $items= khach_hang_selectall_by_role();
+    $items= khach_hang_select_page('ma_kh', 6);
     $VIEW_NAME = "list.php";
 }elseif (exist_param("btn_insert")) {
     // lấy dữ liệu từ form
@@ -26,7 +26,7 @@ if(exist_param("btn_list")){
     khach_hang_insert($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro,$dia_chi);
 
     // show dữ liệu
-    $items = khach_hang_selectall_by_role();
+    $items = khach_hang_select_page('ma_kh', 6);
     $VIEW_NAME = "list.php";
 }elseif(exist_param("btn_edit")){
     // lấy dữ liệu từ form
@@ -34,7 +34,7 @@ if(exist_param("btn_list")){
     $khach_hang_info = khach_hang_select_by_id($ma_kh);
     extract($khach_hang_info);
     // showw dữ liệu    
-    $items = khach_hang_selectall_by_role();
+    $items = khach_hang_select_page('ma_kh', 6);
     $VIEW_NAME = "edit.php";
 }elseif (exist_param("btn_delete")) {
 
@@ -42,7 +42,7 @@ if(exist_param("btn_list")){
     khach_hang_delete($ma_kh);
     //hiển thị danh sách
 
-    $items = khach_hang_selectall_by_role();
+    $items = khach_hang_select_page('ma_kh', 6);
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_delete_all")) {
     try {
@@ -52,7 +52,7 @@ if(exist_param("btn_list")){
     } catch (Exception $exc) {
         $MESSAGE = "Xóa thất bại!";
     }
-    $items = khach_hang_selectall_by_role();
+    $items = khach_hang_select_page('ma_kh', 6);
     $VIEW_NAME = "list.php";
 }elseif (exist_param("btn_update")) {
     // lấy dữ liệu từ form
@@ -74,7 +74,7 @@ if(exist_param("btn_list")){
     khach_hang_update($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro,$dia_chi);
 
     // Hiển thị danh sách
-    $items = khach_hang_selectall_by_role();
+    $items = khach_hang_select_page('ma_kh', 6);
     $VIEW_NAME = "list.php";
 }else {
     $VIEW_NAME = "add.php";
