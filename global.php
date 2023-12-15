@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$ROOT_URL = "/duan1";
+$ROOT_URL = "/duan1/restaurants";
 $CONTENT_URL = "$ROOT_URL/content";
 $ADMIN_URL = "$ROOT_URL/admin";
 $SITE_URL = "$ROOT_URL/site";
