@@ -171,26 +171,21 @@
         // Function to update the total amount  
         function updateTotalAmount() {
             var totalAmount = <?= $totalAll ?>;
-
             // Iterate through each row in the table
             $('#cart tbody tr').each(function () {
                 // Get the quantity and unit price for the current row
                 var quantity = parseInt($(this).find('.sl').val()) || 0;
                 var unitPrice = parseFloat($(this).find('.don_gia').val().replace(',', '')) || 0;
-
                 // Calculate subtotal for the current row
                 var subtotal = quantity * unitPrice;
-
                 // Update the displayed subtotal for the current row
                 $(this).find('.thanh_tien_sp').text(subtotal.toLocaleString() + ' đ');
-
                 // Add the subtotal to the total amount
                 totalAmount += subtotal;
             });
             // Display the total amount in the footer
             $('#tongdonhang .text-right td').text(totalAmount.toLocaleString() + ' đ');
         }
-
         // Call the updateTotalAmount function on page load
         updateTotalAmount();
 

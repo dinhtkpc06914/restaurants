@@ -33,7 +33,7 @@
                                             <?php
                                             if (isset($_SESSION['user']) && $_SESSION['user']['hinh'] != "") { ?>
                                                 <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['hinh'] ?>"
-                                                    width="30" height="70" class="img-circle profile_img" alt="">
+                                                  class="img-circle profile_img" alt="">
                                             <?php } else { ?>
                                                 <i class="fa fa-user primary-color"></i>
                                             <?php } ?>

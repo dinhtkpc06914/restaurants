@@ -44,7 +44,12 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-
+                    <div class="text-right">
+                           <button style="background-color: #2A3F54;" type="submit" class="btn text-white"
+                                id="deleteAll" onclick="return checkDelete()">
+                                Xóa mục đã chọn</button>
+                          
+                           </div>
                         <form action="?btn_delete_all" method="post">
 
                             <table width="100%" class="table table-hover table-bordered text-center">
@@ -52,15 +57,16 @@
                                     <tr class="text-white">
                                         <th><input type="checkbox" id="select-all"></th>
                                         <th>Mã món ăn</th>
-                                        <th>Tên món ăn</th>
+                                        <th style="width: 20px;">Tên món ăn</th>
                                         <th>Ảnh</th>
                                         <th>Đơn giá</th>
                                         <th>Giảm giá</th>
                                         <th>Lượt xem</th>
                                         <th>Ngày nhập</th>
+                                     
                                         <th>Đặc biệt?</th>
                                         <th style="width: 300px;">Mô tả</th>
-                                        <th></th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -106,6 +112,7 @@
                                         <td>
                                             <?= $ngay_nhap ?>
                                         </td>
+                                       
                                         <td>
                                             <?= ($dac_biet == 1) ? "Đặc biệt" : "Không"; ?>
                                         </td>
@@ -127,11 +134,7 @@
                                 </tbody>
 
                             </table>
-                            <button style="background-color: #2A3F54;" type="submit" class="btn text-white"
-                                id="deleteAll" onclick="return checkDelete()">
-                                Xóa mục đã chọn</button>
-                            <a href="index.php" class="btn  text-white" style="background-color: #2A3F54;">Thêm mới
-                                <i class="fas fa-plus-circle"></i></a>
+                          
                             <div class="mt-3" width="100%">
                                 <ul class="pagination justify-content-center">
                                     <!-- Mũi tên sang trái -->

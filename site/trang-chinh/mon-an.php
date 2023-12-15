@@ -46,27 +46,36 @@ $monAnList = mon_an_select_page1("ma_mon_an", $limit, $page);
             <?php endif; ?>
           </div>     
           <a   href="<?= $SITE_URL . '/mon-an/chi-tiet.php?ma_mon_an=' . $monAn['ma_mon_an'] ?>"
-            class=" btn-book animate ">Xem món </a>
+            class=" btn-book animate "><button class="text-white"  style="background-color: #cda45e; border-radius: 4px;">Xem món</button> </a>
         </div>
       <?php endforeach; ?>
     </div>
-
     <!-- Thêm phần phân trang -->
     <div class="row">
-      <div class="col-lg-12 d-flex justify-content-center">
+    <div class="col-lg-12 d-flex justify-content-center">
         <?php
         // Tổng số trang
         $totalPages = ceil($_SESSION['total_pro'] / $limit);
 
+        // Hiển thị mũi tên 'Qua lại'
+        if ($_SESSION['page'] > 1) {
+            echo '<a class="nav-link scrollto mt-5" href="?page=' . ($_SESSION['page'] - 1) . '">&#9668; Quay lại</a>';
+        }
+
         // Hiển thị link phân trang
         for ($i = 1; $i <= $totalPages; $i++) {
-          echo '<a class="nav-link scrollto mt-5" href="?page=' . $i . '">' . $i . '</a> ';
+            echo '<a class="nav-link scrollto mt-5" href="?page=' . $i . '">' . $i . '</a> ';
+        }
+
+        // Hiển thị mũi tên 'Tiếp theo'
+        if ($_SESSION['page'] < $totalPages) {
+            echo '<a class="nav-link scrollto mt-5" href="?page=' . ($_SESSION['page'] + 1) . '">Tiếp theo &#9658;</a>';
         }
         ?>
-      </div>
     </div>
-
+</div>
   </div>
+  
 </section>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 

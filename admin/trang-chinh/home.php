@@ -66,7 +66,7 @@ require_once "../../dao/pdo.php";
 			<div class="col-6 col-lg-3">
 				<div class="app-card app-card-stat shadow-sm h-100">
 					<div class="app-card-body p-3 p-lg-4">
-						<h4 class="stats-type mb-1">Loại món ăn</h4>
+						<h4 class="stats-type mb-1">Danh mục</h4>
 						<div class="stats-figure">
 							<?= $loai ?>
 						</div>

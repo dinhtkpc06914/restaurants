@@ -113,6 +113,13 @@ function mon_an_select_page1($order, $limit, $page)
     $sql = "SELECT * FROM mon_an ORDER BY $order DESC LIMIT $begin, $limit";
     return pdo_query($sql);
 }
+function mon_an_update_trang_thai($arr_ma_mon_an, $trang_thai)
+{
+    $arr_ma_mon_an = implode(",", $arr_ma_mon_an); // Chuyển mảng thành chuỗi để sử dụng trong câu SQL
+
+    $sql = "UPDATE mon_an SET trang_thai = ? WHERE ma_mon_an IN ($arr_ma_mon_an)";
+    pdo_execute($sql, $trang_thai);
+}
 
 
 

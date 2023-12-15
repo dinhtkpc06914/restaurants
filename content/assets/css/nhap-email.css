@@ -3,8 +3,9 @@ body {
     background-size: cover;
     background-position: center;
     color: #fff;
-    margin-top: 150px; /* Điều chỉnh margin-top để cân bằng với chiều cao của thanh điều hướng */
+    margin-top: 170px; /* Điều chỉnh margin-top để cân bằng với chiều cao của thanh điều hướng */
     font-family: 'Arial', sans-serif;
+  
 }
 .contents {
     padding: 40px;

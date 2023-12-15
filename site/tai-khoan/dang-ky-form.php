@@ -180,6 +180,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
         if (mat_khau.trim() === "") {
             document.getElementById("mat_khau_error").innerText = "Vui lòng nhập mật khẩu!";
             valid = false;
+        }  else if (mat_khau.trim() === "" || mat_khau.length < 5) {
+            document.getElementById("mat_khau_error").innerText = "Mật khẩu phải có ít nhất 5 ký tự!";
+            valid = false;
         } else {
             document.getElementById("mat_khau_error").innerText = "";
         }
@@ -197,7 +200,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
         if (email.trim() === "") {
             document.getElementById("email_error").innerText = "Vui lòng nhập email !";
             valid = false;
-        } else {
+         } else if (!/\S+@\S+\.\S+/.test(email)) {
+            document.getElementById("email_error").innerText = "Email không hợp lệ!";
+            valid = false;
+        }else {
             document.getElementById("email_error").innerText = "";
         }
         //kiểm tra địa chỉ

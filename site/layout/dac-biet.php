@@ -28,8 +28,8 @@
     }
 
     .img-fluid {
-        max-width: 100%;
-        height: auto;
+       width: 3rem;
+        height:3rem;
         border-radius: 5px; 
     }
 </style>
@@ -48,7 +48,7 @@
             <li class="list-group-item px-2 py-3">
                 <a class="d-flex align-items-center" href="<?= $SITE_URL . '/mon-an/chi-tiet.php?ma_mon_an=' . $hh_item['ma_mon_an'] ?>">
                     <div class="thumbnail">
-                        <img class="img-fluid" src="<?= $UPLOAD_URL . '/products/' . $hh_item['hinh'] ?>" alt="<?= $hh_item['ten_mon_an'] ?>" height="50px" width="40px">
+                        <img class="img-fluid" src="<?= $UPLOAD_URL . '/products/' . $hh_item['hinh'] ?>" alt="<?= $hh_item['ten_mon_an'] ?>" >
                     </div>
                     <span class="ml-2 d-block"><?= $hh_item['ten_mon_an'] ?></span>
                 </a>

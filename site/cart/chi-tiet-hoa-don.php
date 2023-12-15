@@ -55,6 +55,8 @@
             $order_trang_thai = 'Đang giao';
         } elseif ($orders['trang_thai'] == 3) {
             $order_trang_thai = 'Giao thành công';
+        }elseif($orders['trang_thai'] == 4) {
+            $order_trang_thai = 'Đã hủy';
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_trang_thai_order"])) {
@@ -94,11 +96,14 @@
                             </div>
                         </article>
                         <input type="hidden" name="order_details" value="item">
+                        
                         <div class="track">
+                       
                             <div class="step active">
                                 <span class="icon"><i class="fa fa-check text-black"></i></span>
                                 <span class="text text-dark">Đang chờ xác nhận</span>
                             </div>
+                           
                             <div class="step <?php if ($orders['trang_thai'] == 1 || $orders['trang_thai'] == 2 || $orders['trang_thai'] == 3)
                                 echo 'active' ?>">
                                     <span class="icon"><i class="fa fa-user text-black"></i></span>
@@ -114,6 +119,7 @@
                                     <span class="icon"><i class="fa fa-check text-dark"></i></span>
                                     <span class="text text-dark">Đã giao hàng</span>
                                 </div>
+                              
                             </div>
 
                             <hr>

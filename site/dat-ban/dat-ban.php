@@ -12,9 +12,6 @@ if (isset($_SESSION['user']['ma_kh'])) {
     extract($kh);
      
     $VIEW_NAME = "../dat-ban/thong-bao.php";
-
-
-
 }  
 
 

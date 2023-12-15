@@ -27,7 +27,7 @@
 <body>
     <div class="container">
         <div class="container mt-5">
-            <div class="card">
+            <div class="card ">
 
                 <div class="card-body mb-5">
                     <div class="row" style="background-url">
@@ -99,7 +99,7 @@
                                 <ul class="pagination">
                                     <!-- Mũi tên sang trái -->
                                     <li class="page-item <?= $_SESSION['page'] == 1 ? 'disabled' : '' ?>">
-                                        <a style="background-color: #cda45e" class="page-link mr-2 text-dark"
+                                        <a style="background-color: #cda45e" class="page-link  text-dark"
                                             href="?page=<?= max(1, $_SESSION['page'] - 1) ?>">
                                             <span>&laquo;</span>
                                         </a>
@@ -107,7 +107,7 @@
 
                                     <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>
                                         <li class="page-item <?= $_SESSION['page'] == $i ? 'active' : '' ?>">
-                                            <a style="background-color: #cda45e" class="page-link mr-2 text-dark"
+                                            <a style="background-color: #cda45e" class="page-link  text-dark"
                                                 href="?page=<?= $i ?>">
                                                 <?= $i ?>
                                             </a>
@@ -117,7 +117,7 @@
                                     <!-- Mũi tên sang phải -->
                                     <li
                                         class="page-item <?= $_SESSION['page'] == $_SESSION['total_page'] ? 'disabled' : '' ?>">
-                                        <a style="background-color: #cda45e" class="page-link mr-2 text-dark"
+                                        <a style="background-color: #cda45e" class="page-link text-dark"
                                             href="?page=<?= $_SESSION['page'] + 1 ?>">
                                             <span>&raquo;</span>
                                         </a>

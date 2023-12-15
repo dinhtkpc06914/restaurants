@@ -4,6 +4,12 @@ require_once "../../dao/khach_hang.php";
 require "../../global.php";
 
 extract($_REQUEST);
+
+$field = isset($_GET['field']) ? $_GET['field'] : "";
+$value = isset($_GET['value']) ? $_GET['value'] : "";
+
+$response = ["exists" => false, "message" => ""];
+
 if(exist_param("btn_list")){
     $items= khach_hang_select_page('ma_kh', 6);
     $VIEW_NAME = "list.php";
@@ -19,16 +25,26 @@ if(exist_param("btn_list")){
     $kich_hoat = isset($_POST['kich_hoat']) ? $_POST['kich_hoat'] : null;
     $vai_tro = isset($_POST['vai_tro']) ? $_POST['vai_tro'] : 0; // Mặc định là 0 (Khách hàng)
     $dia_chi = $_POST['dia_chi'];
-    // Mã hóa mật khẩu bằng Argon2
-    $hashed_mat_khau = password_hash($raw_mat_khau, PASSWORD_ARGON2I);
 
-    // insert database
-    khach_hang_insert($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro,$dia_chi);
+    // Check if username or email already exists
+    if (khach_hang_exist($ma_kh)) {
+        $MESSAGE = "Tên đăng nhập đã tồn tại";
+        $VIEW_NAME = "add.php";
+    } elseif (khach_hang_exist_email($email)) {
+        $MESSAGE = "Email đã tồn tại";
+        $VIEW_NAME = "add.php";
+    } else {
+        // Mã hóa mật khẩu bằng Argon2
+        $hashed_mat_khau = password_hash($raw_mat_khau, PASSWORD_ARGON2I);
 
-    // show dữ liệu
-    $items = khach_hang_select_page('ma_kh', 6);
-    $VIEW_NAME = "list.php";
-}elseif(exist_param("btn_edit")){
+        // insert database
+        khach_hang_insert($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro, $dia_chi);
+
+        // show dữ liệu
+        $items = khach_hang_select_page('ma_kh', 6);
+        $VIEW_NAME = "list.php";
+    }
+} elseif(exist_param("btn_edit")){
     // lấy dữ liệu từ form
     $ma_kh = $_REQUEST["ma_kh"];
     $khach_hang_info = khach_hang_select_by_id($ma_kh);

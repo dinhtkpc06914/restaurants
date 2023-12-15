@@ -141,9 +141,7 @@
                                     <input type="radio" name="phuong_thuc" value="0" checked placeholder=""> <span class="text-dark"
                                         id="phuong_thuc">Thanh toán khi nhận
                                         hàng</span>
-                                    <br>
-                                
-                                    <a href="thanh-toan-momo" class="btn-momo primary-btn mt-3">THANH TOÁN MOMO</a>
+                                    <br>                                                   
                                 </div>
 
                                 <div class="form-group">

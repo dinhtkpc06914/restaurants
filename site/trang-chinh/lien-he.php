@@ -38,14 +38,10 @@
                 <h4>Số điện thoại:</h4>
                 <p>+1 5589 55488 55s</p>
               </div>
-
             </div>
-
           </div>
-
           <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Tên của bạn" required>
@@ -60,10 +56,10 @@
               </div>
               <div class="my-3">
                 <div class="loading">Đang tải</div>
-                <div class="error-message"></div>
+               
                 <div class="sent-message">Cảm ơn đã liên hệ với chúng tôi!</div>
               </div>
-              <div class="text-center"><button type="submit">Gửi tin nhắn</button></div>
+              <div class="text-center"><button type="submit" name="btn_lienhe">Gửi tin nhắn</button></div>
             </form>
 
           </div>
@@ -71,4 +67,7 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section>
+
+
+   

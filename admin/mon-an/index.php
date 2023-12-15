@@ -80,6 +80,20 @@ if (exist_param("btn_list")) {
 
     $items =mon_an_select_page('ma_mon_an', 6);
     $VIEW_NAME = "list.php";
+}elseif (exist_param("btn_update_status")) {
+    try {
+        $arr_ma_mon_an = $_POST['ma_mon_an'];
+        $trang_thai = $_POST['trang_thai'];
+
+        mon_an_update_trang_thai($arr_ma_mon_an, $trang_thai);
+
+        $MESSAGE = "Cập nhật trạng thái thành công!";
+    } catch (Exception $exc) {
+        $MESSAGE = "Cập nhật trạng thái thất bại!";
+    }
+
+    $items = mon_an_select_page('ma_mon_an', 6);
+    $VIEW_NAME = "list.php";
 } else {
     $loai_mon = loai_mon_select_all('ASC');
     $VIEW_NAME = "add.php";

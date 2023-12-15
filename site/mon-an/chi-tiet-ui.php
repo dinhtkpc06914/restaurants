@@ -12,7 +12,8 @@
     }
 
     .img-fluid {
-        width: 28   rem;
+        width: 28rem;
+        height: 29rem;
         border-radius: 2rem;
     }
     

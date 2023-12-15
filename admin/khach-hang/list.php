@@ -26,13 +26,13 @@
                                 <thead>
                                     <tr style="background-color: #2A3F54;" class="text-white">
                                         <th><input type="checkbox" id="select-all"></th>
-                                        <th>Tên đăng nhập</th>
-                                        <th>Họ và tên</th>
-                                        <th>Địa chỉ email</th>
-                                        <th>SĐT</th>
-                                        <th>Ảnh</th>
-                                        <th>Kích hoạt</th>
-                                        <th>Địa chỉ</th>
+                                        <th scope="col">Tên đăng nhập</th>
+                                        <th scope="col">Họ và tên</th>
+                                        <th scope="col">Địa chỉ email</th>
+                                        <th scope="col">SĐT</th>
+                                        <th scope="col">Ảnh</th>
+                                        <th scope="col">Kích hoạt</th>
+                                        <th scope="col">Địa chỉ</th>
                                         <th></th>
                                     </tr>
                                 </thead>

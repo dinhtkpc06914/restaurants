@@ -43,7 +43,7 @@
                 <table width="100%" class="table table-hover table-bordered text-center">
                     <thead >
                         <tr  style="background-color: #2A3F54;" class=" text-white">
-                            <th><input type="checkbox" id="selmect-all"></th>
+                            <th><input type="checkbox" id="select-all"></th>
                             <th>Mã loại món</th>
                             <th>Tên loại món</th>
                             <th>Mô tả</th>

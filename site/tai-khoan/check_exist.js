@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
           const response = JSON.parse(xhr.responseText);
           const messageElement = document.getElementById(field + "-message");
-  
+
           if (response.exists) {
             messageElement.innerHTML = response.message;
           } else {

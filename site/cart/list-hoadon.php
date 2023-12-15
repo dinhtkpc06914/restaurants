@@ -194,6 +194,9 @@ if (isset($_SESSION['user'])) {
         } elseif($trang_thai == 3) {
             $order_trang_thai = 'Giao thành công';
         }
+        elseif($trang_thai == 4) {
+            $order_trang_thai = 'Đã hủy';
+        }
         ?>
         
      <body>

@@ -41,13 +41,16 @@ require_once "../../dao/dat_ban.php"
 <body>
   <section id="book-a-table" class="book-a-table">
     <div class="container" data-aos="fade-up">
-      <div class="card bg-light">
+     
         <form action="<?= $SITE_URL . '/dat-ban/index.php' ?>" method="post" role="form" enctype="multipart/form-data"
-          data-aos="fade-up" data-aos-delay="100" onsubmit="event.preventDefault(); validateForm();">
+          data-aos="fade-up" data-aos-delay="100" onsubmit="return validateForm();">
           <div class="row justify-content-center">
+         
             <div class="col-lg-8 col-md-6 form-group">
-              <div class="section-title text-center " style="background-color: #cda45e" >
-                <p class="text-white">Đặt bàn</p>
+            <div class="card">
+             <div class="col-sm-10 mx-auto">
+             <div class="section-title text-center "  style="color: #cda45e">
+                <p  >ĐẶT BÀN</p>
               </div>
               <input type="text" name="name" class="form-control mt-3" id="name" placeholder="Tên của bạn"
                 data-rule="minlen:4" data-msg="Please enter at least 4 chars">
@@ -55,11 +58,11 @@ require_once "../../dao/dat_ban.php"
               <input type="email" class="form-control mt-4 " name="email" id="email" placeholder="Email của bạn"
                 data-rule="email" data-msg="Please enter a valid email">
               <p id="email_error" class="text-danger"></p>
-              <label for="date" class="text-dark">Ngày</label>
+              <label for="date" class="text-dark ml-2">Ngày</label>
               <input type="date" name="date" class="form-control mt-2" id="date" data-rule="minlen:4"
                 data-msg="Vui lòng nhập ít nhất 4 ký tự">
               <p id="date_error" class="text-danger"></p>
-              <label for="time" class="text-dark">Giờ</label>
+              <label for="time" class="text-dark ml-2">Giờ</label>
               <input type="time" class="form-control" name="time" id="time" data-rule="minlen:4"
                 data-msg="Vui lòng nhập ít nhất 4 ký tự">
               <p id="time_error" class="text-danger"></p>
@@ -71,7 +74,7 @@ require_once "../../dao/dat_ban.php"
               <input type="text" class="form-control mt-4" name="phone" id="phone" placeholder="Số điện thoại"
                 data-rule="minlen:4" data-msg="Please enter at least 4 chars">
               <p id="phone_error" class="text-danger"></p>
-              <label for="ma_loai_ban" class="text-dark">Loại bàn</label>
+              <label for="ma_loai_ban" class="text-dark ml-2">Loại bàn</label>
               <select class="form-control " name="ma_loai_ban" id="ma_loai_ban" data-rule="required"
                 data-msg="Please select a table type">
 
@@ -87,17 +90,12 @@ require_once "../../dao/dat_ban.php"
               <p id="ma_loai_ban_error" class="text-danger"></p>
               <textarea class="form-control mt-4" name="message" rows="5" placeholder="Lời nhắn"></textarea>
               <p class="text-danger"></p>
-              <button style="background-color: #cda45e" type="submit"
-                class="col-sm-12 btn btn-outline-dark text-white mt-4 ">Đặt bàn</button>
+              <div class="text-center"><button  style="background-color: #cda45e" type="submit" class=" col-sm-4 btn btn-outline-dark text-white form-control">Đặt bàn</button></div>
+             </div>
             </div>
-
-
-          </div>
-
+            </div>         
         </form>
       </div>
-
-
     </div>
   </section><!-- End Book A Table Section -->
 </body>
@@ -118,7 +116,7 @@ require_once "../../dao/dat_ban.php"
       // Check if the phone number matches the format
       return phoneRegex.test(phoneNumber);
     }
-
+    
   
 
    
@@ -133,7 +131,11 @@ require_once "../../dao/dat_ban.php"
     if (email === "") {
       document.getElementById("email_error").innerText = "Vui lòng nhập email!";
       valid = false;
-    } else {
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+            document.getElementById("email_error").innerText = "Email không hợp lệ!";
+            valid = false;
+        }
+    else {
       document.getElementById("email_error").innerText = "";
     }
 

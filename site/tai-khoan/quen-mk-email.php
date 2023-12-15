@@ -2,10 +2,11 @@
 <style>
     body{
         background-image: url("<?= $CONTENT_URL ?>/assets/img/about-bg.jpg");
+       
     }
 </style>
 <link href="<?=$CONTENT_URL?>/assets/css/nhap-email.css" rel="stylesheet">
-<body>
+<body >
 
     <div class="content">
         <div class="container">

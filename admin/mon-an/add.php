@@ -133,7 +133,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 text-center">
+                            <div class="mb-3 text-right">
                                 <input type="submit" name="btn_insert" value="Thêm mới" class="btn text-white"
                                     style="background-color: #2A3F54;">
                                 <a href="index.php?btn_list"><input type="button" class="btn text-white"

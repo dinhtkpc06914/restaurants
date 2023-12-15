@@ -1,4 +1,10 @@
  <!-- ======= Footer ======= -->
+ <style>
+        .success-message {
+            display: none;
+            color: green;
+        }
+    </style>
  <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -36,12 +42,13 @@
 
         
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Bản tin của chúng tôi</h4>
+            <h4>Nhập email nếu bạn cần hổ trợ</h4>
         
-            <form action="../layout/index.php" method="post" >
-              <input type="email" name="email"><input class="btn_submittt" type="submit" value="Subscribe">
+            <form id="subscribeForm" action="../layout/index.php" method="post" target="_self" >
+            <input type="hidden" name="id">
+              <input type="email" name="email"><input class="btn_submittt" type="submit" value="Gửi">
             </form>
-
+            <h4 id="successMessage" class="success-message">Cảm ơn bạn đã quan tâm ! chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</h4>
           </div>
 
         </div>
@@ -60,4 +67,24 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+  <script>
+        document.getElementById('subscribeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Tạm thời ẩn form và hiển thị thông báo
+            document.getElementById('subscribeForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Gửi dữ liệu form đến server
+            var formData = new FormData(this);
+            fetch('../layout/index.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        });
+    </script>
+    <?php
