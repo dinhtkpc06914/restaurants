@@ -1,17 +1,16 @@
 
 <?php
 require '../../global.php';
-require '../../dao/email.php';
-$id = $_POST['id'];
+
 $email = $_POST['email'];
 
 require_once '../../dao/pdo.php';
-$sql = "INSERT INTO email(id, email) 
-        VALUES (?, ?)";
+$sql = "INSERT INTO email( email) 
+        VALUES ( ?)";
 try {
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$id ,$email]);
+    $stmt->execute([$email]);
 
     // Lấy thông tin email vừa insert
     $insertedEmail = $email;

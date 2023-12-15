@@ -4,10 +4,9 @@
       <div class="row">
         <div class="col-lg-8">
           <h1>Chào mừng đến <span>Simple Savory</span></h1>
-          <h2>M ngu như con bò!</h2>
+          <h2>Cung cấp thực phẩm sạch trong hơn 18 năm!</h2>
 
           <div class="btn d-flex">
-        
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">Menu của chúng tôi</a>
             <li class="  <?= $name_page == 'dat_bat' ? 'active' : '' ?>">       <a  class="btn-book animated fadeInUp"  href="<?= $SITE_URL ?>/trang-chinh/index.php?dat_ban">Đặt bàn</a></li>
           </div>

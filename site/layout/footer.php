@@ -45,16 +45,14 @@
             <h4>Nhập email nếu bạn cần hổ trợ</h4>
         
             <form id="subscribeForm" action="../layout/index.php" method="post" target="_self" >
-              <input type="hidden" name="id">
-              <input type="email" name="email"><input class="btn_submittt" type="submit" value="Gửi">
+             
+              <input type="email" name="email"><input  type="submit" value="Gửi">
             </form>
             <h4 id="successMessage" class="success-message">Cảm ơn bạn đã quan tâm ! chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</h4>
           </div>
-
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
