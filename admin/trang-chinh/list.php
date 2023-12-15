@@ -52,7 +52,7 @@
     <div class="card-single col d-flex justify-content-around bg-success text-white py-5 ml-3">
             <div>
                 <h5 class="font-weight-bold"><?= $loai ?></h5>
-                <span>Danh mục</span>
+                <span>DANH MỤC</span>
             </div>
             <div>
                 <i class="fas fa-th-list" style="font-size: 80px;"></i>
@@ -61,7 +61,7 @@
         <div class="card-single col d-flex justify-content-around bg-warning text-white py-5 ml-3">
             <div>
                 <h5 class="font-weight-bold"><?= $mon_an ?></h5>
-                <span>Sản phẩm</span>
+                <span>SẢN PHẨM</span>
             </div>
             <div>
                 <i class="fas fa-sitemap" style="font-size: 80px;"></i>
@@ -70,7 +70,7 @@
         <div class="card-single col d-flex justify-content-around bg-danger text-white py-5 ml-3">
             <div>
                 <h5 class="font-weight-bold"><?= $khach_hang ?></h5>
-                <span>Khách hàng</span>
+                <span>KHÁCH HÀNG</span>
             </div>
             <div>
                 <i class="fas fa-users" style="font-size: 80px;"></i>
@@ -79,7 +79,7 @@
         <div class="card-single col d-flex justify-content-around bg-primary text-white py-5 ml-3">
             <div>
                 <h5 class="font-weight-bold"><?= $binh_luan ?></h5>
-                <span>Bình luận</span>
+                <span>BÌNH LUẬN</span>
             </div>
             <div>
                 <i class="fas fa-comments" style="font-size: 80px;"></i>
