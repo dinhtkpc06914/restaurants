@@ -25,7 +25,7 @@ if (exist_param("btn_thanh_toan")) {
     $VIEW_NAME = "../cart/chi-tiet-hoa-don.php";
 } else if (exist_param("btn_thanh_toan_vnpay")){
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "http://localhost/duan1/site/cart/vnpay_return.php";
+        $vnp_Returnurl = "http://localhost/duan1/restaurants/site/cart/vnpay_return.php";
         $vnp_TmnCode = "YTH94E2V"; //Mã website tại VNPAY 
         $vnp_HashSecret = "YJTYOYVIPDPYBWZCDCCOOCMYERBRDRGT"; //Chuỗi bí mật
 
