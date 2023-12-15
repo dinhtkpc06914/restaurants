@@ -1,0 +1,56 @@
+Tài liệu test 
+
+
+Trang quản trị admin:
+ - Chức năng thêm mới khách hàng:
+  + Mã khách hàng: PC06914
+  + Tên khách hàng: Nguyễn Văn A
+  + Mật khẩu: 12345sau
+  + Xác Nhận mật khẩu: 12345sau
+  + Địa chỉ email: tkd25082003@gmail.com
+  + Số điện thoại: 0339680260
+  + Địa chỉ: Âp bờ kinh 2, xã mỹ hòa , Huyện cầu ngang, tỉnh Trà Vinh
+
+- Chức năng thêm mới loại bàn:
+  + Tên loại bàn: Bàn tiệc sinh nhật 
+  + Mô tả: Loại bàn chỉ dành cho các bửa tiệc sinh nhật.
+
+- Chức năng thêm mới danh mục:
+  + Tên danh mục: Món lẩu 
+  + Mô tả: Danh mục để chứa các món lẩu.
+
+- Chức năng thêm mới món ăn:
+  + Tên món ăn: Mì ý sôt thịt bằm
+  + Đơn giá: 170000
+  + Giá giảm : 25000
+  + Mô tả: Mì Ý sốt thịt bằm có thể được thưởng thức ngay khi nóng hổi, kèm theo bánh mì nướng hoặc phô mai Parmesan. 
+Đây là một món ăn đơn giản nhưng ngon miệng, thích hợp cho cả gia đình hoặc bữa tiệc nhẹ.
+
+
+Trang client:
+ - Chức năng đăng ký tài khoản:
+  + Họ tên: Nguyễn Văn B:
+  + Tên đăng nhập: pc06965:
+  + Địa chỉ email: tkd25092003@gmail.com
+  + Số điện thoại: 0336676239
+  + Mật khẩu: 12345sau
+  + Nhập lại mật khẩu: 12345sau
+  + Địa chỉ: Âp bờ kinh 2, xã mỹ hòa , Huyện cầu ngang, tỉnh Trà Vinh
+
+- Chức năng đặt bàn:
+  + Họ tên: Nguyễn Văn B:
+  + Địa chỉ email: tkd25092003@gmail.com
+  + Ngày đặt: 17/12/2023
+  + Giờ đặt: 12:00 CH
+  + Số người: 6
+  + Số điện thoại: 0336676239
+  + Lời nhắn: Chúng tôi có một bửa tiệc sinh nhật, vui lòng chuẩn bị thật kỹ lưỡng và đúng giờ.
+
+
+
+
+
+
+
+
+ 

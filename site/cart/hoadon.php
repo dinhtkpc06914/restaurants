@@ -13,14 +13,7 @@ if (isset($_SESSION['user']['ma_kh'])) {
       $items = hoa_don_select_with_khach_hang($ma_kh);
     $VIEW_NAME = "../cart/list-hoadon.php";
 
-
-
-}  else if (exist_param("btn_list")) {
-
-    $VIEW_NAME = "../cart/list-hoadon.php";
-}
-
-
+}  
 else {
     header("location:" . $SITE_URL . "/tai-khoan/dang-nhap.php");
 }

@@ -121,7 +121,6 @@ function getFullOrderInformation($ma_hoa_don) {
         WHERE hoa_don.ma_hoa_don = ?
         
     ";
-
     return pdo_query($sql, $ma_hoa_don);
 }
 function select_hoa_don_and_mon_an($ma_hoa_don) {
@@ -138,8 +137,36 @@ function select_hoa_don_and_mon_an($ma_hoa_don) {
            hoa_don ON mon_an.ma_mon_an =hoa_don.ma_mon_an
         WHERE ma_hoa_don = ?;
     ";
-
     return pdo_query($sql, $ma_hoa_don);
 }
+function invoice__vnpay_insert(
+    $vnp_TxnRef,
+    $vnp_Amount,
+    $vnp_OrderInfo,
+    $vnp_ResponseCode,
+    $vnp_TransactionNo,
+    $vnp_BankCode,
+    $vnp_PayDate
+) {
+    $sql = "INSERT INTO vnpay (
+        vnp_TxnRef,
+        vnp_Amount,
+        vnp_OrderInfo,
+        vnp_ResponseCode,
+        vnp_TransactionNo,
+        vnp_BankCode,
+        vnp_PayDate
+    ) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
+    pdo_execute(
+        $sql,
+        $vnp_TxnRef,
+        $vnp_Amount,
+        $vnp_OrderInfo,
+        $vnp_ResponseCode,
+        $vnp_TransactionNo,
+        $vnp_BankCode,
+        $vnp_PayDate
+    );
+}
 

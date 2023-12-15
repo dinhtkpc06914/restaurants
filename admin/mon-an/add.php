@@ -71,6 +71,7 @@
                                     <input type="text" name="ten_mon_an" id="ten_mon_an" class="form-control"
                                         placeholder="Nhập tên món ăn...">
                                     <p id="ten_mon_an_error" style="color: red;"></p>
+                                    <p class="text-danger"><?=  $MESSAGE?></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -157,7 +158,7 @@
         var mo_ta_mon = document.getElementsByName("mo_ta_mon")[0].value;
 
         if (ten_mon_an === "") {
-            document.getElementById("ten_mon_an_error").innerText = "Vui lòng nhập tên hàng hóa.";
+            document.getElementById("ten_mon_an_error").innerText = "Vui lòng nhập tên món ăn.";
             valid = false;
         } else {
             document.getElementById("ten_mon_an_error").innerText = "";

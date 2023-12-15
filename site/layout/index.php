@@ -43,15 +43,12 @@ function GuiMail($toEmail)
         $mail->Password = 'ozqn cgzf cyzw zwzt';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-
         //Recipients
         $mail->setFrom('dinhtkpc06914@fpt.edu.vn', 'restaurant');
         $mail->addAddress($toEmail); // Sử dụng thông tin email vừa lấy từ cơ sở dữ liệu
-
         //Content
         $mail->isHTML(true);
         $mail->Subject = 'Thư Liên Hệ Từ Khách Hàng:';
-
         $noidungthu = "
             <h3>Á đù z hia</h3>
             <p>Cảm ơn bạn đã quan tâm! Chúng tôi sẽ liên hệ để hỗ trợ bạn trong thời gian sớm nhất.</p>

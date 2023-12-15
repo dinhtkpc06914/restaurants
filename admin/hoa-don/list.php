@@ -108,7 +108,7 @@
                         <form action="index.php" method="post">
                             <table class="table">
                                 <thead class="alert-success " style="background-color: #2A3F54;">
-                                    <tr >
+                                    <tr>
                                         <th>Mã hóa đơn</th>
                                         <th>Họ và Tên</th>
                                         <th>Giảm Giá</th>
@@ -149,7 +149,7 @@
                                                 </td>
 
                                                 <td>
-                                                  
+
                                                     <form action="index.php" method="post">
                                                         <div class="select-wrapper" data-value="<?= $trang_thai ?>">
                                                             <div class="select-value">
@@ -168,9 +168,9 @@
                                                                     case 3:
                                                                         echo "Đã giao";
                                                                         break;
-                                                                        case 4:
-                                                                            echo "Đã hủy";
-                                                                            break;
+                                                                    case 4:
+                                                                        echo "Đã hủy";
+                                                                        break;
                                                                     default:
                                                                         echo "";
                                                                 }
@@ -197,12 +197,12 @@
                                                                 </option>
                                                             </select>
                                                         </div>
-                                                       
-                                                    <button type="submit" style="background: #2A3F54; height:1.8rem"
+
+                                                        <button type="submit" style="background: #2A3F54; height:1.8rem"
                                                             class='btn text-white ' name="btn_xacnhan">
                                                             <i class="fas fa-check"></i>
                                                         </button>
-                                                 
+
                                                     </form>
                                                 </td>
                                                 <td>

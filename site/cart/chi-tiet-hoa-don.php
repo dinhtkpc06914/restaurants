@@ -75,7 +75,7 @@
                     <h3 class="text-center" style="background-color: #cda45e;"> Chi tiết đơn hàng</h3>
 
                     <div class="card-body">
-                        <a name="btn_list" class="text-white btn btn-dark col-sm-1" href="hoadon.php?btn_list">
+                        <a name="btn_list" class="text-white btn btn-dark col-sm-1" id="backButton">
                             <i class="bi bi-chevron-double-left">Quay lại</i>
                         </a>
 
@@ -149,7 +149,7 @@
                                                 <del>
                                                     <?= number_format($item['don_gia'], 0, ".", ".") ?>đ
                                                 </del>
-                                                <span>
+                                                <span class="text-danger">
                                                     <?= number_format((($item['don_gia'] - $item['gia_giam'])), 0, ".", ".") ?>đ
 
                                                 </span>
@@ -221,3 +221,14 @@
         </div>
     <?php endforeach; ?>
 </body>
+<script>
+    document.getElementById('backButton').addEventListener('click', function() {
+    window.history.back();
+});
+document.getElementById('backButton').addEventListener('click', function() {
+    window.history.go(1);
+
+});
+
+
+</script>

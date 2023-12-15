@@ -1,9 +1,9 @@
 <?php
 require_once 'pdo.php';
-function loai_insert($ten_loai_ban, $mo_ta,$trang_thai)
+function loai_insert($ten_loai_ban, $mo_ta)
 {
-    $sql = "INSERT INTO loai_ban(ten_loai_ban, mo_ta) VALUES(?,?,?)";
-    pdo_execute($sql, $ten_loai_ban,$mo_ta,$trang_thai);
+    $sql = "INSERT INTO loai_ban(ten_loai_ban, mo_ta) VALUES(?,?)";
+    pdo_execute($sql, $ten_loai_ban,$mo_ta);
 }
 function loai_update(  $ma_loai_ban,$ten_loai_ban,$mo_ta)
 {
@@ -33,10 +33,10 @@ function loai_select_by_id($ma_loai_ban)
     $sql = "SELECT * FROM loai_ban WHERE ma_loai_ban=?";
     return pdo_query_one($sql, $ma_loai_ban);
 }
-function loai_exist($ma_loai_ban)
+function loai_exist($ten_loai_ban)
 {
-    $sql = "SELECT count(*) FROM loai_ban WHERE ma_loai_ban=?";
-    return pdo_query_value($sql, $ma_loai_ban) > 0;
+    $sql = "SELECT count(*) FROM loai_ban WHERE ten_loai_ban=?";
+    return pdo_query_value($sql, $ten_loai_ban) > 0;
 }
 
 function loai_exist_ten_loai_ban_add($ten_loai_ban)

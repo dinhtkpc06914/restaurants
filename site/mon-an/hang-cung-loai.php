@@ -11,10 +11,9 @@
     }
 
     .product-img {
-        width: 100%;
-        height: auto;
-        max-width: 25rem;
-        max-height: 15rem;
+      
+     width: 350px;
+     height: 300px;
     }
 
     .container {

@@ -45,6 +45,10 @@
         background-image: url(<?= $CONTENT_URL ?>/assets/img/nguvl.jpeg);
         font: 1em sans-serif;
     }
+    .img-responsive{
+        width: 100px;
+        height: 80px;
+    }
 </style>
 
 <body>
@@ -82,7 +86,7 @@
                                             <div class="row ">
                                                 <div class="col-sm-2 hidden-xs"><img
                                                         src="<?= $UPLOAD_URL . '/products/' . $item['hinh'] ?>" alt="Sản phẩm 1"
-                                                        class="img-responsive" width="100">
+                                                        class="img-responsive" >
                                                 </div>
                                                 <div class="col-sm-8 mt-4 ml-2">
                                                  
@@ -94,7 +98,7 @@
                                             </div>
                                         </td>
                                         <td data-th="Đơn giá" class="d-flex mr-2">                                
-                                            <span class="mr-2">
+                                            <span class="mr-2 ">
                                                <del>
                                                <?= number_format($item['don_gia'], 0, ".", ".") ?>đ
                                                </del>
@@ -102,9 +106,8 @@
 
                                             <input type="hidden" class="don_gia " name="don_gia"
                                                 value="<?= $item['don_gia'] ?>">
-                                            <span>
-                                            <?= number_format((($item['don_gia'] - $item['gia_giam'])), 0, ".", ".") ?>đ
-                                            
+                                            <span class="text-danger">
+                                            <?= number_format((($item['don_gia'] - $item['gia_giam'])), 0, ".", ".") ?>đ                                      
                                             </span>
                                         </td>
                                         <td data-th="Số lượng">
@@ -115,7 +118,7 @@
                                                     value="<?= $index ?>">
                                             </form>
                                         </td>
-                                        <td data-th="Tổng tiền" class="text-center">
+                                        <td data-th="Tổng tiền" class="text-center text-danger">
                                             <?= number_format((($item['don_gia'] - $item['gia_giam']) * $item['sl']), 0, ".", ".") ?>
                                             đ
                                         </td>

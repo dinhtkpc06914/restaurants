@@ -3,6 +3,7 @@ require '../../global.php';
 require '../../dao/mon_an.php';
 require '../../dao/khach_hang.php';
 //-------------------------------//
+
 extract($_REQUEST);
 // var_dump($_REQUEST);
 // die;
@@ -15,7 +16,8 @@ if (exist_param("form_invoice")) {
     }  else {
         header("location:" . $SITE_URL . "/tai-khoan/dang-nhap.php");
     }
-} else {
+}
+ else {
     $VIEW_NAME = "../cart/cart.php";
 }
 require '../layout.php';

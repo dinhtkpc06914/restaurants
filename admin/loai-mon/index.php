@@ -3,25 +3,33 @@ require_once "../../dao/pdo.php";
 require_once "../../dao/loai_mon.php";
 require "../../global.php";
 
-
-
 // chech_login();
 
 extract($_REQUEST);
-if (exist_param("btn_list")) {
+extract($_REQUEST);
+$field = isset($_GET['field']) ? $_GET['field'] : "";
+$value = isset($_GET['value']) ? $_GET['value'] : "";
 
+$response = ["exists" => false, "message" => ""];
+if (exist_param("btn_list")) {
     //show dữ liệu
     $items = loai_mon_select_all();
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_insert")) {
+    if (loai_mon_exist_ten_loai_mon_add($ten_loai_mon)) {
+        $MESSAGE = "Tên danh mục đã tồn tại";
+        $VIEW_NAME = "add.php"; // Set the view to the add form to display the error message
+    } else {
+        $ten_loai_mon = $_POST['ten_loai_mon'];
+        $mo_ta = $_POST['mo_ta'];
+        //insert vào db
+        loai_mon_insert($ten_loai_mon, $mo_ta);
+        //show dữ liệu
+        $items = loai_mon_select_all();
+        $VIEW_NAME = "list.php";
+    }
     #lấy dữ liệu từ form
-    $ten_loai_mon = $_POST['ten_loai_mon'];
-    $mo_ta = $_POST['mo_ta'];
-    //insert vào db
-    loai_mon_insert($ten_loai_mon, $mo_ta);
-    //show dữ liệu
-    $items = loai_mon_select_all();
-    $VIEW_NAME = "list.php";
+   
 } else if (exist_param("btn_edit")) {
     #lấy dữ liệu từ form
     $ma_loai_mon = $_REQUEST['ma_loai_mon'];

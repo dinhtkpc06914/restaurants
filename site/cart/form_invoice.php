@@ -98,7 +98,7 @@
               <div class="card">
                 <div class="card-body">
                 <div class="row m-1 pb-5">
-                    <form action="<?= $SITE_URL.'/cart/invoice.php' ?>" method="POST" class="m-auto" id="invoice"
+                    <form action="<?= $SITE_URL.'/cart/invoice.php?btn_thanh_toan_vnpay' ?>" method="POST" class="m-auto" id="invoice"
                         enctype="multipart/form-data" onsubmit="return validateForm(event)">
 
                         <div class="row">
@@ -230,7 +230,6 @@
                                                         value="<?= $gia = number_format($totalAll, 0, ".", ".") ?>đ">
                                                 </td>
                                             </tfoot>
-
                                         </table>
                                         <div class="text-end">
                                             <button type="submit" name="btn_thanh_toan"
@@ -238,13 +237,16 @@
                                                 style="background-color: #cda45e;">
                                                THANH TOÁN 
                                             </button>
+                                            <button type="submit" name="redirect"
+                                                class="btn btn-success col-sm-6 btn-block pt-2 pb-2 rounded-pill"
+                                                style="background-color: #cda45e;">
+                                               THANH TOÁN VNPAY
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
                 </div>

@@ -7,31 +7,42 @@ require "../../global.php";
 // chech_login();
 
 extract($_REQUEST);
+extract($_REQUEST);
+$field = isset($_GET['field']) ? $_GET['field'] : "";
+$value = isset($_GET['value']) ? $_GET['value'] : "";
+
+$response = ["exists" => false, "message" => ""];
 if (exist_param("btn_list")) {
 
     //show dữ liệu
     $items =mon_an_select_page('ma_mon_an', 6);
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_insert")) {
-    #lấy dữ liệu từ form
-    $ten_mon_an = $_POST['ten_mon_an'];
-    $don_gia = $_POST['don_gia'];
-    $gia_giam = $_POST['giam_gia'];
-    $ma_loai_mon = $_POST['ma_loai_mon'];
-    $dac_biet = $_POST['dac_biet'];
-    $luot_xem = $_POST['so_luot_xem'];
-    $mo_ta_mon = $_POST['mo_ta_mon'];
-    $ngay_nhap = $_POST['ngay_nhap'];
+    if (mon_an_exist_add($ten_mon_an)) {
+        $MESSAGE = "Tên món ăn đã tồn tại";
+        $VIEW_NAME = "add.php"; // Set the view to the add form to display the error message
+    } else{
+   #lấy dữ liệu từ form
+   $ten_mon_an = $_POST['ten_mon_an'];
+   $don_gia = $_POST['don_gia'];
+   $gia_giam = $_POST['giam_gia'];
+   $ma_loai_mon = $_POST['ma_loai_mon'];
+   $dac_biet = $_POST['dac_biet'];
+   $luot_xem = $_POST['so_luot_xem'];
+   $mo_ta_mon = $_POST['mo_ta_mon'];
+   $ngay_nhap = $_POST['ngay_nhap'];
 
-    // $hinh = $_FILES['hinh']['name'];
-    // Upload file lên host
-    $hinh = save_file('hinh', "$UPLOAD_URL/products/");
-    //insert vào db
-    mon_an_insert($ten_mon_an, $don_gia, $gia_giam, $hinh,$mo_ta_mon,$dac_biet, $ngay_nhap, $luot_xem,$ma_loai_mon  );
+   // $hinh = $_FILES['hinh']['name'];
+   // Upload file lên host
+   $hinh = save_file('hinh', "$UPLOAD_URL/products/");
+   //insert vào db
+   mon_an_insert($ten_mon_an, $don_gia, $gia_giam, $hinh,$mo_ta_mon,$dac_biet, $ngay_nhap, $luot_xem,$ma_loai_mon  );
 
-    //show dữ liệu
-    $items =mon_an_select_page('ma_mon_an', 6);
-    $VIEW_NAME = "list.php";
+   //show dữ liệu
+   $items =mon_an_select_page('ma_mon_an', 6);
+   $VIEW_NAME = "list.php";
+    }
+ 
 } else if (exist_param("btn_edit")) {
     #lấy dữ liệu từ form
     $ma_mon_an = $_REQUEST['ma_mon_an'];

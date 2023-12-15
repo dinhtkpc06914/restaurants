@@ -2,9 +2,8 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>THÊM MỚI KHÁCH HÀNG</h3>
+                            <h3>CHI TIẾT ĐƠN HÀNG</h3>
                         </div>
-
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 form-group pull-right top_search">
                                 <div class="input-group">

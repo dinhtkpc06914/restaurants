@@ -42,9 +42,9 @@
                                 <div class="x_content">
                                 <form action="index.php" method="POST" id="add_loai" onsubmit="return validateForm()" >              
                     <div class="mb-3" >
-                        <label for="ten_loai_mon" class="form-label">Tên loại món</label>
+                        <label for="ten_loai_mon" class="form-label">Tên danh mục</label>
                         <input  type="text" name="ten_loai_mon" class="form-control"  placeholder="Nhập tên loại...">
-                        <p id="ten_loai_mon_error" style="color: red;"></p>
+                        <p id="ten_loai_mon_error" style="color: red;"><?= $MESSAGE ?></p>
                     </div>
                     <div class="mb-3">
                         <label for="mo_ta" class="form-label">Mô tả</label>
