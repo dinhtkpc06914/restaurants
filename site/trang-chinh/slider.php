@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-8">
           <h1>Chào mừng đến <span>Simple Savory</span></h1>
-          <h2>Cung cấp thực phẩm tuyệt vời trong hơn 18 năm!</h2>
+          <h2>M ngu như con bò!</h2>
 
           <div class="btn d-flex">
         
