@@ -49,7 +49,7 @@ function GuiMail($toEmail)
         $mail->isHTML(true);
         $mail->Subject = 'Thư Liên Hệ Từ Khách Hàng:';
         $noidungthu = "
-            <h3>Á đù z hia</h3>
+            <h3>SIMPLE SAVORY</h3>
             <p>Cảm ơn bạn đã quan tâm! Chúng tôi sẽ liên hệ để hỗ trợ bạn trong thời gian sớm nhất.</p>
         ";
 
