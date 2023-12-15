@@ -42,7 +42,7 @@
 
         
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Nhập email nếu bạn cần hổ trợ</h4>
+            <h4>Nhập email nếu bạn cần hỗ trợ</h4>
         
             <form id="subscribeForm" action="../layout/index.php" method="post" target="_self" >
              
