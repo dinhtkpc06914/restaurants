@@ -73,7 +73,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<label class="anim">
 					<input type="checkbox" class="checkbox">
 					<span>Ghi nhớ tôi</span>
-					<a href="<?= $SITE_URL ?>/tai-khoan/quen-mk.php">Quên mật khẩu</a>
+					<a href="<?= $SITE_URL ?>/tai-khoan/quen-mk.php">Quên mật khẩu.</a>
 				</label>
 				<div class="clear"></div>
 				<div class="submit-agileits">
@@ -107,7 +107,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
         // Kiểm tra trường 'ma_kh'
         if (ma_kh.trim() === "") {
-            document.getElementById("ma_kh_error").innerText = "Vui lòng nhập tên đăng nhập.";
+            document.getElementById("ma_kh_error").innerText = "Vui lòng nhập tên đăng nhập!";
             valid = false;
         } else {
             document.getElementById("ma_kh_error").innerText = "";
@@ -115,7 +115,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
         // Kiểm tra trường 'mat_khau'
         if (mat_khau.trim() === "") {
-            document.getElementById("mat_khau_error").innerText = "Vui lòng nhập mật khẩu.";
+            document.getElementById("mat_khau_error").innerText = "Vui lòng nhập mật khẩu!";
             valid = false;
         } else {
             document.getElementById("mat_khau_error").innerText = "";
