@@ -5,7 +5,7 @@
         /* Có thể điều chỉnh kích thước ảnh nếu cần */
         /* Thêm các thuộc tính CSS khác tùy theo nhu cầu của bạn */
         color: #fff;
-        margin-top: 160px;
+        margin-top: 170px;
     }
     #title-update{
         color: #cda45e;
@@ -13,17 +13,14 @@
         font-weight: bold;
     }
 
-    .container{
-        padding: 40px;
-    background-color: rgba(0, 0, 0, 0.7); /* Background mờ để làm nổi bật form */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
-    margin-bottom: 2rem;
-    }
+
     </style>
 <body>
 <div class="container">
-    <h2 class="py-3 text-center " style=" color:#cda45e">Cập nhật tài khoản</h2>
+   <div class="card">
+   <h2 class="py-3 text-center card-header" style=" color:#cda45e">Cập nhật tài khoản</h2>
+    <div class="card-body">
+       
     <div class="row m-1 pb-5">
         <div class="col-lg-5 col-md ">
             <img src="<?= $UPLOAD_URL . '/users/' . $hinh ?>" class="img-fluid" alt="">
@@ -55,7 +52,7 @@
                 <div class="form-group">
                     <label for="" id="title-update">Địa chỉ</label>
                     <input type="text" name="dia_chi" id="" class="form-control" 
-                        aria-describedby="helpId" value="<?= $dia_chi ?>"
+                        aria-describedby="helpId" value="<?= $dia_chi ?>">
                 </div>
                 <div class="form-group">
                     <label for="" id="title-update">Ảnh đại diện</label>
@@ -77,5 +74,7 @@
 
 
     </div>
+    </div>
+   </div>
 </div>
 </body>
