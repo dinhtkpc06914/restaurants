@@ -12,9 +12,8 @@ if (exist_param("btn_update")) {
     
     try {
         // Mã hóa mật khẩu bằng Argon2
-        $hashed_mat_khau = password_hash($mat_khau, PASSWORD_ARGON2I);
-
-        khach_hang_update($ma_kh, $hashed_mat_khau, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro, $dia_chi);
+      
+        khach_hang_update1($ma_kh, $ho_ten, $email, $sdt, $hinh, $kich_hoat, $vai_tro, $dia_chi);
         
         $MESSAGE = "Cập nhật thành công!";
         
