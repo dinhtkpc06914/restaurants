@@ -12,6 +12,11 @@ function khach_hang_update($ma_kh, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich
     $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,email=?,sdt=?,hinh=?,kich_hoat=?,vai_tro=?,dia_chi=? WHERE ma_kh=?";
     pdo_execute($sql, $mat_khau, $ho_ten, $email,$sdt, $hinh, $kich_hoat == 1, $vai_tro == 1,$dia_chi, $ma_kh);
 }
+function khach_hang_update1($ma_kh,$ho_ten, $email,$sdt, $hinh, $kich_hoat, $vai_tro,$dia_chi)
+{
+    $sql = "UPDATE khach_hang SET ho_ten=?,email=?,sdt=?,hinh=?,kich_hoat=?,vai_tro=?,dia_chi=? WHERE ma_kh=?";
+    pdo_execute($sql, $ho_ten, $email,$sdt, $hinh, $kich_hoat == 1, $vai_tro == 1,$dia_chi, $ma_kh);
+}
 function khach_hang_delete($ma_kh)
 {
     $sql = "DELETE FROM khach_hang WHERE ma_kh=?";
